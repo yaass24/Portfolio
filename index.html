@@ -37,7 +37,7 @@
   .menu{display:none;background:none;border:0;color:var(--text);font-size:1.5rem;cursor:pointer}
 
   /* hero */
-  .hero{padding:110px 0 80px}
+  .hero{padding:110px 0 70px}
   .badge{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--muted);border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:28px}
   .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
   .hero h1{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.15;font-weight:700;max-width:14ch}
@@ -124,6 +124,14 @@
   .tg .chips{margin-top:0;gap:8px}
   .tg .chips span{background:transparent;padding:6px 14px;font-size:.85rem}
   .quote-line{color:var(--text)!important;font-size:1.15rem!important;font-weight:600;border-inline-start:3px solid var(--accent);padding-inline-start:14px;margin-top:22px!important}
+  .mbs{position:relative;margin:0 0 90px;padding:44px 48px;border-radius:24px;background:linear-gradient(135deg,rgba(0,108,53,.28),rgba(23,23,26,.9) 70%);border:1px solid rgba(127,216,166,.22);overflow:hidden}
+  .mbs::before{content:"”";position:absolute;inset-inline-end:28px;top:-30px;font-size:11rem;line-height:1;color:rgba(127,216,166,.12);font-family:Georgia,serif}
+  html.lang-en .mbs::before{content:"“"}
+  .mbs blockquote{font-size:clamp(1.25rem,2.6vw,1.9rem);font-weight:700;line-height:1.6;max-width:30ch;position:relative}
+  html.lang-en .mbs blockquote{max-width:38ch}
+  .mbs figcaption{margin-top:18px;color:#7fd8a6;font-size:.95rem;font-weight:600;display:flex;align-items:center;gap:12px}
+  .mbs figcaption::before{content:"";width:32px;height:2px;background:#7fd8a6;display:inline-block}
+  @media (max-width:820px){.mbs{padding:32px 24px;margin-bottom:70px}.mbs::before{font-size:8rem}}
   /* reveal */
   .r{opacity:0;transform:translateY(24px);transition:.7s ease}
   .r.in{opacity:1;transform:none}
@@ -178,6 +186,14 @@
       <a href="#work" class="btn btn-accent"><span class="ar">استعرض أعمالي ←</span><span class="en">See my work →</span></a>
       <a href="#contact" class="btn btn-ghost"><span class="ar">تواصل معي</span><span class="en">Get in touch</span></a>
     </div>
+  </div>
+
+
+  <div class="wrap">
+    <figure class="mbs r">
+      <blockquote><span class="ar">«إن العالم يعيش في زمن الابتكارات العلمية والتقنية غير المسبوقة، وآفاق النمو غير المحدودة»</span><span class="en">“The world is living in an era of unprecedented scientific and technological innovation, and limitless horizons for growth.”</span></blockquote>
+      <figcaption><span class="ar">صاحب السمو الملكي الأمير محمد بن سلمان بن عبدالعزيز آل سعود</span><span class="en">HRH Prince Mohammed bin Salman bin Abdulaziz Al Saud</span></figcaption>
+    </figure>
   </div>
 
   <section id="work">
