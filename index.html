@@ -267,6 +267,31 @@
   html.lang-en .mbs::before{content:"/*"}
   .contact h2::after{display:none}
   @media (max-width:820px){.term-body{padding:24px 20px}.links a::before{content:""}.term-title{transform:none}}
+
+  /* ===== system windows (tidy) ===== */
+  section{border-top:none!important;padding:34px 0!important}
+  .contact{padding:90px 0!important}
+  .win{background:rgba(16,22,29,.72);border:1px solid var(--line);border-radius:16px;overflow:hidden;backdrop-filter:blur(6px);padding:0!important}
+  .win-bar{display:flex;align-items:center;gap:8px;padding:12px 18px;background:#121922;border-bottom:1px solid var(--line);direction:ltr}
+  .win-bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.win-bar i:nth-child(2){background:#febc2e}.win-bar i:nth-child(3){background:#28c840}
+  .win-path{margin-inline-start:12px;font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--muted)}
+  .win-body{padding:40px 44px 44px}
+  .win-body.about{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+  .win .head{margin-bottom:32px}
+  /* cards inside windows: clean tiles, no extra dots */
+  .svc,.op,.hk,.cert,.pillar{padding-top:26px!important}
+  .svc::before,.op::before,.hk::before,.cert::before,.pillar::before{display:none!important}
+  .card,.svc,.op,.hk,.cert,.tg,.pillar{background:#0d1218!important;border-color:#1a232e!important}
+  .card:hover,.op:hover{border-color:#2a3a4a!important}
+  .hero{padding:56px 0 34px}
+  .mbs{margin-bottom:34px}
+  /* status bar */
+  .statusbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;gap:16px;padding:5px 18px;background:#0f151c;border-top:1px solid var(--line);font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--muted);direction:ltr}
+  .statusbar .l,.statusbar .r2{display:flex;gap:18px;align-items:center}
+  .statusbar .ok{color:#28c840}
+  .statusbar b{color:var(--accent);font-weight:500}
+  body{padding-bottom:30px}
+  @media (max-width:820px){.win-body{padding:26px 20px 28px}.win-body.about{grid-template-columns:1fr;gap:32px}.statusbar .r2{display:none}}
 </style>
 </head>
 <body>
@@ -320,7 +345,7 @@
   </div>
 
   <section id="work">
-    <div class="wrap">
+    <div class="wrap win"><div class="win-bar"><i></i><i></i><i></i><span class="win-path">~/projects</span></div><div class="win-body">
       <div class="head r">
         <div><div class="eyebrow"><span class="ar">مشاريعي</span><span class="en">Projects</span></div><h2><span class="ar">حلول لمشاكل حقيقية</span><span class="en">Solutions to real problems</span></h2></div>
         <a href="https://github.com/yaass24" target="_blank" rel="noopener" class="btn btn-ghost"><span class="ar">كل المشاريع على GitHub ←</span><span class="en">All projects on GitHub →</span></a>
@@ -361,11 +386,12 @@
       </div>
       <div class="more-head r"><h3><span class="ar">مشاريع أخرى</span><span class="en">More projects</span></h3></div>
       <div class="ops"><div class="op r"><div class="op-top"><h3>Greno ♻️</h3><span class="tag"><span class="ar">ذكاء اصطناعي · نسخة أولية</span><span class="en">AI · Early Version</span></span></div><p><span class="ar">تطبيق ويب يتيح تصوير أي نفاية أو رفع صورتها، ثم يصنّفها بالذكاء الاصطناعي ويقترح فئة التخلص الصحيحة. درّبتُ فيه أول نموذج YOLOv8.</span><span class="en">A web app that lets users snap or upload a photo of a waste item, then uses AI to classify it and suggest the correct disposal category. My first trained YOLOv8 model.</span></p><div class="op-tool">Python · YOLOv8 · Flask · Gemini</div></div><div class="op r"><div class="op-top"><h3>EduTrack</h3><span class="tag"><span class="ar">إدارة مشاريع تقنية</span><span class="en">IT Project Management</span></span></div><p><span class="ar">فكرة تطبيق يجمع واجبات الطالب واختباراته ومشاريعه في مكان واحد بدل التنقل بين Blackboard وOutlook والبريد.</span><span class="en">An app idea that gathers students’ assignments, exams and projects in one place instead of juggling Blackboard, Outlook and email.</span></p><div class="op-tool">Microsoft Project</div></div><div class="op r"><div class="op-top"><h3><bdi>FitPass+</bdi></h3><span class="tag"><span class="ar">تحليل وتصميم كائني التوجه</span><span class="en">OOAD</span></span></div><p><span class="ar">نموذج أولي لتطبيق حجز حصص رياضية وطلب وجبات صحية، صُمّم ضمن مشروع مقرر OOAD.</span><span class="en">A prototype for booking fitness classes and ordering healthy meals, designed for an OOAD course project.</span></p><div class="op-tool">Figma</div></div></div>
+      </div>
     </div>
   </section>
 
   <section id="vision">
-    <div class="wrap">
+    <div class="wrap win"><div class="win-bar"><i></i><i></i><i></i><span class="win-path">~/vision-2030.md</span></div><div class="win-body">
       <div class="head r"><div><div class="eyebrow"><span class="ar">رؤية 2030</span><span class="en">Saudi Vision 2030</span></div><h2><span class="ar">مشاريعي ومحاور الرؤية</span><span class="en">My projects & the Vision pillars</span></h2></div></div>
       <div class="pillars">
         <div class="pillar r">
@@ -385,18 +411,20 @@
         </div>
       </div>
       <p class="note r"><span class="ar">ارتباط بأهداف الرؤية ومحاورها، وليس تبعية رسمية لها.</span><span class="en">Thematic alignment with the Vision's goals, not an official affiliation.</span></p>
+      </div>
     </div>
   </section>
 
   <section id="services">
-    <div class="wrap">
+    <div class="wrap win"><div class="win-bar"><i></i><i></i><i></i><span class="win-path">~/skills/expertise</span></div><div class="win-body">
       <div class="head r"><div><div class="eyebrow"><span class="ar">مجالاتي</span><span class="en">Expertise</span></div><h2><span class="ar">ما أُتقنه</span><span class="en">What I do</span></h2></div></div>
       <div class="services"><div class="svc r"><div class="n">01</div><h3><span class="ar">إدارة البيانات وذكاء الأعمال</span><span class="en">Data Management & BI</span></h3><p><span class="ar">تنظيف البيانات وإدارتها وتحليلها، وبناء لوحات ومؤشرات أداء تدعم اتخاذ القرار.</span><span class="en">Cleaning, managing and analyzing data, and building dashboards and KPIs that support decisions.</span></p></div><div class="svc r"><div class="n">02</div><h3><span class="ar">تحليل النظم</span><span class="en">Systems Analysis</span></h3><p><span class="ar">تحويل المتطلبات إلى نماذج ومخططات دقيقة.</span><span class="en">From requirements to clear models and diagrams.</span></p></div><div class="svc r"><div class="n">03</div><h3><span class="ar">إدارة المشاريع</span><span class="en">Project Management</span></h3><p><span class="ar">تخطيط ومتابعة المهام والجداول عبر Microsoft Project.</span><span class="en">Planning and tracking tasks and timelines in Microsoft Project.</span></p></div><div class="svc r"><div class="n">04</div><h3><span class="ar">تجربة المستخدم UX/UI</span><span class="en">UX/UI Design</span></h3><p><span class="ar">أبحاث المستخدم وتصميم الواجهات والنماذج التفاعلية.</span><span class="en">User research, interfaces and interactive prototypes.</span></p></div><div class="svc r"><div class="n">05</div><h3><span class="ar">أنظمة ERP</span><span class="en">ERP Systems</span></h3><p><span class="ar">فهم وأتمتة العمليات المؤسسية عبر Odoo.</span><span class="en">Understanding and automating business processes with Odoo.</span></p></div><div class="svc r"><div class="n">06</div><h3><span class="ar">تطوير الويب</span><span class="en">Web Development</span></h3><p><span class="ar">بناء نماذج أولية عاملة، من الواجهة حتى قاعدة البيانات.</span><span class="en">Working prototypes, from front end to database.</span></p></div></div>
+      </div>
     </div>
   </section>
 
   <section id="about">
-    <div class="wrap about">
+    <div class="wrap win"><div class="win-bar"><i></i><i></i><i></i><span class="win-path">~/about.md</span></div><div class="win-body about">
       <div class="r">
         <div class="eyebrow"><span class="ar">عنّي</span><span class="en">About</span></div>
         <h2><span class="ar">مرحبًا، أنا ياسمين</span><span class="en">Hi, I'm Yasmin</span></h2>
@@ -407,21 +435,24 @@
         <div class="eyebrow"><span class="ar">أدواتي</span><span class="en">Tools</span></div>
         <div class="tgroups"><div class="tg"><div class="tgl"><span class="ar">الإدارة والإنتاجية</span><span class="en">Management & Productivity</span></div><div class="chips"><span>Microsoft Project</span><span>Excel</span><span>Google Sheets</span><span>Word</span><span>PowerPoint</span><span>Outlook</span></div></div><div class="tg"><div class="tgl"><span class="ar">البيانات والأعمال</span><span class="en">Data & Business</span></div><div class="chips"><span>Python</span><span>SQL Server</span><span>Power BI</span><span>YOLOv8</span><span>Google Colab</span><span>Odoo ERP</span></div></div><div class="tg"><div class="tgl"><span class="ar">التصميم والتطوير</span><span class="en">Design & Development</span></div><div class="chips"><span>Figma</span><span>Balsamiq</span><span>HTML/CSS/JS</span><span>Flask</span><span>PHP · MySQL</span><span>Git</span></div></div><div class="tg"><div class="tgl"><span class="ar">مهارات شخصية</span><span class="en">Soft Skills</span></div><div class="chips"><span><span class="ar">قيادة الفريق</span><span class="en">Team Leadership</span></span><span><span class="ar">التواصل</span><span class="en">Communication</span></span><span><span class="ar">سرعة التعلّم</span><span class="en">Quick Learner</span></span></div></div></div>
       </div>
+      </div>
     </div>
   </section>
 
   <section id="hackathons">
-    <div class="wrap">
+    <div class="wrap win"><div class="win-bar"><i></i><i></i><i></i><span class="win-path">~/hackathons.log</span></div><div class="win-body">
       <div class="head r"><div><div class="eyebrow"><span class="ar">الهاكاثونات</span><span class="en">Hackathons</span></div><h2><span class="ar">أفكار تحت ضغط الوقت</span><span class="en">Ideas under pressure</span></h2></div></div>
       <div class="hks"><div class="hk r"><div class="hktop"><div class="hkn">01</div><span class="hkb"><span class="ar">شاركت</span><span class="en">Participated</span></span></div><h3><span class="ar">هاكاثون فرق</span><span class="en">Farq Hackathon</span></h3><p><span class="ar">جامعة اليمامة</span><span class="en">Al Yamamah University</span></p></div><div class="hk r"><div class="hktop"><div class="hkn">02</div><span class="hkb"><span class="ar">شاركت</span><span class="en">Participated</span></span></div><h3><span class="ar">هاكاثون الطفولة</span><span class="en">Childhood Hackathon</span></h3><p><span class="ar">جمعية إنماء لرعاية الطفولة</span><span class="en">Enmaa Association for Childhood Care</span></p></div><div class="hk r"><div class="hktop"><div class="hkn">03</div><span class="hkb"><span class="ar">شاركت</span><span class="en">Participated</span></span></div><h3><span class="ar">هاكاثون AgentX</span><span class="en">AgentX Hackathon</span></h3><p><span class="ar">الرياض</span><span class="en">Riyadh</span></p></div><div class="hk r"><div class="hktop"><div class="hkn">04</div><span class="hkb live"><i></i><span class="ar">جارٍ</span><span class="en">Ongoing</span></span></div><h3><span class="ar">هاكاثون الابتكار للتحول الرقمي الصحي العسكري</span><span class="en">Military Health Digital Transformation Innovation Hackathon</span></h3><p><span class="ar">كلية الأمير سلطان العسكرية للعلوم الصحية بالظهران</span><span class="en">Prince Sultan Military College of Health Sciences, Dhahran</span></p></div><div class="hk r"><div class="hktop"><div class="hkn">05</div><span class="hkb live"><i></i><span class="ar">جارٍ</span><span class="en">Ongoing</span></span></div><h3><span class="ar">هاكاثون نمكّن للذكاء الاصطناعي 2026</span><span class="en">Nmkkn AI Hackathon 2026</span></h3><p><span class="ar">نمكّن</span><span class="en">Nmkkn</span></p></div></div>
+      </div>
     </div>
   </section>
 
   <section id="certs">
-    <div class="wrap">
+    <div class="wrap win"><div class="win-bar"><i></i><i></i><i></i><span class="win-path">~/certifications</span></div><div class="win-body">
       <div class="head r"><div><div class="eyebrow"><span class="ar">الشهادات</span><span class="en">Certifications</span></div><h2><span class="ar">التعلّم المستمر</span><span class="en">Continuous learning</span></h2></div>
         <a href="https://www.linkedin.com/in/yasmin-almomen-9a45a13a5/details/certifications/" target="_blank" rel="noopener" class="btn btn-ghost"><span class="ar">كل الشهادات على LinkedIn ←</span><span class="en">All on LinkedIn →</span></a></div>
       <div class="certs"><div class="cert r"><div class="cicon">✦</div><div><h3>AI Foundations</h3><p>OpenAI</p><span class=cdate><span class="ar">نوفمبر 2026</span><span class="en">Nov 2026</span></span></div></div><div class="cert r"><div class="cicon">✦</div><div><h3>Build Your First App With Replit</h3><p>Tuwaiq Club · KFUPM</p><span class=cdate><span class="ar">نوفمبر 2026</span><span class="en">Nov 2026</span></span></div></div><div class="cert r"><div class="cicon">✦</div><div><h3>Introduction to AI &amp; ML on Google Cloud</h3><p><span class="ar">وزارة الاتصالات وتقنية المعلومات</span><span class="en">Ministry of Communications and IT</span></p><span class=cdate><span class="ar">يوليو 2026</span><span class="en">Jul 2026</span></span></div></div></div>
+      </div>
     </div>
   </section>
 
@@ -446,6 +477,7 @@
   </div>
 </footer>
 
+<div class="statusbar"><div class="l"><span class="ok">● online</span><span>⎇ main</span><span><b>yasmin</b>@portfolio</span></div><div class="r2"><span id="sb-lang">AR</span><span>UTF-8</span><span>CIS · IAU</span><span id="sb-time"></span></div></div>
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
   const root = document.documentElement;
@@ -456,6 +488,10 @@
     root.dir = en ? 'ltr' : 'rtl';
     try { localStorage.setItem('lang', en ? 'en' : 'ar'); } catch (e) {}
   };
+
+  const sbl=document.getElementById('sb-lang'), sbt=document.getElementById('sb-time');
+  const upd=()=>{ if(sbl) sbl.textContent=root.classList.contains('lang-en')?'EN':'AR'; if(sbt) sbt.textContent=new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}); };
+  upd(); setInterval(upd,15000); document.getElementById('lang').addEventListener('click',upd);
   const links = document.getElementById('links');
   document.getElementById('menu').onclick = () => links.classList.toggle('open');
   links.querySelectorAll('a').forEach(a => a.onclick = () => links.classList.remove('open'));
