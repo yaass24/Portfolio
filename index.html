@@ -51,7 +51,7 @@
   h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.2}
 
   /* work */
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
   .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s;display:flex;flex-direction:column}
   .card:hover{transform:translateY(-4px);border-color:#3a3a40}
   .thumb{aspect-ratio:16/10;display:grid;place-items:center;background:#f6f4ef;padding:28px}
@@ -106,6 +106,8 @@
   .pn{font-size:1.35rem;font-weight:700;color:#7fd8a6;margin-bottom:10px}
   .pillar p{color:var(--muted);font-size:.95rem}
   .pp{margin-top:16px;font-size:.85rem;font-weight:600}
+  .pp.soon{color:var(--accent)}
+  .thumb-hajar{background:linear-gradient(135deg,#f6e3c4,#e8c79a);color:#6b3f1d}
   .note{color:var(--muted);font-size:.8rem;margin-top:20px}
   .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
   .chips span{border:1px solid var(--line);background:var(--surface);padding:8px 16px;border-radius:999px;font-size:.9rem;direction:ltr}
@@ -163,6 +165,19 @@
       </div>
       <div class="grid">
         <article class="card r">
+          <div class="thumb thumb-text thumb-hajar"><span class="ar">هَجَر</span><span class="en">HAJAR</span></div>
+          <div class="card-body">
+            <div class="card-top"><h3>هَجَر · HAJAR</h3><span class="tag">لعبة ثلاثية الأبعاد · مشروع مستقل</span></div>
+            <p>لعبة مغامرة ثلاثية الأبعاد تعرّف بتراث الأحساء ومعالمها في رحلة من ١٠ مراحل، من الواحة وجامع جواثا وعين الحارة إلى مزارع الأحساء. تشتغل من المتصفح على الجوال والآيباد واللابتوب، وتدعم يد بلايستيشن.</p>
+            <div class="v2030">🇸🇦 رؤية 2030 · مجتمع حيوي · الثقافة والتراث</div>
+            <div class="plinks">
+              <a href="https://hajar-3d-adventure.yaassmin38.workers.dev/" target="_blank" rel="noopener">العب الآن ↗</a>
+              <a href="https://www.figma.com/design/ATX26Fxhx2PWwExfgdswzQ" target="_blank" rel="noopener">Figma ↗</a>
+              <a href="https://github.com/yaass24/Hajar" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+        <article class="card r">
           <div class="thumb"><img src="assets/mueen-logo.png" alt="شعار مُعين MU'EEN"></div>
           <div class="card-body">
             <div class="card-top"><h3>مُعين · MU'EEN</h3><span class="tag">نظام جامعي · نموذج أولي</span></div>
@@ -211,8 +226,8 @@
       <div class="pillars">
         <div class="pillar r">
           <div class="pn">مجتمع حيوي</div>
-          <p>تمكين ذوي الإعاقة والاحتياجات الصحية، ورفع جودة الحياة في الأماكن العامة.</p>
-          <div class="pp">مُعين · رَويَّة</div>
+          <p>تمكين ذوي الإعاقة، ورفع جودة الحياة في الأماكن العامة، وإبراز التراث والثقافة الوطنية.</p>
+          <div class="pp">مُعين · رَويَّة · هَجَر</div>
         </div>
         <div class="pillar r">
           <div class="pn">اقتصاد مزدهر</div>
@@ -222,7 +237,7 @@
         <div class="pillar r">
           <div class="pn">وطن طموح</div>
           <p>بناء قدرات وطنية في التقنية والبيانات، وتقديم حلول رقمية فعّالة بأقل تكلفة.</p>
-          <div class="pp">كل مشاريعي</div>
+          <div class="pp soon">مشروع قيد العمل · قريباً</div>
         </div>
       </div>
       <p class="note r">ارتباط بأهداف الرؤية ومحاورها، وليس تبعية رسمية لها.</p>
@@ -235,7 +250,7 @@
       <div class="services">
         <div class="svc r"><div class="n">01</div><h3>تحليل البيانات وذكاء الأعمال</h3><p>لوحات ومؤشرات تساعد على اتخاذ القرار.</p></div>
         <div class="svc r"><div class="n">02</div><h3>تحليل النظم</h3><p>من المتطلبات إلى نماذج ومخططات واضحة.</p></div>
-        <div class="svc r"><div class="n">03</div><h3>إدارة المشاريع</h3><p>تنظيم الفريق والمهام من الفكرة إلى التسليم.</p></div>
+        <div class="svc r"><div class="n">03</div><h3>إدارة المشاريع</h3><p>تخطيط ومتابعة المهام والجداول عبر Microsoft Project.</p></div>
         <div class="svc r"><div class="n">04</div><h3>تجربة المستخدم UX/UI</h3><p>بحث وتصميم واجهات ونماذج تفاعلية.</p></div>
         <div class="svc r"><div class="n">05</div><h3>أنظمة ERP</h3><p>فهم وأتمتة العمليات المؤسسية عبر Odoo.</p></div>
         <div class="svc r"><div class="n">06</div><h3>تطوير الويب</h3><p>نماذج أولية تعمل فعلاً، من الواجهة إلى قاعدة البيانات.</p></div>
@@ -253,7 +268,7 @@
       <div class="r">
         <div class="eyebrow">أدواتي</div>
         <div class="chips">
-          <span>Python</span><span>SQL</span><span>Power BI</span><span>Figma</span><span>Git</span><span>Odoo</span><span>HTML/CSS/JS</span><span>PHP · MySQL</span>
+          <span>Microsoft Project</span><span>Excel</span><span>Word</span><span>PowerPoint</span><span>Outlook</span><span>Python</span><span>SQL</span><span>Power BI</span><span>Figma</span><span>Git</span><span>Odoo</span><span>HTML/CSS/JS</span><span>PHP · MySQL</span>
         </div>
       </div>
     </div>
