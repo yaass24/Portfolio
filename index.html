@@ -292,6 +292,13 @@
   .statusbar b{color:var(--accent);font-weight:500}
   body{padding-bottom:30px}
   @media (max-width:820px){.win-body{padding:26px 20px 28px}.win-body.about{grid-template-columns:1fr;gap:32px}.statusbar .r2{display:none}}
+  .out.now{display:flex;align-items:center;gap:10px;color:var(--text)}
+  .live-dot{flex:none;width:9px;height:9px;border-radius:50%;background:#28c840;box-shadow:0 0 10px #28c840;animation:blink 1.6s steps(1) infinite}
+  .cert-now{border-color:rgba(255,181,71,.35)!important}
+  .cert-now .cicon{background:rgba(255,181,71,.1);color:#ffb547}
+  .now-b{color:#ffb547!important;border-color:rgba(255,181,71,.35)!important;background:rgba(255,181,71,.08)}
+  .certs{grid-template-columns:repeat(2,1fr)!important}
+  @media (max-width:820px){.certs{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body>
@@ -325,6 +332,8 @@
         <h1><span class="ar">ياسمين المؤمن<br><em class="en-name">Yasmin Almomen</em></span><span class="en">Yasmin Almomen<br><em>ياسمين المؤمن</em></span></h1>
         <div class="cmd"><span class="pr">❯</span> cat role.txt</div>
         <p class="out"><span class="ar">نظم معلومات حاسوبية · جامعة الإمام عبدالرحمن بن فيصل</span><span class="en">Computer Information Systems · Imam Abdulrahman Bin Faisal University</span></p>
+        <div class="cmd"><span class="pr">❯</span> cat now.txt</div>
+        <p class="out now"><span class="live-dot"></span><span class="ar">أشارك حاليًا في برنامج أكاديمية كاوست · المعلوماتية الحيوية (Bioinformatics)</span><span class="en">Currently in the KAUST Academy program · Bioinformatics</span></p>
         <div class="cmd"><span class="pr">❯</span> echo $MISSION</div>
         <p class="out str"><span class="ar">أُحوِّل التحديات الواقعية إلى حلول رقمية متكاملة، تجمع بين دقة التحليل وجودة التصميم وفاعلية التقنية.</span><span class="en">I turn real-world challenges into complete digital solutions that combine rigorous analysis, thoughtful design and effective technology.</span></p>
         <div class="actions">
@@ -449,9 +458,9 @@
 
   <section id="certs">
     <div class="wrap win"><div class="win-bar"><i></i><i></i><i></i><span class="win-path">~/certifications</span></div><div class="win-body">
-      <div class="head r"><div><div class="eyebrow"><span class="ar">الشهادات</span><span class="en">Certifications</span></div><h2><span class="ar">التعلّم المستمر</span><span class="en">Continuous learning</span></h2></div>
+      <div class="head r"><div><div class="eyebrow"><span class="ar">الشهادات والبرامج</span><span class="en">Certifications &amp; Programs</span></div><h2><span class="ar">التعلّم المستمر</span><span class="en">Continuous learning</span></h2></div>
         <a href="https://www.linkedin.com/in/yasmin-almomen-9a45a13a5/details/certifications/" target="_blank" rel="noopener" class="btn btn-ghost"><span class="ar">كل الشهادات على LinkedIn ←</span><span class="en">All on LinkedIn →</span></a></div>
-      <div class="certs"><div class="cert r"><div class="cicon">✦</div><div><h3>AI Foundations</h3><p>OpenAI</p><span class=cdate><span class="ar">نوفمبر 2026</span><span class="en">Nov 2026</span></span></div></div><div class="cert r"><div class="cicon">✦</div><div><h3>Build Your First App With Replit</h3><p>Tuwaiq Club · KFUPM</p><span class=cdate><span class="ar">نوفمبر 2026</span><span class="en">Nov 2026</span></span></div></div><div class="cert r"><div class="cicon">✦</div><div><h3>Introduction to AI &amp; ML on Google Cloud</h3><p><span class="ar">وزارة الاتصالات وتقنية المعلومات</span><span class="en">Ministry of Communications and IT</span></p><span class=cdate><span class="ar">يوليو 2026</span><span class="en">Jul 2026</span></span></div></div></div>
+      <div class="certs"><div class="cert r cert-now"><div class="cicon">◉</div><div><h3>KAUST Academy · Bioinformatics</h3><p><span class="ar">أكاديمية كاوست · المعلوماتية الحيوية</span><span class="en">King Abdullah University of Science and Technology</span></p><span class="cdate now-b"><span class="ar">جارٍ</span><span class="en">Ongoing</span></span></div></div><div class="cert r"><div class="cicon">✦</div><div><h3>AI Foundations</h3><p>OpenAI</p><span class=cdate><span class="ar">نوفمبر 2026</span><span class="en">Nov 2026</span></span></div></div><div class="cert r"><div class="cicon">✦</div><div><h3>Build Your First App With Replit</h3><p>Tuwaiq Club · KFUPM</p><span class=cdate><span class="ar">نوفمبر 2026</span><span class="en">Nov 2026</span></span></div></div><div class="cert r"><div class="cicon">✦</div><div><h3>Introduction to AI &amp; ML on Google Cloud</h3><p><span class="ar">وزارة الاتصالات وتقنية المعلومات</span><span class="en">Ministry of Communications and IT</span></p><span class=cdate><span class="ar">يوليو 2026</span><span class="en">Jul 2026</span></span></div></div></div>
       </div>
     </div>
   </section>
