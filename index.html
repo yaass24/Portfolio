@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ياسمين المؤمن | Yasmin Almomen</title>
-<meta name="description" content="ياسمين المؤمن — نظم معلومات حاسوبية، جامعة الإمام عبدالرحمن بن فيصل">
+<title>Yasmin Almomen | ياسمين المؤمن</title>
+<meta name="description" content="Yasmin Almomen — Computer Information Systems, Imam Abdulrahman Bin Faisal University">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<script>try{if(localStorage.getItem('lang')==='en'){document.documentElement.className='lang-en';document.documentElement.lang='en';document.documentElement.dir='ltr';}}catch(e){}</script>
 <style>
   :root{
     --bg:#0e0e10; --surface:#17171a; --line:#26262b;
@@ -100,7 +101,7 @@
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
   /* vision */
-  .v2030{font-size:.8rem;color:#7fd8a6;background:rgba(127,216,166,.08);border:1px solid rgba(127,216,166,.25);padding:6px 12px;border-radius:10px;align-self:flex-start}
+  .v2030-unused{font-size:.8rem;color:#7fd8a6;background:rgba(127,216,166,.08);border:1px solid rgba(127,216,166,.25);padding:6px 12px;border-radius:10px;align-self:flex-start}
   .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .pillar{background:linear-gradient(160deg,rgba(0,108,53,.18),var(--surface) 60%);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
   .pn{font-size:1.35rem;font-weight:700;color:#7fd8a6;margin-bottom:10px}
@@ -127,6 +128,15 @@
     .hero{padding:70px 0 60px}
     section{padding:70px 0}
   }
+
+  .en{display:none}
+  html.lang-en .ar{display:none}
+  html.lang-en .en{display:inline}
+  html.lang-en body{font-family:"Inter","IBM Plex Sans Arabic",system-ui,sans-serif}
+  .lang{background:none;border:1px solid var(--line);color:var(--text);padding:8px 14px;border-radius:999px;font:inherit;font-size:.85rem;cursor:pointer}
+  .lang:hover{border-color:var(--muted)}
+  .navr{display:flex;align-items:center;gap:10px}
+  .en-name{direction:ltr;unicode-bidi:isolate}
 </style>
 </head>
 <body>
@@ -135,85 +145,68 @@
   <nav class="wrap">
     <a href="#" class="logo">Yasmin<span>.</span></a>
     <div class="links" id="links">
-      <a href="#work">الأعمال</a>
-      <a href="#vision">رؤية 2030</a>
-      <a href="#services">مجالاتي</a>
-      <a href="#about">عنّي</a>
-      <a href="#contact">تواصل</a>
+      <a href="#work"><span class="ar">الأعمال</span><span class="en">Work</span></a>
+      <a href="#vision"><span class="ar">رؤية 2030</span><span class="en">Vision 2030</span></a>
+      <a href="#services"><span class="ar">مجالاتي</span><span class="en">Expertise</span></a>
+      <a href="#about"><span class="ar">عنّي</span><span class="en">About</span></a>
+      <a href="#contact"><span class="ar">تواصل</span><span class="en">Contact</span></a>
     </div>
-    <a href="https://www.linkedin.com/in/yasmin-almomen-9a45a13a5" target="_blank" rel="noopener" class="btn btn-accent">LinkedIn</a>
-    <button class="menu" id="menu" aria-label="القائمة">☰</button>
+    <div class="navr">
+      <button class="lang" id="lang" aria-label="Language"><span class="ar">EN</span><span class="en">عربي</span></button>
+      <a href="https://www.linkedin.com/in/yasmin-almomen-9a45a13a5" target="_blank" rel="noopener" class="btn btn-accent">LinkedIn</a>
+      <button class="menu" id="menu" aria-label="Menu">☰</button>
+    </div>
   </nav>
 </header>
 
 <main>
   <div class="hero wrap">
-    <div class="badge r"><span class="dot"></span> نظم معلومات حاسوبية · جامعة الإمام عبدالرحمن بن فيصل</div>
-    <h1 class="r">ياسمين المؤمن<br><em>Yasmin Almomen</em></h1>
-    <p class="r">أحوّل المشاكل الحقيقية إلى حلول رقمية تخدم الناس، وأساهم بها في بناء مستقبل رقمي يواكب رؤية المملكة 2030.</p>
+    <div class="badge r"><span class="dot"></span> <span class="ar">نظم معلومات حاسوبية · جامعة الإمام عبدالرحمن بن فيصل</span><span class="en">Computer Information Systems · Imam Abdulrahman Bin Faisal University</span></div>
+    <h1 class="r"><span class="ar">ياسمين المؤمن<br><em class="en-name">Yasmin Almomen</em></span><span class="en">Yasmin Almomen<br><em>ياسمين المؤمن</em></span></h1>
+    <p class="r"><span class="ar">أحوّل المشاكل الحقيقية إلى حلول رقمية تخدم الناس.</span><span class="en">I turn real-world problems into digital solutions that serve people.</span></p>
     <div class="actions r">
-      <a href="#work" class="btn btn-accent">شوف أعمالي ←</a>
-      <a href="#contact" class="btn btn-ghost">تواصل معي</a>
+      <a href="#work" class="btn btn-accent"><span class="ar">شوف أعمالي ←</span><span class="en">See my work →</span></a>
+      <a href="#contact" class="btn btn-ghost"><span class="ar">تواصل معي</span><span class="en">Get in touch</span></a>
     </div>
   </div>
 
   <section id="work">
     <div class="wrap">
       <div class="head r">
-        <div><div class="eyebrow">مشاريعي</div><h2>حلول لمشاكل حقيقية</h2></div>
-        <a href="https://github.com/yaass24" target="_blank" rel="noopener" class="btn btn-ghost">كل المشاريع على GitHub ←</a>
+        <div><div class="eyebrow"><span class="ar">مشاريعي</span><span class="en">Projects</span></div><h2><span class="ar">حلول لمشاكل حقيقية</span><span class="en">Solutions to real problems</span></h2></div>
+        <a href="https://github.com/yaass24" target="_blank" rel="noopener" class="btn btn-ghost"><span class="ar">كل المشاريع على GitHub ←</span><span class="en">All projects on GitHub →</span></a>
       </div>
       <div class="grid">
         <article class="card r">
-          <div class="thumb thumb-hajar"><img src="assets/hajar-logo.jpg" alt="شعار هَجَر HAJAR"></div>
+          <div class="thumb thumb-hajar"><img src="assets/hajar-logo.jpg" alt="HAJAR logo"></div>
           <div class="card-body">
-            <div class="card-top"><h3>هَجَر · HAJAR</h3><span class="tag">لعبة ثلاثية الأبعاد · مشروع مستقل</span></div>
-            <p>لعبة مغامرة ثلاثية الأبعاد تعرّف بتراث الأحساء ومعالمها في رحلة من ١٠ مراحل، من الواحة وجامع جواثا وعين الحارة إلى مزارع الأحساء. تشتغل من المتصفح على الجوال والآيباد واللابتوب، وتدعم يد بلايستيشن.</p>
-            <div class="v2030">🇸🇦 رؤية 2030 · مجتمع حيوي · الثقافة والتراث</div>
-            <div class="plinks">
-              <a href="https://hajar-3d-adventure.yaassmin38.workers.dev/" target="_blank" rel="noopener">العب الآن ↗</a>
-              <a href="https://www.figma.com/design/ATX26Fxhx2PWwExfgdswzQ" target="_blank" rel="noopener">Figma ↗</a>
-              <a href="https://github.com/yaass24/Hajar" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
+            <div class="card-top"><h3>هَجَر · HAJAR</h3><span class="tag"><span class="ar">لعبة ثلاثية الأبعاد · مشروع مستقل</span><span class="en">3D Game · Independent Project</span></span></div>
+            <p><span class="ar">لعبة مغامرة ثلاثية الأبعاد تعرّف بتراث الأحساء ومعالمها في رحلة من ١٠ مراحل، من الواحة وجامع جواثا وعين الحارة إلى مزارع الأحساء. تشتغل من المتصفح على الجوال والآيباد واللابتوب، وتدعم يد بلايستيشن.</span><span class="en">An interactive 3D adventure celebrating Al-Ahsa's heritage across 10 stages, from the oasis, Jawatha Mosque and Ain Al-Harah to the Al-Ahsa farms. Runs in the browser on phone, iPad and laptop, with PlayStation controller support.</span></p>
+            <div class="plinks"><a href="https://hajar-3d-adventure.yaassmin38.workers.dev/" target="_blank" rel="noopener"><span class="ar">العب الآن</span><span class="en">Play now</span> ↗</a><a href="https://www.figma.com/design/ATX26Fxhx2PWwExfgdswzQ" target="_blank" rel="noopener"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Hajar" target="_blank" rel="noopener"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
           </div>
         </article>
         <article class="card r">
-          <div class="thumb"><img src="assets/mueen-logo.png" alt="شعار مُعين MU'EEN"></div>
+          <div class="thumb"><img src="assets/mueen-logo.png" alt="MU'EEN logo"></div>
           <div class="card-body">
-            <div class="card-top"><h3>مُعين · MU'EEN</h3><span class="tag">نظام جامعي · نموذج أولي</span></div>
-            <p>نظام استباقي يربط الاحتياجات الصحية المعتمدة للطلاب بجداولهم وقاعاتهم وحالة مرافق الحرم، فيكشف التعارضات مبكراً (مثل مصعد معطّل في مبنى محاضرة طالب يحتاجه)، ويتيح تنبيهاً صحياً فورياً بمسح رمز QR عند مدخل كل دور.</p>
-            <div class="v2030">🇸🇦 رؤية 2030 · مجتمع حيوي · تمكين ذوي الإعاقة</div>
-            <div class="plinks">
-              <a href="https://yaass24.github.io/Mu-een/" target="_blank" rel="noopener">العرض المباشر ↗</a>
-              <a href="https://www.figma.com/design/sXCsdqLnoGpQ19vTEYezXS/mu-een?node-id=78-2" target="_blank" rel="noopener">Figma ↗</a>
-              <a href="https://github.com/yaass24/Mu-een" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
+            <div class="card-top"><h3>مُعين · MU'EEN</h3><span class="tag"><span class="ar">نظام جامعي · نموذج أولي</span><span class="en">University System · Prototype</span></span></div>
+            <p><span class="ar">نظام استباقي يربط الاحتياجات الصحية المعتمدة للطلاب بجداولهم وقاعاتهم وحالة مرافق الحرم، فيكشف التعارضات مبكراً (مثل مصعد معطّل في مبنى محاضرة طالب يحتاجه)، ويتيح تنبيهاً صحياً فورياً بمسح رمز QR عند مدخل كل دور.</span><span class="en">A proactive system linking students' approved health needs with their schedules, rooms and campus facility status. It flags conflicts early (like an elevator out of service where a student needs it) and enables an instant health alert by scanning a QR code at each floor entrance.</span></p>
+            <div class="plinks"><a href="https://yaass24.github.io/Mu-een/" target="_blank" rel="noopener"><span class="ar">العرض المباشر</span><span class="en">Live demo</span> ↗</a><a href="https://www.figma.com/design/sXCsdqLnoGpQ19vTEYezXS/mu-een?node-id=78-2" target="_blank" rel="noopener"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Mu-een" target="_blank" rel="noopener"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
           </div>
         </article>
         <article class="card r">
-          <div class="thumb"><img style="max-width:100%;transform:scale(1.25)" src="assets/wadeh-logo.png" alt="شعار واضح WADEH"></div>
+          <div class="thumb thumb-white"><img src="assets/rawiyyah-logo.jpg" alt="RAWIYYAH logo"></div>
           <div class="card-body">
-            <div class="card-top"><h3>واضح · WADEH</h3><span class="tag">بنك رقمي · UX Case Study</span></div>
-            <p>بنك رقمي تجريبي بالعربية فكرته إن التزاماتك الشهرية ما تفوتك: أقساط وفواتير وجمعيات، مع تذكيرات في تقويم الآيفون وCarPlay، وويدجت للرصيد، ودخول بـ Face ID والبصمة.</p>
-            <div class="v2030">🇸🇦 رؤية 2030 · اقتصاد مزدهر · التحول الرقمي المالي</div>
-            <div class="plinks">
-              <a href="https://wadeh-lly2.onrender.com" target="_blank" rel="noopener">التطبيق ↗</a>
-              <a href="https://www.figma.com/design/qJjKAEzTGd5scJkjaGuV9N/WADEH-%E2%80%93-Digital-Banking-App?node-id=49-2" target="_blank" rel="noopener">Figma ↗</a>
-              <a href="https://github.com/yaass24/Wadeh-v2" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
+            <div class="card-top"><h3>رَويَّة · RAWIYYAH</h3><span class="tag"><span class="ar">تخطيط شامل · إمكانية الوصول</span><span class="en">Inclusive Planning · Accessibility</span></span></div>
+            <p><span class="ar">نموذج أولي يساعد فرق التصميم على تخطيط ملاعب أطفال دامجة ومراجعتها رقمياً قبل التنفيذ، يجمع المخطط ومراجعة مبنية على قواعد وفحص ترابط المسارات في مساحة عمل واحدة، مستنداً إلى مبادئ التصميم الشامل ودليل UNICEF.</span><span class="en">A prototype that helps design teams plan and review inclusive playgrounds digitally before construction, combining layout, rule-based review and route-connectivity checks in one workspace, grounded in Universal Design and the UNICEF toolkit.</span></p>
+            <div class="plinks"><a href="https://rawiyyah.free.je/" target="_blank" rel="noopener"><span class="ar">العرض المباشر</span><span class="en">Live demo</span> ↗</a><a href="https://www.figma.com/design/2GawzgM1IP3HQyRKrVWjN1/RAWIYYAH?node-id=101-2" target="_blank" rel="noopener"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Rawiyyah" target="_blank" rel="noopener"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
           </div>
         </article>
         <article class="card r">
-          <div class="thumb thumb-white"><img src="assets/rawiyyah-logo.jpg" alt="شعار رَويَّة RAWIYYAH"></div>
+          <div class="thumb"><img style="max-width:100%;transform:scale(1.25)" src="assets/wadeh-logo.png" alt="WADEH logo"></div>
           <div class="card-body">
-            <div class="card-top"><h3>رَويَّة · RAWIYYAH</h3><span class="tag">تخطيط شامل · إمكانية الوصول</span></div>
-            <p>نموذج أولي يساعد فرق التصميم على تخطيط ملاعب أطفال دامجة ومراجعتها رقمياً قبل التنفيذ، يجمع المخطط ومراجعة مبنية على قواعد وفحص ترابط المسارات في مساحة عمل واحدة، مستنداً إلى مبادئ التصميم الشامل ودليل UNICEF.</p>
-            <div class="v2030">🇸🇦 رؤية 2030 · مجتمع حيوي · جودة الحياة</div>
-            <div class="plinks">
-              <a href="https://rawiyyah.free.je/" target="_blank" rel="noopener">العرض المباشر ↗</a>
-              <a href="https://www.figma.com/design/2GawzgM1IP3HQyRKrVWjN1/RAWIYYAH?node-id=101-2" target="_blank" rel="noopener">Figma ↗</a>
-              <a href="https://github.com/yaass24/Rawiyyah" target="_blank" rel="noopener">GitHub ↗</a>
-            </div>
+            <div class="card-top"><h3>واضح · WADEH</h3><span class="tag"><span class="ar">بنك رقمي · دراسة حالة UX</span><span class="en">Digital Bank · UX Case Study</span></span></div>
+            <p><span class="ar">بنك رقمي تجريبي بالعربية فكرته إن التزاماتك الشهرية ما تفوتك: أقساط وفواتير وجمعيات، مع تذكيرات في تقويم الآيفون وCarPlay، وويدجت للرصيد، ودخول بـ Face ID والبصمة.</span><span class="en">An Arabic digital-banking prototype built so you never miss a monthly commitment: installments, bills and savings circles, with reminders in iPhone Calendar and CarPlay, a balance widget, and Face ID / fingerprint sign-in.</span></p>
+            <div class="plinks"><a href="https://wadeh-lly2.onrender.com" target="_blank" rel="noopener"><span class="ar">التطبيق</span><span class="en">App</span> ↗</a><a href="https://www.figma.com/design/qJjKAEzTGd5scJkjaGuV9N/WADEH-%E2%80%93-Digital-Banking-App?node-id=49-2" target="_blank" rel="noopener"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Wadeh-v2" target="_blank" rel="noopener"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
           </div>
         </article>
       </div>
@@ -222,63 +215,54 @@
 
   <section id="vision">
     <div class="wrap">
-      <div class="head r"><div><div class="eyebrow">رؤية 2030</div><h2>مشاريعي ومحاور الرؤية</h2></div></div>
+      <div class="head r"><div><div class="eyebrow"><span class="ar">رؤية 2030</span><span class="en">Saudi Vision 2030</span></div><h2><span class="ar">مشاريعي ومحاور الرؤية</span><span class="en">My projects & the Vision pillars</span></h2></div></div>
       <div class="pillars">
         <div class="pillar r">
-          <div class="pn">مجتمع حيوي</div>
-          <p>تمكين ذوي الإعاقة، ورفع جودة الحياة في الأماكن العامة، وإبراز التراث والثقافة الوطنية.</p>
-          <div class="pp">مُعين · رَويَّة · هَجَر</div>
+          <div class="pn"><span class="ar">مجتمع حيوي</span><span class="en">A Vibrant Society</span></div>
+          <p><span class="ar">تمكين ذوي الإعاقة، ورفع جودة الحياة في الأماكن العامة، وإبراز التراث والثقافة الوطنية.</span><span class="en">Empowering people with disabilities, improving quality of life in public spaces, and celebrating national heritage and culture.</span></p>
+          <div class="pp"><span class="ar">هَجَر · مُعين · رَويَّة</span><span class="en">HAJAR · MU'EEN · RAWIYYAH</span></div>
         </div>
         <div class="pillar r">
-          <div class="pn">اقتصاد مزدهر</div>
-          <p>دعم التحول الرقمي في الخدمات المالية وتعزيز الوعي المالي والتخطيط للالتزامات.</p>
-          <div class="pp">واضح</div>
+          <div class="pn"><span class="ar">اقتصاد مزدهر</span><span class="en">A Thriving Economy</span></div>
+          <p><span class="ar">دعم التحول الرقمي في الخدمات المالية وتعزيز الوعي المالي والتخطيط للالتزامات.</span><span class="en">Supporting digital transformation in financial services and building financial awareness and planning.</span></p>
+          <div class="pp"><span class="ar">واضح</span><span class="en">WADEH</span></div>
         </div>
         <div class="pillar r">
-          <div class="pn">وطن طموح</div>
-          <p>بناء قدرات وطنية في التقنية والبيانات، وتقديم حلول رقمية فعّالة بأقل تكلفة.</p>
-          <div class="pp soon">مشروع قيد العمل · قريباً</div>
+          <div class="pn"><span class="ar">وطن طموح</span><span class="en">An Ambitious Nation</span></div>
+          <p><span class="ar">بناء قدرات وطنية في التقنية والبيانات، وتقديم حلول رقمية فعّالة بأقل تكلفة.</span><span class="en">Building national capabilities in technology and data, and delivering effective digital solutions at low cost.</span></p>
+          <div class="pp soon"><span class="ar">مشروع قيد العمل · قريباً</span><span class="en">Project in progress · Coming soon</span></div>
         </div>
       </div>
-      <p class="note r">ارتباط بأهداف الرؤية ومحاورها، وليس تبعية رسمية لها.</p>
+      <p class="note r"><span class="ar">ارتباط بأهداف الرؤية ومحاورها، وليس تبعية رسمية لها.</span><span class="en">Thematic alignment with the Vision's goals, not an official affiliation.</span></p>
     </div>
   </section>
 
   <section id="services">
     <div class="wrap">
-      <div class="head r"><div><div class="eyebrow">مجالاتي</div><h2>وش أتقن</h2></div></div>
-      <div class="services">
-        <div class="svc r"><div class="n">01</div><h3>تحليل البيانات وذكاء الأعمال</h3><p>لوحات ومؤشرات تساعد على اتخاذ القرار.</p></div>
-        <div class="svc r"><div class="n">02</div><h3>تحليل النظم</h3><p>من المتطلبات إلى نماذج ومخططات واضحة.</p></div>
-        <div class="svc r"><div class="n">03</div><h3>إدارة المشاريع</h3><p>تخطيط ومتابعة المهام والجداول عبر Microsoft Project.</p></div>
-        <div class="svc r"><div class="n">04</div><h3>تجربة المستخدم UX/UI</h3><p>بحث وتصميم واجهات ونماذج تفاعلية.</p></div>
-        <div class="svc r"><div class="n">05</div><h3>أنظمة ERP</h3><p>فهم وأتمتة العمليات المؤسسية عبر Odoo.</p></div>
-        <div class="svc r"><div class="n">06</div><h3>تطوير الويب</h3><p>نماذج أولية تعمل فعلاً، من الواجهة إلى قاعدة البيانات.</p></div>
-      </div>
+      <div class="head r"><div><div class="eyebrow"><span class="ar">مجالاتي</span><span class="en">Expertise</span></div><h2><span class="ar">وش أتقن</span><span class="en">What I do</span></h2></div></div>
+      <div class="services"><div class="svc r"><div class="n">01</div><h3><span class="ar">تحليل البيانات وذكاء الأعمال</span><span class="en">Data Analytics & BI</span></h3><p><span class="ar">لوحات ومؤشرات تساعد على اتخاذ القرار.</span><span class="en">Dashboards and KPIs that support decisions.</span></p></div><div class="svc r"><div class="n">02</div><h3><span class="ar">تحليل النظم</span><span class="en">Systems Analysis</span></h3><p><span class="ar">من المتطلبات إلى نماذج ومخططات واضحة.</span><span class="en">From requirements to clear models and diagrams.</span></p></div><div class="svc r"><div class="n">03</div><h3><span class="ar">إدارة المشاريع</span><span class="en">Project Management</span></h3><p><span class="ar">تخطيط ومتابعة المهام والجداول عبر Microsoft Project.</span><span class="en">Planning and tracking tasks and timelines in Microsoft Project.</span></p></div><div class="svc r"><div class="n">04</div><h3><span class="ar">تجربة المستخدم UX/UI</span><span class="en">UX/UI Design</span></h3><p><span class="ar">بحث وتصميم واجهات ونماذج تفاعلية.</span><span class="en">User research, interfaces and interactive prototypes.</span></p></div><div class="svc r"><div class="n">05</div><h3><span class="ar">أنظمة ERP</span><span class="en">ERP Systems</span></h3><p><span class="ar">فهم وأتمتة العمليات المؤسسية عبر Odoo.</span><span class="en">Understanding and automating business processes with Odoo.</span></p></div><div class="svc r"><div class="n">06</div><h3><span class="ar">تطوير الويب</span><span class="en">Web Development</span></h3><p><span class="ar">نماذج أولية تعمل فعلاً، من الواجهة إلى قاعدة البيانات.</span><span class="en">Working prototypes, from front end to database.</span></p></div></div>
     </div>
   </section>
 
   <section id="about">
     <div class="wrap about">
       <div class="r">
-        <div class="eyebrow">عنّي</div>
-        <h2>مرحبا، أنا ياسمين 👋</h2>
-        <p>في سنتي الأخيرة بالجامعة. أبدأ كل مشروع من سؤال: وش المشكلة الفعلية ومين يعاني منها؟ وبعدها أبني الحل بأبسط طريقة ممكنة.</p>
+        <div class="eyebrow"><span class="ar">عنّي</span><span class="en">About</span></div>
+        <h2><span class="ar">مرحبا، أنا ياسمين 👋</span><span class="en">Hi, I'm Yasmin 👋</span></h2>
+        <p><span class="ar">في سنتي الأخيرة بالجامعة. أبدأ كل مشروع من سؤال: وش المشكلة الفعلية ومين يعاني منها؟ وبعدها أبني الحل بأبسط طريقة ممكنة.</span><span class="en">A senior CIS student. I start every project with one question: what is the real problem, and who is facing it? Then I build the solution in the simplest way possible.</span></p>
       </div>
       <div class="r">
-        <div class="eyebrow">أدواتي</div>
-        <div class="chips">
-          <span>Microsoft Project</span><span>Excel</span><span>Word</span><span>PowerPoint</span><span>Outlook</span><span>Python</span><span>SQL</span><span>Power BI</span><span>Figma</span><span>Git</span><span>Odoo</span><span>HTML/CSS/JS</span><span>PHP · MySQL</span>
-        </div>
+        <div class="eyebrow"><span class="ar">أدواتي</span><span class="en">Tools</span></div>
+        <div class="chips"><span>Microsoft Project</span><span>Excel</span><span>Word</span><span>PowerPoint</span><span>Outlook</span><span>Python</span><span>SQL</span><span>Power BI</span><span>Figma</span><span>Git</span><span>Odoo</span><span>HTML/CSS/JS</span><span>PHP · MySQL</span></div>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
     <div class="wrap r">
-      <div class="eyebrow">تواصل</div>
-      <h2>خلنا نتواصل.</h2>
-      <p>للتعاون أو الفرص التدريبية والوظيفية.</p>
+      <div class="eyebrow"><span class="ar">تواصل</span><span class="en">Contact</span></div>
+      <h2><span class="ar">خلنا نتواصل.</span><span class="en">Let's connect.</span></h2>
+      <p><span class="ar">للتعاون أو الفرص التدريبية والوظيفية.</span><span class="en">For collaborations, internships and job opportunities.</span></p>
       <div class="actions" style="justify-content:center">
         <a href="https://www.linkedin.com/in/yasmin-almomen-9a45a13a5" target="_blank" rel="noopener" class="btn btn-accent">LinkedIn</a>
         <a href="https://github.com/yaass24" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
@@ -290,13 +274,21 @@
 
 <footer>
   <div class="wrap">
-    <span>© <span id="y"></span> ياسمين المؤمن · Yasmin Almomen</span>
-    <a href="#">للأعلى ↑</a>
+    <span>© <span id="y"></span> Yasmin Almomen · ياسمين المؤمن</span>
+    <a href="#"><span class="ar">للأعلى ↑</span><span class="en">Back to top ↑</span></a>
   </div>
 </footer>
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
+  const root = document.documentElement;
+  document.getElementById('lang').onclick = () => {
+    const en = !root.classList.contains('lang-en');
+    root.classList.toggle('lang-en', en);
+    root.lang = en ? 'en' : 'ar';
+    root.dir = en ? 'ltr' : 'rtl';
+    try { localStorage.setItem('lang', en ? 'en' : 'ar'); } catch (e) {}
+  };
   const links = document.getElementById('links');
   document.getElementById('menu').onclick = () => links.classList.toggle('open');
   links.querySelectorAll('a').forEach(a => a.onclick = () => links.classList.remove('open'));
