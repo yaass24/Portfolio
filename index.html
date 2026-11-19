@@ -51,17 +51,22 @@
   h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.2}
 
   /* work */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s;display:flex;flex-direction:column}
   .card:hover{transform:translateY(-4px);border-color:#3a3a40}
-  .thumb{aspect-ratio:4/3;display:grid;place-items:center;font-size:3rem;font-weight:700;color:rgba(0,0,0,.25)}
-  .t1{background:linear-gradient(135deg,#d4ff3f,#6ee7b7)}
-  .t2{background:linear-gradient(135deg,#ff9a76,#ffd166)}
-  .t3{background:linear-gradient(135deg,#a78bfa,#60a5fa)}
-  .t4{background:linear-gradient(135deg,#f472b6,#fb7185)}
-  .card-body{padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .thumb{aspect-ratio:16/10;display:grid;place-items:center;background:#f6f4ef;padding:28px}
+  .thumb img{max-height:100%;max-width:85%;object-fit:contain}
+  .thumb-text{background:linear-gradient(135deg,#fdf3e3,#e7f3ec);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:#2f5d50}
+  .thumb-text .ar{font-size:3rem;font-weight:700;line-height:1.2}
+  .thumb-text .en{font-size:.95rem;letter-spacing:.35em;font-weight:600;direction:ltr}
+  .card-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .card-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
   .card h3{font-size:1.15rem}
-  .tag{font-size:.8rem;color:var(--muted);border:1px solid var(--line);padding:4px 12px;border-radius:999px;white-space:nowrap}
+  .card p{color:var(--muted);font-size:.93rem}
+  .tag{font-size:.78rem;color:var(--muted);border:1px solid var(--line);padding:4px 12px;border-radius:999px;white-space:nowrap}
+  .plinks{display:flex;gap:16px;flex-wrap:wrap;margin-top:auto;padding-top:6px;font-size:.9rem;font-weight:600}
+  .plinks a{color:var(--accent)}
+  .plinks a:hover{text-decoration:underline}
 
   /* services */
   .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -117,7 +122,7 @@
     <a href="#" class="logo">Yasmin<span>.</span></a>
     <div class="links" id="links">
       <a href="#work">الأعمال</a>
-      <a href="#services">الخدمات</a>
+      <a href="#services">مجالاتي</a>
       <a href="#about">عنّي</a>
       <a href="#contact">تواصل</a>
     </div>
@@ -130,7 +135,7 @@
   <div class="hero wrap">
     <div class="badge r"><span class="dot"></span> نظم معلومات حاسوبية · جامعة الإمام عبدالرحمن بن فيصل</div>
     <h1 class="r">ياسمين المؤمن<br><em>Yasmin Almomen</em></h1>
-    <p class="r">متخصصة في نظم المعلومات الحاسوبية. أحب أحوّل الاحتياجات إلى أنظمة واضحة ومرتبة، من تحليل المتطلبات وتصميم قواعد البيانات إلى بناء الحلول التقنية.</p>
+    <p class="r">طالبة نظم معلومات حاسوبية في سنتي الأخيرة. أهتم بتحليل البيانات وذكاء الأعمال، وتصميم تجربة المستخدم، وتحليل النظم، وأحب أبني حلول رقمية مدروسة تخدم الناس فعلاً.</p>
     <div class="actions r">
       <a href="#work" class="btn btn-accent">شوف أعمالي ←</a>
       <a href="#contact" class="btn btn-ghost">تواصل معي</a>
@@ -140,24 +145,57 @@
   <section id="work">
     <div class="wrap">
       <div class="head r">
-        <div><div class="eyebrow">أعمال مختارة</div><h2>مشاريعي</h2></div>
+        <div><div class="eyebrow">مشاريعي</div><h2>أعمال مختارة</h2></div>
+        <a href="https://github.com/yaass24" target="_blank" rel="noopener" class="btn btn-ghost">كل المشاريع على GitHub ←</a>
       </div>
       <div class="grid">
-        <a href="#" class="card r"><div class="thumb t1">01</div><div class="card-body"><h3>اسم المشروع الأول</h3><span class="tag">هوية بصرية</span></div></a>
-        <a href="#" class="card r"><div class="thumb t2">02</div><div class="card-body"><h3>اسم المشروع الثاني</h3><span class="tag">تطبيق جوال</span></div></a>
-        <a href="#" class="card r"><div class="thumb t3">03</div><div class="card-body"><h3>اسم المشروع الثالث</h3><span class="tag">موقع ويب</span></div></a>
-        <a href="#" class="card r"><div class="thumb t4">04</div><div class="card-body"><h3>اسم المشروع الرابع</h3><span class="tag">لوحة تحكم</span></div></a>
+        <article class="card r">
+          <div class="thumb"><img src="assets/mueen-logo.png" alt="شعار مُعين MU'EEN"></div>
+          <div class="card-body">
+            <div class="card-top"><h3>مُعين · MU'EEN</h3><span class="tag">نظام جامعي · نموذج أولي</span></div>
+            <p>نظام استباقي يربط الاحتياجات الصحية المعتمدة للطلاب بجداولهم وقاعاتهم وحالة مرافق الحرم، فيكشف التعارضات مبكراً (مثل مصعد معطّل في مبنى محاضرة طالب يحتاجه)، ويتيح تنبيهاً صحياً فورياً بمسح رمز QR عند مدخل كل دور.</p>
+            <div class="plinks">
+              <a href="https://yaass24.github.io/Mu-een/" target="_blank" rel="noopener">العرض المباشر ↗</a>
+              <a href="https://www.figma.com/design/sXCsdqLnoGpQ19vTEYezXS/mu-een?node-id=78-2" target="_blank" rel="noopener">Figma ↗</a>
+              <a href="https://github.com/yaass24/Mu-een" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+        <article class="card r">
+          <div class="thumb"><img style="max-width:100%;transform:scale(1.25)" src="assets/wadeh-logo.png" alt="شعار واضح WADEH"></div>
+          <div class="card-body">
+            <div class="card-top"><h3>واضح · WADEH</h3><span class="tag">بنك رقمي · UX Case Study</span></div>
+            <p>بنك رقمي تجريبي بالعربية فكرته إن التزاماتك الشهرية ما تفوتك: أقساط وفواتير وجمعيات، مع تذكيرات في تقويم الآيفون وCarPlay، وويدجت للرصيد، ودخول بـ Face ID والبصمة.</p>
+            <div class="plinks">
+              <a href="https://wadeh-lly2.onrender.com" target="_blank" rel="noopener">التطبيق ↗</a>
+              <a href="https://www.figma.com/design/qJjKAEzTGd5scJkjaGuV9N/WADEH-%E2%80%93-Digital-Banking-App?node-id=49-2" target="_blank" rel="noopener">Figma ↗</a>
+              <a href="https://github.com/yaass24/Wadeh-v2" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+        <article class="card r">
+          <div class="thumb thumb-text"><span class="ar">رَويَّة</span><span class="en">RAWIYYAH</span></div>
+          <div class="card-body">
+            <div class="card-top"><h3>رَويَّة · RAWIYYAH</h3><span class="tag">تخطيط شامل · إمكانية الوصول</span></div>
+            <p>نموذج أولي يساعد فرق التصميم على تخطيط ملاعب أطفال دامجة ومراجعتها رقمياً قبل التنفيذ، يجمع المخطط ومراجعة مبنية على قواعد وفحص ترابط المسارات في مساحة عمل واحدة، مستنداً إلى مبادئ التصميم الشامل ودليل UNICEF.</p>
+            <div class="plinks">
+              <a href="https://rawiyyah.free.je/" target="_blank" rel="noopener">العرض المباشر ↗</a>
+              <a href="https://www.figma.com/design/2GawzgM1IP3HQyRKrVWjN1/RAWIYYAH?node-id=101-2" target="_blank" rel="noopener">Figma ↗</a>
+              <a href="https://github.com/yaass24/Rawiyyah" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <section id="services">
     <div class="wrap">
-      <div class="head r"><div><div class="eyebrow">الخدمات</div><h2>مجالاتي</h2></div></div>
+      <div class="head r"><div><div class="eyebrow">اهتماماتي</div><h2>مجالاتي</h2></div></div>
       <div class="services">
-        <div class="svc r"><div class="n">01</div><h3>تحليل وتصميم النظم</h3><p>دراسة المتطلبات وتحويلها إلى مخططات ونماذج واضحة تسهّل بناء النظام.</p></div>
-        <div class="svc r"><div class="n">02</div><h3>قواعد البيانات</h3><p>تصميم قواعد بيانات منظمة وكتابة استعلامات SQL لإدارة البيانات والاستفادة منها.</p></div>
-        <div class="svc r"><div class="n">03</div><h3>تطوير الويب</h3><p>بناء صفحات ومواقع متجاوبة بواجهات بسيطة وسهلة الاستخدام.</p></div>
+        <div class="svc r"><div class="n">01</div><h3>تحليل البيانات وذكاء الأعمال</h3><p>تحويل البيانات إلى رؤى ولوحات واضحة تساعد على اتخاذ القرار، باستخدام Python وSQL وPower BI.</p></div>
+        <div class="svc r"><div class="n">02</div><h3>تصميم تجربة المستخدم</h3><p>دراسة احتياج المستخدم وتصميم واجهات ونماذج تفاعلية في Figma، كما في دراستي لتطبيق واضح.</p></div>
+        <div class="svc r"><div class="n">03</div><h3>تحليل النظم وإدارة المشاريع</h3><p>فهم المشكلة والمتطلبات وتحويلها إلى نظام واضح، مع تنظيم العمل من الفكرة إلى النموذج الأولي.</p></div>
       </div>
     </div>
   </section>
@@ -167,14 +205,14 @@
       <div class="r">
         <div class="eyebrow">عنّي</div>
         <h2>مرحبا، أنا ياسمين 👋</h2>
-        <p>طالبة نظم معلومات حاسوبية في جامعة الإمام عبدالرحمن بن فيصل. يجذبني المكان اللي تلتقي فيه التقنية مع احتياجات الناس والمنظمات، وأستمتع ببناء أنظمة تخلي الشغل أسهل وأوضح.</p>
-        <p>هنا تلقون مشاريعي الجامعية والشخصية، وأنا دايم أتعلم وأطوّر مهاراتي.</p>
+        <p>طالبة في سنتي الأخيرة بتخصص نظم المعلومات الحاسوبية في جامعة الإمام عبدالرحمن بن فيصل. يجذبني المكان اللي تلتقي فيه التقنية والبيانات مع احتياجات الناس، وأستمتع ببناء تجارب رقمية مدروسة.</p>
+        <p>أتعلم حالياً Odoo ERP والتطوير الشامل (Full-Stack)، وأشتغل بأدوات مثل Python وSQL وPower BI وFigma وGit.</p>
       </div>
       <div class="stats">
-        <div class="stat r"><b>CIS</b><span>نظم معلومات حاسوبية</span></div>
-        <div class="stat r"><b>IAU</b><span>جامعة الإمام عبدالرحمن بن فيصل</span></div>
+        <div class="stat r"><b>Python</b><span>تحليل البيانات</span></div>
         <div class="stat r"><b>SQL</b><span>قواعد البيانات</span></div>
-        <div class="stat r"><b>UML</b><span>تحليل وتصميم النظم</span></div>
+        <div class="stat r"><b>Power BI</b><span>ذكاء الأعمال</span></div>
+        <div class="stat r"><b>Figma</b><span>تصميم الواجهات</span></div>
       </div>
     </div>
   </section>
@@ -184,13 +222,8 @@
       <div class="eyebrow">تواصل</div>
       <h2>خلنا نتواصل.</h2>
       <p>للتعاون أو الفرص التدريبية والوظيفية، راسلوني.</p>
-      <a href="mailto:you@example.com" class="btn btn-accent">you@example.com</a>
-      <div class="socials">
-        <a href="#" class="btn btn-ghost">X / تويتر</a>
-        <a href="#" class="btn btn-ghost">LinkedIn</a>
-        <a href="#" class="btn btn-ghost">Behance</a>
-        <a href="#" class="btn btn-ghost">GitHub</a>
-      </div>
+      <a href="https://github.com/yaass24" target="_blank" rel="noopener" class="btn btn-accent">GitHub · yaass24</a>
+      
     </div>
   </section>
 </main>
