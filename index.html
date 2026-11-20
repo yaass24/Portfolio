@@ -279,7 +279,7 @@ mark{background:none;color:var(--acc)}
       <h1><span class="ar">ياسمين المؤمن</span><span class="en">Yasmin Almomen</span><em><span class="ar">Yasmin Almomen</span><span class="en">ياسمين المؤمن</span></em></h1>
       <p class="tag1"><span class="ar">أبني حلولًا رقمية <mark>لمشاكل حقيقية</mark></span><span class="en">I build digital solutions for <mark>real problems</mark></span><span class="cursor"></span></p>
       <p class="sub"><span class="ar">طالبة نظم معلومات حاسوبية في السنة الأخيرة · جامعة الإمام عبدالرحمن بن فيصل</span><span class="en">Final-year Computer Information Systems student · Imam Abdulrahman Bin Faisal University</span></p>
-      <div class="row"><button class="btn acc" data-go="projects"><span class="ar">استكشف أعمالي ←</span><span class="en">explore my work →</span></button><button class="btn" data-go="overview"><span class="ar">شوف البورد كامل ⊞</span><span class="en">see the whole board ⊞</span></button></div></div>
+      <div class="row"><button class="btn acc" data-go="projects"><span class="ar">استكشف أعمالي ←</span><span class="en">explore my work →</span></button><button class="btn" data-go="overview"><span class="ar">شوف البورد كامل ⊞</span><span class="en">see the whole board ⊞</span></button><a class="btn cv-btn" href="assets/cv.pdf" download hidden><span class="ar">السيرة الذاتية ↓</span><span class="en">Résumé ↓</span></a></div></div>
   </section>
   <section class="fr f-proj" id="hajar" data-x="100" data-y="1160" data-w="620" data-h="780" style="left:100px;top:1160px;width:620px;min-height:780px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/hajar</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
@@ -393,7 +393,7 @@ mark{background:none;color:var(--acc)}
     <div class="fr-body">
       <h2><span class="ar">لنصنع أثرًا معًا</span><span class="en">Let’s build impact together</span></h2>
       <p class="sub"><span class="ar">يسعدني التواصل لمناقشة الفرص والأفكار والمشاريع.</span><span class="en">Let’s connect to discuss opportunities, ideas, and projects.</span></p>
-      <div class="row center"><a href="https://www.linkedin.com/in/yasmin-almomen-9a45a13a5" target="_blank" rel="noopener" class="btn acc">LinkedIn ↗&#xFE0E;</a><a href="https://github.com/yaass24" target="_blank" rel="noopener" class="btn">GitHub ↗&#xFE0E;</a><a href="mailto:yasssssmin38@gmail.com" target="_blank" rel="noopener" class="btn">Email ↗&#xFE0E;</a></div></div>
+      <div class="row center"><a href="https://www.linkedin.com/in/yasmin-almomen-9a45a13a5" target="_blank" rel="noopener" class="btn acc">LinkedIn ↗&#xFE0E;</a><a class="btn cv-btn" href="assets/cv.pdf" download hidden><span class="ar">السيرة الذاتية ↓</span><span class="en">Résumé ↓</span></a><a href="https://github.com/yaass24" target="_blank" rel="noopener" class="btn">GitHub ↗&#xFE0E;</a><a href="mailto:yasssssmin38@gmail.com" target="_blank" rel="noopener" class="btn">Email ↗&#xFE0E;</a></div></div>
   </section>
 </div></div>
 
@@ -500,6 +500,16 @@ addEventListener('resize',()=>{ if(!mobile()) fit(rectOf(STOPS[cur]),false); els
 let hinted=false; function hideHint(){ if(hinted) return; hinted=true; const h=document.getElementById('hint'); if(h) h.style.opacity=0; }
 setTimeout(hideHint,7000);
 document.getElementById('lang').onclick=()=>{ const en=!root.classList.contains('lang-en'); root.classList.toggle('lang-en',en); root.lang=en?'en':'ar'; root.dir=en?'ltr':'rtl'; try{localStorage.setItem('lang',en?'en':'ar')}catch(e){} label(STOPS[cur]); if(!idx.hidden) buildIdx(); };
+
+// CV buttons appear only when the file exists (assets/cv.pdf, optional assets/cv-en.pdf)
+(async()=>{
+  const ok=async u=>{ try{ const r=await fetch(u,{method:'HEAD',cache:'no-store'}); return r.ok; }catch(e){ return false; } };
+  const ar=await ok('assets/cv.pdf'), en=await ok('assets/cv-en.pdf');
+  if(!ar&&!en) return;
+  const set=()=>{ const isEn=root.classList.contains('lang-en'); const u=(isEn&&en)||!ar?'assets/cv-en.pdf':'assets/cv.pdf';
+    document.querySelectorAll('.cv-btn').forEach(a=>{a.href=u; a.hidden=false;}); };
+  set(); document.getElementById('lang').addEventListener('click',set);
+})();
 // intro: show whole board, then fly to hero
 if(mobile()){ deck('hero',1); }
 else { fit(rectOf('overview'),false); label('overview'); cur=0; setTimeout(()=>go('hero'),1100); }
