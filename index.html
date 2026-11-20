@@ -299,6 +299,51 @@
   .now-b{color:#ffb547!important;border-color:rgba(255,181,71,.35)!important;background:rgba(255,181,71,.08)}
   .certs{grid-template-columns:repeat(2,1fr)!important}
   @media (max-width:820px){.certs{grid-template-columns:1fr!important}}
+
+  /* ===== showcase layout ===== */
+  .cases{display:flex;flex-direction:column;gap:26px}
+  .case{display:grid;grid-template-columns:1.05fr 1fr;gap:0;background:#0d1218;border:1px solid #1a232e;border-radius:16px;overflow:hidden;transition:.25s}
+  .case:hover{border-color:#2a3a4a;transform:translateY(-3px)}
+  .case.flip .case-media{order:2}
+  .case-media{aspect-ratio:auto!important;min-height:380px;position:relative;display:grid;place-items:center;background:#f6f4ef;padding:40px}
+  .case-media img{max-width:80%;max-height:240px;object-fit:contain}
+  .case-media.thumb-hajar{padding:0;background:#023620}.case-media.thumb-hajar img{max-width:100%;max-height:none;width:100%;height:100%;object-fit:contain}
+  .case-media.thumb-white{background:#fff}
+  .case-text{padding:36px 38px;display:flex;flex-direction:column;gap:12px}
+  .case-id{font-family:"JetBrains Mono",monospace;color:var(--num);font-size:.85rem}
+  .case h3{font-size:1.7rem;line-height:1.3}
+  .case-type{color:var(--muted);font-size:.9rem}
+  .ps{display:grid;grid-template-columns:74px 1fr;gap:12px;align-items:baseline;margin-top:4px}
+  .ps-l{font-family:"JetBrains Mono",monospace;font-size:.78rem;color:#ff8a80;border:1px solid rgba(255,138,128,.3);background:rgba(255,138,128,.07);padding:3px 8px;border-radius:6px;text-align:center}
+  html:not(.lang-en) .ps-l{font-family:"IBM Plex Sans Arabic",sans-serif}
+  .ps-l.sol{color:#c3e88d;border-color:rgba(195,232,141,.3);background:rgba(195,232,141,.07)}
+  .ps p{color:#b4bfcb;font-size:.95rem;line-height:1.75}
+  .case-foot .chips{margin-top:6px}
+  .case-foot .chips span{font-size:.78rem;padding:5px 11px;color:var(--kw);border-color:#2a2440}
+  .case-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:10px}
+  .btn.sm{padding:9px 16px;font-size:.84rem}
+  /* timeline */
+  .timeline{position:relative;padding-inline-start:22px}
+  .timeline::before{content:"";position:absolute;inset-inline-start:5px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),#1d2733 35%)}
+  .tl{position:relative;display:grid;grid-template-columns:130px 1fr;gap:18px;align-items:start;margin-bottom:14px}
+  .tl-dot{position:absolute;inset-inline-start:-22px;top:20px;width:12px;height:12px;border-radius:50%;background:#1d2733;border:2px solid #2c3a4a}
+  .tl.now .tl-dot{background:#ffb547;border-color:#ffb547;box-shadow:0 0 12px #ffb547}
+  .tl-when{padding-top:15px;font-size:.88rem;color:var(--muted)}
+  html.lang-en .tl-when{font-family:"JetBrains Mono",monospace;font-size:.82rem}
+  .tl.now .tl-when{color:#ffb547}
+  .tl-card{background:#0d1218;border:1px solid #1a232e;border-radius:12px;padding:16px 20px}
+  .tl-card h3{font-size:1.02rem;line-height:1.5;margin-top:6px}
+  .tl-card p{color:var(--muted);font-size:.88rem}
+  .tl-kind{font-size:.72rem;font-weight:600;padding:2px 9px;border-radius:5px;border:1px solid}
+  .k-prog{color:#ffb547;border-color:rgba(255,181,71,.35)}
+  .k-hack{color:var(--fn);border-color:rgba(130,170,255,.35)}
+  .k-cert{color:var(--accent);border-color:rgba(212,255,63,.3)}
+  /* expertise list */
+  .exlist{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+  .exlist li{display:flex;gap:10px;align-items:center;background:#0d1218;border:1px solid #1a232e;border-radius:10px;padding:12px 14px;font-size:.92rem;font-weight:600}
+  .exn{font-family:"JetBrains Mono",monospace;color:var(--num);font-size:.78rem;font-weight:500}
+  @media (max-width:900px){.case{grid-template-columns:1fr}.case.flip .case-media{order:0}.case-media{min-height:240px}}
+  @media (max-width:820px){.case-text{padding:24px 22px}.ps{grid-template-columns:1fr;gap:6px}.ps-l{justify-self:start}.tl{grid-template-columns:1fr;gap:6px}.tl-when{padding-top:0}.exlist{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -307,12 +352,10 @@
   <nav class="wrap">
     <a href="#" class="logo"><span class="lg-u">yasmin</span><span class="lg-at">@</span><span class="lg-h">portfolio</span><span class="lg-p">:~$</span></a>
     <div class="links" id="links">
-      <a href="#work"><span class="ar">الأعمال</span><span class="en">Work</span></a>
+      <a href="#work"><span class="ar">المشاريع</span><span class="en">Projects</span></a>
       <a href="#vision"><span class="ar">رؤية 2030</span><span class="en">Vision 2030</span></a>
-      <a href="#services"><span class="ar">مجالاتي</span><span class="en">Expertise</span></a>
+      <a href="#journey"><span class="ar">مسيرتي</span><span class="en">Journey</span></a>
       <a href="#about"><span class="ar">عنّي</span><span class="en">About</span></a>
-      <a href="#hackathons"><span class="ar">الهاكاثونات</span><span class="en">Hackathons</span></a>
-      <a href="#certs"><span class="ar">الشهادات</span><span class="en">Certifications</span></a>
       <a href="#contact"><span class="ar">تواصل</span><span class="en">Contact</span></a>
     </div>
     <div class="navr">
@@ -359,42 +402,59 @@
         <div><div class="eyebrow"><span class="ar">مشاريعي</span><span class="en">Projects</span></div><h2><span class="ar">حلول لمشاكل حقيقية</span><span class="en">Solutions to real problems</span></h2></div>
         <a href="https://github.com/yaass24" target="_blank" rel="noopener" class="btn btn-ghost"><span class="ar">كل المشاريع على GitHub ←</span><span class="en">All projects on GitHub →</span></a>
       </div>
-      <div class="grid">
-        <article class="card r">
-          <div class="thumb thumb-hajar"><img src="assets/hajar-logo.png" alt="HAJAR logo"><span class="status live"><i></i><span class="ar">الإصدار 2</span><span class="en">Version 2</span></span></div>
-          <div class="card-body">
-            <div class="card-top"><h3>هَجَر · HAJAR</h3><span class="tag"><span class="ar">لعبة ثلاثية الأبعاد · مشروع مستقل</span><span class="en">3D Game · Independent Project</span></span></div>
-            <p><span class="ar">لعبة مغامرة ثلاثية الأبعاد تعرّف بتراث الأحساء ومعالمها في رحلة من ١٠ مراحل، من الواحة وجامع جواثا وعين الحارة إلى مزارع الأحساء. تعمل عبر المتصفح على الجوال والآيباد والحاسب، وتدعم يد التحكم PlayStation.</span><span class="en">An interactive 3D adventure celebrating Al-Ahsa's heritage across 10 stages, from the oasis, Jawatha Mosque and Ain Al-Harah to the Al-Ahsa farms. Runs in the browser on phone, iPad and laptop, with PlayStation controller support.</span></p>
-            <div class="plinks"><a href="https://hajar-3d-adventure.yaassmin38.workers.dev/" target="_blank" rel="noopener"><span class="ar">العب الآن</span><span class="en">Play now</span> ↗</a><a href="https://www.figma.com/design/ATX26Fxhx2PWwExfgdswzQ" target="_blank" rel="noopener"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Hajar" target="_blank" rel="noopener"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
+      <div class="cases">
+        <article class="case r">
+          <div class="case-media thumb thumb-hajar"><img src="assets/hajar-logo.png" alt="هَجَر · HAJAR"><span class="status live"><i></i><span class="ar">الإصدار 2</span><span class="en">Version 2</span></span></div>
+          <div class="case-text">
+            <div class="case-id">case_01</div>
+            <h3>هَجَر · HAJAR</h3>
+            <div class="case-type"><span class="ar">لعبة ثلاثية الأبعاد · مشروع مستقل</span><span class="en">3D Game · Independent Project</span></div>
+            <div class="ps"><div class="ps-l"><span class="ar">المشكلة</span><span class="en">problem</span></div><p><span class="ar">تراث الأحساء غني بالمعالم والقصص، لكن الوصول إليه يبقى تقليديًا ولا يجذب الجيل الرقمي.</span><span class="en">Al-Ahsa’s heritage is rich in landmarks and stories, but the way people discover it remains traditional and rarely reaches a digital generation.</span></p></div>
+            <div class="ps"><div class="ps-l sol"><span class="ar">الحل</span><span class="en">solution</span></div><p><span class="ar">لعبة مغامرة ثلاثية الأبعاد في المتصفح، يتنقّل فيها اللاعب عبر ١٠ مراحل من الواحة وجامع جواثا وعين الحارة إلى مزارع الأحساء، وتعمل على الجوال والآيباد والحاسب مع دعم يد PlayStation.</span><span class="en">A browser-based 3D adventure across 10 stages, from the oasis, Jawatha Mosque and Ain Al-Harah to the Al-Ahsa farms, playable on phone, iPad and laptop with PlayStation controller support.</span></p></div>
+            <div class="case-foot"><div class="chips"><span>3D</span><span>Web</span><span>Figma</span></div></div>
+            <div class="case-links"><a href="https://hajar-3d-adventure.yaassmin38.workers.dev/" target="_blank" rel="noopener" class="btn btn-accent sm"><span class="ar">العب الآن</span><span class="en">Play now</span> ↗</a><a href="https://www.figma.com/design/ATX26Fxhx2PWwExfgdswzQ" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Hajar" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
           </div>
         </article>
-        <article class="card r">
-          <div class="thumb"><img src="assets/mueen-logo.png" alt="MU'EEN logo"><span class="status dev"><i></i><span class="ar">نموذج أولي</span><span class="en">Prototype</span></span></div>
-          <div class="card-body">
-            <div class="card-top"><h3>مُعين · MU'EEN</h3><span class="tag"><span class="ar">نظام جامعي · إمكانية الوصول</span><span class="en">University System · Accessibility</span></span></div>
-            <p><span class="ar">نظام استباقي يربط الاحتياجات الصحية المعتمدة للطلاب بجداولهم وقاعاتهم وحالة مرافق الحرم، فيكشف التعارضات مبكرًا (كتعطّل مصعد في مبنى يحتاجه طالب لحضور محاضرته)، ويتيح تنبيهًا صحيًا فوريًا بمسح رمز QR عند مدخل كل دور.</span><span class="en">A proactive system linking students' approved health needs with their schedules, rooms and campus facility status. It flags conflicts early (like an elevator out of service where a student needs it) and enables an instant health alert by scanning a QR code at each floor entrance.</span></p>
-            <div class="plinks"><a href="https://yaass24.github.io/Mu-een/" target="_blank" rel="noopener"><span class="ar">العرض المباشر</span><span class="en">Live demo</span> ↗</a><a href="https://www.figma.com/design/sXCsdqLnoGpQ19vTEYezXS/mu-een?node-id=78-2" target="_blank" rel="noopener"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Mu-een" target="_blank" rel="noopener"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
+        <article class="case r flip">
+          <div class="case-media thumb "><img src="assets/mueen-logo.png" alt="مُعين · MU'EEN"><span class="status dev"><i></i><span class="ar">نموذج أولي</span><span class="en">Prototype</span></span></div>
+          <div class="case-text">
+            <div class="case-id">case_02</div>
+            <h3>مُعين · MU'EEN</h3>
+            <div class="case-type"><span class="ar">نظام جامعي · إمكانية الوصول</span><span class="en">University System · Accessibility</span></div>
+            <div class="ps"><div class="ps-l"><span class="ar">المشكلة</span><span class="en">problem</span></div><p><span class="ar">الطالب ذو الاحتياج الصحي يكتشف العائق غالبًا عند وصوله إليه، كمصعد معطّل أو قاعة غير مناسبة، لأن الجداول وحالة المرافق وطلبات الدعم منفصلة عن بعضها.</span><span class="en">Students with health needs often discover a barrier only when they reach it, such as a broken elevator or an unsuitable room, because schedules, facility status and support requests live in separate places.</span></p></div>
+            <div class="ps"><div class="ps-l sol"><span class="ar">الحل</span><span class="en">solution</span></div><p><span class="ar">نظام يربط الاحتياجات الصحية المعتمدة بالجداول ومواقع القاعات وحالة المرافق، فيكشف التعارضات مبكرًا، ويتيح بلاغًا صحيًا فوريًا بمسح رمز QR عند مدخل كل دور، بأقل تكلفة ممكنة.</span><span class="en">A system linking approved health needs with schedules, room locations and facility status to flag conflicts early, with an instant health alert by scanning a QR code at each floor entrance, at minimal cost.</span></p></div>
+            <div class="case-foot"><div class="chips"><span>Systems Analysis</span><span>Figma</span><span>Web</span></div></div>
+            <div class="case-links"><a href="https://yaass24.github.io/Mu-een/" target="_blank" rel="noopener" class="btn btn-accent sm"><span class="ar">العرض المباشر</span><span class="en">Live demo</span> ↗</a><a href="https://www.figma.com/design/sXCsdqLnoGpQ19vTEYezXS/mu-een?node-id=78-2" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Mu-een" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
           </div>
         </article>
-        <article class="card r">
-          <div class="thumb thumb-white"><img src="assets/rawiyyah-logo.jpg" alt="RAWIYYAH logo"><span class="status dev"><i></i><span class="ar">قيد التطوير</span><span class="en">In development</span></span></div>
-          <div class="card-body">
-            <div class="card-top"><h3>رَويَّة · RAWIYYAH</h3><span class="tag"><span class="ar">تخطيط شامل · إمكانية الوصول</span><span class="en">Inclusive Planning · Accessibility</span></span></div>
-            <p><span class="ar">نموذج أولي يساعد فرق التصميم على تخطيط ملاعب أطفال دامجة ومراجعتها رقميًا قبل التنفيذ، يجمع المخطط ومراجعة مبنية على قواعد وفحص ترابط المسارات في مساحة عمل واحدة، مستندًا إلى مبادئ التصميم الشامل ودليل UNICEF.</span><span class="en">A prototype that helps design teams plan and review inclusive playgrounds digitally before construction, combining layout, rule-based review and route-connectivity checks in one workspace, grounded in Universal Design and the UNICEF toolkit.</span></p>
-            <div class="plinks"><a href="https://rawiyyah.free.je/" target="_blank" rel="noopener"><span class="ar">العرض المباشر</span><span class="en">Live demo</span> ↗</a><a href="https://www.figma.com/design/2GawzgM1IP3HQyRKrVWjN1/RAWIYYAH?node-id=101-2" target="_blank" rel="noopener"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Rawiyyah" target="_blank" rel="noopener"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
+        <article class="case r">
+          <div class="case-media thumb thumb-white"><img src="assets/rawiyyah-logo.jpg" alt="رَويَّة · RAWIYYAH"><span class="status dev"><i></i><span class="ar">قيد التطوير</span><span class="en">In development</span></span></div>
+          <div class="case-text">
+            <div class="case-id">case_03</div>
+            <h3>رَويَّة · RAWIYYAH</h3>
+            <div class="case-type"><span class="ar">تخطيط شامل · إمكانية الوصول</span><span class="en">Inclusive Planning · Accessibility</span></div>
+            <div class="ps"><div class="ps-l"><span class="ar">المشكلة</span><span class="en">problem</span></div><p><span class="ar">إرشادات تصميم الملاعب الدامجة موجودة، لكن تحويلها إلى قرارات تصميم عملية ومتكررة أثناء التخطيط يبقى صعبًا.</span><span class="en">Inclusive playground guidance exists, but turning it into practical, repeatable design decisions during planning remains hard.</span></p></div>
+            <div class="ps"><div class="ps-l sol"><span class="ar">الحل</span><span class="en">solution</span></div><p><span class="ar">مساحة عمل رقمية تجمع مخطط الملعب ومراجعة مبنية على قواعد وفحص ترابط المسارات وتوثيق الملاحظات، مستندة إلى مبادئ التصميم الشامل ودليل UNICEF.</span><span class="en">A digital workspace combining playground layout, rule-based review, route-connectivity checks and documented feedback, grounded in Universal Design and the UNICEF toolkit.</span></p></div>
+            <div class="case-foot"><div class="chips"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div></div>
+            <div class="case-links"><a href="https://rawiyyah.free.je/" target="_blank" rel="noopener" class="btn btn-accent sm"><span class="ar">العرض المباشر</span><span class="en">Live demo</span> ↗</a><a href="https://www.figma.com/design/2GawzgM1IP3HQyRKrVWjN1/RAWIYYAH?node-id=101-2" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Rawiyyah" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
           </div>
         </article>
-        <article class="card r">
-          <div class="thumb"><img style="max-width:100%;transform:scale(1.25)" src="assets/wadeh-logo.png" alt="WADEH logo"><span class="status live"><i></i><span class="ar">الإصدار 2</span><span class="en">Version 2</span></span></div>
-          <div class="card-body">
-            <div class="card-top"><h3>واضح · WADEH</h3><span class="tag"><span class="ar">بنك رقمي · دراسة حالة UX</span><span class="en">Digital Bank · UX Case Study</span></span></div>
-            <p><span class="ar">نموذج بنك رقمي عربي يضمن ألّا تفوت المستخدم التزاماته الشهرية من أقساط وفواتير وجمعيات، عبر تذكيرات في تقويم الآيفون وCarPlay، وويدجت للرصيد، ودخول آمن بـ Face ID والبصمة.</span><span class="en">An Arabic digital-banking prototype built so you never miss a monthly commitment: installments, bills and savings circles, with reminders in iPhone Calendar and CarPlay, a balance widget, and Face ID / fingerprint sign-in.</span></p>
-            <div class="plinks"><a href="https://wadeh-lly2.onrender.com" target="_blank" rel="noopener"><span class="ar">التطبيق</span><span class="en">App</span> ↗</a><a href="https://www.figma.com/design/qJjKAEzTGd5scJkjaGuV9N/WADEH-%E2%80%93-Digital-Banking-App?node-id=49-2" target="_blank" rel="noopener"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Wadeh-v2" target="_blank" rel="noopener"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
+        <article class="case r flip">
+          <div class="case-media thumb "><img src="assets/wadeh-logo.png" alt="واضح · WADEH" style="transform:scale(1.2)"><span class="status live"><i></i><span class="ar">الإصدار 2</span><span class="en">Version 2</span></span></div>
+          <div class="case-text">
+            <div class="case-id">case_04</div>
+            <h3>واضح · WADEH</h3>
+            <div class="case-type"><span class="ar">بنك رقمي · دراسة حالة UX</span><span class="en">Digital Bank · UX Case Study</span></div>
+            <div class="ps"><div class="ps-l"><span class="ar">المشكلة</span><span class="en">problem</span></div><p><span class="ar">الأقساط والفواتير والجمعيات الشهرية تفوت بسهولة، والتطبيقات البنكية لا تذكّر بها في المكان المناسب.</span><span class="en">Monthly installments, bills and savings circles are easy to miss, and banking apps rarely remind you at the right moment.</span></p></div>
+            <div class="ps"><div class="ps-l sol"><span class="ar">الحل</span><span class="en">solution</span></div><p><span class="ar">نموذج بنك رقمي عربي يرسل تذكيرات الالتزامات إلى تقويم الآيفون وشاشة CarPlay، ويعرض الرصيد في ويدجت، مع دخول آمن بـ Face ID والبصمة.</span><span class="en">An Arabic digital-banking prototype that sends commitment reminders to iPhone Calendar and CarPlay, shows the balance in a widget, and signs in with Face ID or fingerprint.</span></p></div>
+            <div class="case-foot"><div class="chips"><span>UX Research</span><span>Figma</span><span>Node.js</span></div></div>
+            <div class="case-links"><a href="https://wadeh-lly2.onrender.com" target="_blank" rel="noopener" class="btn btn-accent sm"><span class="ar">التطبيق</span><span class="en">App</span> ↗</a><a href="https://www.figma.com/design/qJjKAEzTGd5scJkjaGuV9N/WADEH-%E2%80%93-Digital-Banking-App?node-id=49-2" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Wadeh-v2" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
           </div>
         </article>
       </div>
       <div class="more-head r"><h3><span class="ar">مشاريع أخرى</span><span class="en">More projects</span></h3></div>
       <div class="ops"><div class="op r"><div class="op-top"><h3>Greno ♻️</h3><span class="tag"><span class="ar">ذكاء اصطناعي · نسخة أولية</span><span class="en">AI · Early Version</span></span></div><p><span class="ar">تطبيق ويب يتيح تصوير أي نفاية أو رفع صورتها، ثم يصنّفها بالذكاء الاصطناعي ويقترح فئة التخلص الصحيحة. درّبتُ فيه أول نموذج YOLOv8.</span><span class="en">A web app that lets users snap or upload a photo of a waste item, then uses AI to classify it and suggest the correct disposal category. My first trained YOLOv8 model.</span></p><div class="op-tool">Python · YOLOv8 · Flask · Gemini</div></div><div class="op r"><div class="op-top"><h3>EduTrack</h3><span class="tag"><span class="ar">إدارة مشاريع تقنية</span><span class="en">IT Project Management</span></span></div><p><span class="ar">فكرة تطبيق يجمع واجبات الطالب واختباراته ومشاريعه في مكان واحد بدل التنقل بين Blackboard وOutlook والبريد.</span><span class="en">An app idea that gathers students’ assignments, exams and projects in one place instead of juggling Blackboard, Outlook and email.</span></p><div class="op-tool">Microsoft Project</div></div><div class="op r"><div class="op-top"><h3><bdi>FitPass+</bdi></h3><span class="tag"><span class="ar">تحليل وتصميم كائني التوجه</span><span class="en">OOAD</span></span></div><p><span class="ar">نموذج أولي لتطبيق حجز حصص رياضية وطلب وجبات صحية، صُمّم ضمن مشروع مقرر OOAD.</span><span class="en">A prototype for booking fitness classes and ordering healthy meals, designed for an OOAD course project.</span></p><div class="op-tool">Figma</div></div></div>
+
       </div>
     </div>
   </section>
@@ -424,10 +484,11 @@
     </div>
   </section>
 
-  <section id="services">
-    <div class="wrap win"><div class="win-bar"><i></i><i></i><i></i><span class="win-path">~/skills/expertise</span></div><div class="win-body">
-      <div class="head r"><div><div class="eyebrow"><span class="ar">مجالاتي</span><span class="en">Expertise</span></div><h2><span class="ar">ما أُتقنه</span><span class="en">What I do</span></h2></div></div>
-      <div class="services"><div class="svc r"><div class="n">01</div><h3><span class="ar">إدارة البيانات وذكاء الأعمال</span><span class="en">Data Management & BI</span></h3><p><span class="ar">تنظيف البيانات وإدارتها وتحليلها، وبناء لوحات ومؤشرات أداء تدعم اتخاذ القرار.</span><span class="en">Cleaning, managing and analyzing data, and building dashboards and KPIs that support decisions.</span></p></div><div class="svc r"><div class="n">02</div><h3><span class="ar">تحليل النظم</span><span class="en">Systems Analysis</span></h3><p><span class="ar">تحويل المتطلبات إلى نماذج ومخططات دقيقة.</span><span class="en">From requirements to clear models and diagrams.</span></p></div><div class="svc r"><div class="n">03</div><h3><span class="ar">إدارة المشاريع</span><span class="en">Project Management</span></h3><p><span class="ar">تخطيط ومتابعة المهام والجداول عبر Microsoft Project.</span><span class="en">Planning and tracking tasks and timelines in Microsoft Project.</span></p></div><div class="svc r"><div class="n">04</div><h3><span class="ar">تجربة المستخدم UX/UI</span><span class="en">UX/UI Design</span></h3><p><span class="ar">أبحاث المستخدم وتصميم الواجهات والنماذج التفاعلية.</span><span class="en">User research, interfaces and interactive prototypes.</span></p></div><div class="svc r"><div class="n">05</div><h3><span class="ar">أنظمة ERP</span><span class="en">ERP Systems</span></h3><p><span class="ar">فهم وأتمتة العمليات المؤسسية عبر Odoo.</span><span class="en">Understanding and automating business processes with Odoo.</span></p></div><div class="svc r"><div class="n">06</div><h3><span class="ar">تطوير الويب</span><span class="en">Web Development</span></h3><p><span class="ar">بناء نماذج أولية عاملة، من الواجهة حتى قاعدة البيانات.</span><span class="en">Working prototypes, from front end to database.</span></p></div></div>
+  <section id="journey">
+    <div class="wrap win"><div class="win-bar"><i></i><i></i><i></i><span class="win-path">~/journey.log</span></div><div class="win-body">
+      <div class="head r"><div><div class="eyebrow"><span class="ar">مسيرتي</span><span class="en">Journey</span></div><h2><span class="ar">أتعلّم وأشارك وأبني</span><span class="en">Learning, competing, building</span></h2></div>
+        <a href="https://www.linkedin.com/in/yasmin-almomen-9a45a13a5/details/certifications/" target="_blank" rel="noopener" class="btn btn-ghost"><span class="ar">الشهادات على LinkedIn ←</span><span class="en">Certificates on LinkedIn →</span></a></div>
+      <div class="timeline"><div class="tl r now"><div class="tl-dot"></div><div class="tl-when"><span class="ar">جارٍ</span><span class="en">Now</span></div><div class="tl-card"><span class="tl-kind k-prog"><span class="ar">برنامج</span><span class="en">program</span></span><h3>KAUST Academy · Bioinformatics</h3><p><span class="ar">أكاديمية كاوست · برنامج المعلوماتية الحيوية</span><span class="en">KAUST Academy · Bioinformatics program</span></p></div></div><div class="tl r now"><div class="tl-dot"></div><div class="tl-when"><span class="ar">جارٍ</span><span class="en">Now</span></div><div class="tl-card"><span class="tl-kind k-hack"><span class="ar">هاكاثون</span><span class="en">hackathon</span></span><h3><span class="ar">هاكاثون الابتكار للتحول الرقمي الصحي العسكري</span><span class="en">Military Health Digital Transformation Innovation Hackathon</span></h3><p><span class="ar">كلية الأمير سلطان العسكرية للعلوم الصحية بالظهران</span><span class="en">Prince Sultan Military College of Health Sciences, Dhahran</span></p></div></div><div class="tl r now"><div class="tl-dot"></div><div class="tl-when"><span class="ar">جارٍ</span><span class="en">Now</span></div><div class="tl-card"><span class="tl-kind k-hack"><span class="ar">هاكاثون</span><span class="en">hackathon</span></span><h3><span class="ar">هاكاثون نمكّن للذكاء الاصطناعي 2026</span><span class="en">Nmkkn AI Hackathon 2026</span></h3><p><span class="ar">نمكّن</span><span class="en">Nmkkn</span></p></div></div><div class="tl r "><div class="tl-dot"></div><div class="tl-when"><span class="ar">نوفمبر 2026</span><span class="en">Nov 2026</span></div><div class="tl-card"><span class="tl-kind k-cert"><span class="ar">شهادة</span><span class="en">certificate</span></span><h3>AI Foundations</h3><p>OpenAI</p></div></div><div class="tl r "><div class="tl-dot"></div><div class="tl-when"><span class="ar">نوفمبر 2026</span><span class="en">Nov 2026</span></div><div class="tl-card"><span class="tl-kind k-cert"><span class="ar">شهادة</span><span class="en">certificate</span></span><h3>Build Your First App With Replit</h3><p>Tuwaiq Club · KFUPM</p></div></div><div class="tl r "><div class="tl-dot"></div><div class="tl-when"><span class="ar">يوليو 2026</span><span class="en">Jul 2026</span></div><div class="tl-card"><span class="tl-kind k-cert"><span class="ar">شهادة</span><span class="en">certificate</span></span><h3>Introduction to AI &amp; ML on Google Cloud</h3><p><span class="ar">وزارة الاتصالات وتقنية المعلومات</span><span class="en">Ministry of Communications and IT</span></p></div></div><div class="tl r "><div class="tl-dot"></div><div class="tl-when"><span class="ar">شاركت</span><span class="en">Participated</span></div><div class="tl-card"><span class="tl-kind k-hack"><span class="ar">هاكاثون</span><span class="en">hackathon</span></span><h3><span class="ar">هاكاثون AgentX</span><span class="en">AgentX Hackathon</span></h3><p><span class="ar">الرياض</span><span class="en">Riyadh</span></p></div></div><div class="tl r "><div class="tl-dot"></div><div class="tl-when"><span class="ar">شاركت</span><span class="en">Participated</span></div><div class="tl-card"><span class="tl-kind k-hack"><span class="ar">هاكاثون</span><span class="en">hackathon</span></span><h3><span class="ar">هاكاثون الطفولة</span><span class="en">Childhood Hackathon</span></h3><p><span class="ar">جمعية إنماء لرعاية الطفولة</span><span class="en">Enmaa Association for Childhood Care</span></p></div></div><div class="tl r "><div class="tl-dot"></div><div class="tl-when"><span class="ar">شاركت</span><span class="en">Participated</span></div><div class="tl-card"><span class="tl-kind k-hack"><span class="ar">هاكاثون</span><span class="en">hackathon</span></span><h3><span class="ar">هاكاثون فرق</span><span class="en">Farq Hackathon</span></h3><p><span class="ar">جامعة اليمامة</span><span class="en">Al Yamamah University</span></p></div></div></div>
       </div>
     </div>
   </section>
@@ -439,28 +500,13 @@
         <h2><span class="ar">مرحبًا، أنا ياسمين</span><span class="en">Hi, I'm Yasmin</span></h2>
         <p><span class="ar">طالبة نظم معلومات حاسوبية، أهتم بالربط بين البيانات والتقنية وإدارة المشاريع، لتقديم حلول عملية تصنع قيمة حقيقية للأعمال وتدعم رؤية المملكة 2030؛ أبدأ بفهم المشكلة بعمق، وأنتهي بحلٍّ عامل قابل للاختبار.</span><span class="en">Computer Information Systems student interested in bridging data, technology, and project management to deliver practical solutions that drive business value and support Saudi Vision 2030. I start by deeply understanding the problem and finish with a working, testable solution.</span></p>
         <p class="quote-line"><span class="ar">«قوة الأنظمة ليست في تعقيدها التقني، بل في قدرتها على تحويل التعقيد إلى وضوح، والبيانات إلى قرارات، والاحتياجات إلى حلول.»</span><span class="en">“The power of systems lies not in their technical complexity, but in their ability to turn complexity into clarity, data into decisions, and needs into solutions.”</span></p>
+        <div class="eyebrow" style="margin-top:34px"><span class="ar">مجالاتي</span><span class="en">Expertise</span></div>
+        <ul class="exlist"><li><span class="exn">01</span><span class="ar">إدارة البيانات وذكاء الأعمال</span><span class="en">Data Management & BI</span></li><li><span class="exn">02</span><span class="ar">تحليل النظم</span><span class="en">Systems Analysis</span></li><li><span class="exn">03</span><span class="ar">إدارة المشاريع</span><span class="en">Project Management</span></li><li><span class="exn">04</span><span class="ar">تجربة المستخدم UX/UI</span><span class="en">UX/UI Design</span></li><li><span class="exn">05</span><span class="ar">أنظمة ERP</span><span class="en">ERP Systems</span></li><li><span class="exn">06</span><span class="ar">تطوير الويب</span><span class="en">Web Development</span></li></ul>
       </div>
       <div class="r">
         <div class="eyebrow"><span class="ar">أدواتي</span><span class="en">Tools</span></div>
         <div class="tgroups"><div class="tg"><div class="tgl"><span class="ar">الإدارة والإنتاجية</span><span class="en">Management & Productivity</span></div><div class="chips"><span>Microsoft Project</span><span>Excel</span><span>Google Sheets</span><span>Word</span><span>PowerPoint</span><span>Outlook</span></div></div><div class="tg"><div class="tgl"><span class="ar">البيانات والأعمال</span><span class="en">Data & Business</span></div><div class="chips"><span>Python</span><span>SQL Server</span><span>Power BI</span><span>YOLOv8</span><span>Google Colab</span><span>Odoo ERP</span></div></div><div class="tg"><div class="tgl"><span class="ar">التصميم والتطوير</span><span class="en">Design & Development</span></div><div class="chips"><span>Figma</span><span>Balsamiq</span><span>HTML/CSS/JS</span><span>Flask</span><span>PHP · MySQL</span><span>Git</span></div></div><div class="tg"><div class="tgl"><span class="ar">مهارات شخصية</span><span class="en">Soft Skills</span></div><div class="chips"><span><span class="ar">قيادة الفريق</span><span class="en">Team Leadership</span></span><span><span class="ar">التواصل</span><span class="en">Communication</span></span><span><span class="ar">سرعة التعلّم</span><span class="en">Quick Learner</span></span></div></div></div>
       </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="hackathons">
-    <div class="wrap win"><div class="win-bar"><i></i><i></i><i></i><span class="win-path">~/hackathons.log</span></div><div class="win-body">
-      <div class="head r"><div><div class="eyebrow"><span class="ar">الهاكاثونات</span><span class="en">Hackathons</span></div><h2><span class="ar">أفكار تحت ضغط الوقت</span><span class="en">Ideas under pressure</span></h2></div></div>
-      <div class="hks"><div class="hk r"><div class="hktop"><div class="hkn">01</div><span class="hkb"><span class="ar">شاركت</span><span class="en">Participated</span></span></div><h3><span class="ar">هاكاثون فرق</span><span class="en">Farq Hackathon</span></h3><p><span class="ar">جامعة اليمامة</span><span class="en">Al Yamamah University</span></p></div><div class="hk r"><div class="hktop"><div class="hkn">02</div><span class="hkb"><span class="ar">شاركت</span><span class="en">Participated</span></span></div><h3><span class="ar">هاكاثون الطفولة</span><span class="en">Childhood Hackathon</span></h3><p><span class="ar">جمعية إنماء لرعاية الطفولة</span><span class="en">Enmaa Association for Childhood Care</span></p></div><div class="hk r"><div class="hktop"><div class="hkn">03</div><span class="hkb"><span class="ar">شاركت</span><span class="en">Participated</span></span></div><h3><span class="ar">هاكاثون AgentX</span><span class="en">AgentX Hackathon</span></h3><p><span class="ar">الرياض</span><span class="en">Riyadh</span></p></div><div class="hk r"><div class="hktop"><div class="hkn">04</div><span class="hkb live"><i></i><span class="ar">جارٍ</span><span class="en">Ongoing</span></span></div><h3><span class="ar">هاكاثون الابتكار للتحول الرقمي الصحي العسكري</span><span class="en">Military Health Digital Transformation Innovation Hackathon</span></h3><p><span class="ar">كلية الأمير سلطان العسكرية للعلوم الصحية بالظهران</span><span class="en">Prince Sultan Military College of Health Sciences, Dhahran</span></p></div><div class="hk r"><div class="hktop"><div class="hkn">05</div><span class="hkb live"><i></i><span class="ar">جارٍ</span><span class="en">Ongoing</span></span></div><h3><span class="ar">هاكاثون نمكّن للذكاء الاصطناعي 2026</span><span class="en">Nmkkn AI Hackathon 2026</span></h3><p><span class="ar">نمكّن</span><span class="en">Nmkkn</span></p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="certs">
-    <div class="wrap win"><div class="win-bar"><i></i><i></i><i></i><span class="win-path">~/certifications</span></div><div class="win-body">
-      <div class="head r"><div><div class="eyebrow"><span class="ar">الشهادات والبرامج</span><span class="en">Certifications &amp; Programs</span></div><h2><span class="ar">التعلّم المستمر</span><span class="en">Continuous learning</span></h2></div>
-        <a href="https://www.linkedin.com/in/yasmin-almomen-9a45a13a5/details/certifications/" target="_blank" rel="noopener" class="btn btn-ghost"><span class="ar">كل الشهادات على LinkedIn ←</span><span class="en">All on LinkedIn →</span></a></div>
-      <div class="certs"><div class="cert r cert-now"><div class="cicon">◉</div><div><h3>KAUST Academy · Bioinformatics</h3><p><span class="ar">أكاديمية كاوست · المعلوماتية الحيوية</span><span class="en">King Abdullah University of Science and Technology</span></p><span class="cdate now-b"><span class="ar">جارٍ</span><span class="en">Ongoing</span></span></div></div><div class="cert r"><div class="cicon">✦</div><div><h3>AI Foundations</h3><p>OpenAI</p><span class=cdate><span class="ar">نوفمبر 2026</span><span class="en">Nov 2026</span></span></div></div><div class="cert r"><div class="cicon">✦</div><div><h3>Build Your First App With Replit</h3><p>Tuwaiq Club · KFUPM</p><span class=cdate><span class="ar">نوفمبر 2026</span><span class="en">Nov 2026</span></span></div></div><div class="cert r"><div class="cicon">✦</div><div><h3>Introduction to AI &amp; ML on Google Cloud</h3><p><span class="ar">وزارة الاتصالات وتقنية المعلومات</span><span class="en">Ministry of Communications and IT</span></p><span class=cdate><span class="ar">يوليو 2026</span><span class="en">Jul 2026</span></span></div></div></div>
       </div>
     </div>
   </section>
