@@ -42,7 +42,7 @@ html.lang-en body{font-family:Inter,"IBM Plex Sans Arabic",sans-serif}
 /* viewport + board */
 #vp{position:fixed;inset:0;overflow:hidden;cursor:grab;touch-action:none}
 #vp.drag{cursor:grabbing}
-#board{position:absolute;left:0;top:0;width:3500px;height:2780px;transform-origin:0 0;will-change:transform;
+#board{position:absolute;left:0;top:0;width:3500px;height:3060px;transform-origin:0 0;will-change:transform;
  background-image:radial-gradient(rgba(130,170,255,.12) 1.5px,transparent 1.5px);background-size:32px 32px}
 #board.anim{transition:transform .95s cubic-bezier(.65,.02,.2,1)}
 .links{position:absolute;left:0;top:0;pointer-events:none}
@@ -171,6 +171,18 @@ mark{background:none;color:var(--acc)}
 .lrn-pv{font-family:"JetBrains Mono",monospace;color:var(--fn);font-size:15px;margin-top:4px;direction:ltr;text-align:start}
 .lrn-ds{color:#b9c3ce;font-size:17px;line-height:1.75;margin-top:8px;max-width:70ch}
 [dir=rtl] .lrn-pv,[dir=rtl] .mono-b{text-align:right}
+
+.dash-card{margin-top:14px;background:var(--tile);border:1px solid #1a232e;border-radius:16px;padding:18px 20px}
+.dash-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.dash-head h4{font-size:20px}.dash-head>span{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--kw);direction:ltr}
+.dash-card>p{color:var(--muted);font-size:15px;margin:4px 0 12px}
+.dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dash-grid figure{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0a0f15}
+.dash-grid img{display:block;width:100%;aspect-ratio:16/9.4;object-fit:cover;background:#fff}
+.dash-grid figcaption{padding:10px 12px;font-size:14px;font-weight:600;display:flex;flex-direction:column;gap:2px}
+.dash-grid figcaption small{font-family:"JetBrains Mono",monospace;font-weight:400;font-size:11.5px;color:var(--kw);direction:ltr;text-align:start}
+[dir=rtl] .dash-grid figcaption small{text-align:right}
+@media (max-width:760px){.dash-card{padding:14px}.dash-grid{grid-template-columns:1fr}.dash-head h4{font-size:17px}.dash-card>p{font-size:14px}}
 /* a11y */
 :focus{outline:none}
 :focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:10px}
@@ -264,7 +276,7 @@ mark{background:none;color:var(--acc)}
 
 <div id="vp"><div id="board">
   <div class="note-lbl big" style="left:100px;top:40px"><span class="ar">بورد ياسمين</span><span class="en">yasmin’s board</span></div>
-  <div class="note-lbl" style="left:100px;top:1090px"><span class="ar">// المشاريع</span><span class="en">// projects</span></div>
+  <div class="note-lbl" style="left:100px;top:1370px"><span class="ar">// المشاريع</span><span class="en">// projects</span></div>
   
   <section class="fr f-quote" id="quote" data-x="1250" data-y="160" data-w="1000" data-h="260" style="left:1250px;top:160px;width:1000px;min-height:260px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/quote.txt</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
@@ -281,7 +293,7 @@ mark{background:none;color:var(--acc)}
       <p class="sub"><span class="ar">طالبة نظم معلومات حاسوبية في السنة الأخيرة · جامعة الإمام عبدالرحمن بن فيصل</span><span class="en">Final-year Computer Information Systems student · Imam Abdulrahman Bin Faisal University</span></p>
       <div class="row"><button class="btn acc" data-go="projects"><span class="ar">استكشف أعمالي ←</span><span class="en">explore my work →</span></button><button class="btn" data-go="overview"><span class="ar">شوف البورد كامل ⊞</span><span class="en">see the whole board ⊞</span></button><a class="btn cv-btn" href="assets/cv.pdf" download hidden><span class="ar">السيرة الذاتية ↓</span><span class="en">Résumé ↓</span></a></div></div>
   </section>
-  <section class="fr f-proj" id="hajar" data-x="100" data-y="1160" data-w="620" data-h="780" style="left:100px;top:1160px;width:620px;min-height:780px">
+  <section class="fr f-proj" id="hajar" data-x="100" data-y="1440" data-w="620" data-h="780" style="left:100px;top:1440px;width:620px;min-height:780px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/hajar</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="pj">
@@ -295,7 +307,7 @@ mark{background:none;color:var(--acc)}
         </div>
       </div></div>
   </section>
-  <section class="fr f-proj" id="mueen" data-x="770" data-y="1160" data-w="620" data-h="780" style="left:770px;top:1160px;width:620px;min-height:780px">
+  <section class="fr f-proj" id="mueen" data-x="770" data-y="1440" data-w="620" data-h="780" style="left:770px;top:1440px;width:620px;min-height:780px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/mueen</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="pj">
@@ -309,7 +321,7 @@ mark{background:none;color:var(--acc)}
         </div>
       </div></div>
   </section>
-  <section class="fr f-proj" id="wadeh" data-x="1440" data-y="1160" data-w="620" data-h="780" style="left:1440px;top:1160px;width:620px;min-height:780px">
+  <section class="fr f-proj" id="wadeh" data-x="1440" data-y="1440" data-w="620" data-h="780" style="left:1440px;top:1440px;width:620px;min-height:780px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/wadeh</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="pj">
@@ -323,7 +335,7 @@ mark{background:none;color:var(--acc)}
         </div>
       </div></div>
   </section>
-  <section class="fr f-proj" id="rawiyyah" data-x="2110" data-y="1160" data-w="620" data-h="780" style="left:2110px;top:1160px;width:620px;min-height:780px">
+  <section class="fr f-proj" id="rawiyyah" data-x="2110" data-y="1440" data-w="620" data-h="780" style="left:2110px;top:1440px;width:620px;min-height:780px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/rawiyyah</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="pj">
@@ -337,7 +349,7 @@ mark{background:none;color:var(--acc)}
         </div>
       </div></div>
   </section>
-  <section class="fr f-proj f-next" id="next" data-x="2780" data-y="1160" data-w="620" data-h="780" style="left:2780px;top:1160px;width:620px;min-height:780px">
+  <section class="fr f-proj f-next" id="next" data-x="2780" data-y="1440" data-w="620" data-h="780" style="left:2780px;top:1440px;width:620px;min-height:780px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/next</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="pj">
@@ -355,7 +367,14 @@ mark{background:none;color:var(--acc)}
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/more</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="lbl"><span class="ar">تجارب أخرى</span><span class="en">More experiments</span></div>
-      <div class="minis"><div class="mini "><h4>Greno ♻️</h4><p><span class="ar">صوّر النفاية، واعرف أين ترميها</span><span class="en">Snap the waste, learn where it goes</span></p><span>Python · YOLOv8 · Flask</span></div><div class="mini "><h4>EduTrack</h4><p><span class="ar">مهامك الدراسية في مكان واحد</span><span class="en">All your coursework in one place</span></p><span>Microsoft Project</span></div><div class="mini "><h4><bdi>FitPass+</bdi></h4><p><span class="ar">حصص رياضية ووجبات صحية بلمسة</span><span class="en">Classes and healthy meals in one tap</span></p><span>Figma</span></div></div></div>
+      <div class="minis"><div class="mini "><h4>Greno ♻️</h4><p><span class="ar">صوّر النفاية، واعرف أين ترميها</span><span class="en">Snap the waste, learn where it goes</span></p><span>Python · YOLOv8 · Flask</span></div><div class="mini "><h4>EduTrack</h4><p><span class="ar">مهامك الدراسية في مكان واحد</span><span class="en">All your coursework in one place</span></p><span>Microsoft Project</span></div><div class="mini "><h4><bdi>FitPass+</bdi></h4><p><span class="ar">حصص رياضية ووجبات صحية بلمسة</span><span class="en">Classes and healthy meals in one tap</span></p><span>Figma</span></div></div><div class="dash-card">
+        <div class="dash-head"><h4><span class="ar">لوحات تحليل البيانات</span><span class="en">Data dashboards</span></h4><span>Power BI · SQL Server</span></div>
+        <p><span class="ar">تحويل البيانات إلى لوحات تفاعلية تدعم اتخاذ القرار.</span><span class="en">Turning data into interactive dashboards that support decisions.</span></p>
+        <div class="dash-grid">
+          <figure><img src="assets/dash-sales.jpg" alt="Customer Sales Performance Dashboard" loading="lazy"><figcaption><span class="ar">أداء مبيعات العملاء</span><span class="en">Customer Sales Performance</span><small>Power BI</small></figcaption></figure>
+          <figure><img src="assets/dash-airport.jpg" alt="Airline Passengers Analysis Dashboard" loading="lazy"><figcaption><span class="ar">تنظيف وتحليل بيانات مطار</span><span class="en">Airport Data Cleaning &amp; Visualization</span><small>SQL Server · Power BI</small></figcaption></figure>
+        </div>
+      </div></div>
   </section>
   <section class="fr f-about" id="about" data-x="100" data-y="160" data-w="1000" data-h="880" style="left:100px;top:160px;width:1000px;min-height:880px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/about.md</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
@@ -375,7 +394,7 @@ mark{background:none;color:var(--acc)}
       <p class="vsub"><span class="ar">أؤمن برؤية المملكة 2030، وأعمل لأكون جزءًا من تحقيقها.</span><span class="en">I believe in Saudi Vision 2030, and I work to be part of achieving it.</span></p>
       <div class="vps"><div class="vp"><span class="vn">01</span><b><span class="ar">مجتمع حيوي</span><span class="en">A Vibrant Society</span></b><span class="vk"><span class="ar">جودة حياة · ثقافة · تمكين</span><span class="en">Quality of life · Culture · Inclusion</span></span></div><div class="vp"><span class="vn">02</span><b><span class="ar">اقتصاد مزدهر</span><span class="en">A Thriving Economy</span></b><span class="vk"><span class="ar">ابتكار · تحول رقمي · فرص</span><span class="en">Innovation · Digital · Opportunity</span></span></div><div class="vp"><span class="vn">03</span><b><span class="ar">وطن طموح</span><span class="en">An Ambitious Nation</span></b><span class="vk"><span class="ar">كفاءة · شفافية · مسؤولية</span><span class="en">Efficiency · Transparency · Responsibility</span></span></div></div></div>
   </section>
-  <section class="fr f-learning" id="learning" data-x="1250" data-y="2040" data-w="1000" data-h="300" style="left:1250px;top:2040px;width:1000px;min-height:300px">
+  <section class="fr f-learning" id="learning" data-x="1250" data-y="2320" data-w="1000" data-h="300" style="left:1250px;top:2320px;width:1000px;min-height:300px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/learning.md</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="lbl"><span class="ar">التعلّم والتطوير</span><span class="en">Learning & Development</span></div>
@@ -388,7 +407,7 @@ mark{background:none;color:var(--acc)}
         </div>
       </div></div>
   </section>
-  <section class="fr f-contact" id="contact" data-x="1250" data-y="2400" data-w="1000" data-h="300" style="left:1250px;top:2400px;width:1000px;min-height:300px">
+  <section class="fr f-contact" id="contact" data-x="1250" data-y="2680" data-w="1000" data-h="300" style="left:1250px;top:2680px;width:1000px;min-height:300px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/contact</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <h2><span class="ar">لنصنع أثرًا معًا</span><span class="en">Let’s build impact together</span></h2>
@@ -423,8 +442,8 @@ const mobile=()=>matchMedia('(max-width:760px)').matches;
 let s=1,tx=0,ty=0,cur=1;
 const apply=(anim)=>{board.classList.toggle('anim',!!anim);board.style.transform=`translate(${tx}px,${ty}px) scale(${s})`;};
 const rectOf=id=>{
-  if(id==='overview') return {x:60,y:20,w:3380,h:2720};
-  if(id==='projects') return {x:100,y:1100,w:3300,h:860};
+  if(id==='overview') return {x:60,y:20,w:3380,h:3000};
+  if(id==='projects') return {x:100,y:1380,w:3300,h:860};
   const el=document.getElementById(id); return {x:+el.dataset.x,y:+el.dataset.y,w:+el.dataset.w,h:Math.max(+el.dataset.h,el.offsetHeight)};
 };
 function fit(r,anim=true){
