@@ -493,6 +493,65 @@
   .w.r{transition:opacity .6s ease,transform .6s ease}
   @media (max-width:1000px){.t-hero,.t-big,.t-wide,.t-mbs,.t-vision,.t-about,.t-skills{grid-column:span 12}.t-now,.t-contact,.t-sm{grid-column:span 6}.t-mini{grid-column:span 4}.t-big{min-height:440px}}
   @media (max-width:700px){.dash>*{grid-column:span 12!important;grid-row:auto!important}.t-contact{order:99}.t-hero .w-body{padding:26px 22px}.t-big{min-height:380px}}
+
+  /* ===== portfolio-first ===== */
+  .hero2{padding:110px 0 40px;text-align:start}
+  .hero2 h1{font-size:clamp(3rem,8vw,6.2rem);line-height:1.05;font-weight:700;margin-top:10px}
+  .h2l{font-size:clamp(1.3rem,3vw,2.1rem);color:#b4bfcb;margin-top:14px;font-weight:600}
+  .h2l em{font-style:normal;color:var(--accent)}
+  .hero2 .actions{margin-top:30px}
+  .mbs3{margin:40px 0 0;padding:22px 26px;border-inline-start:3px solid #7fd8a6;background:linear-gradient(90deg,rgba(0,108,53,.18),transparent);border-radius:4px}
+  [dir=rtl] .mbs3{background:linear-gradient(270deg,rgba(0,108,53,.18),transparent)}
+  .mbs3 blockquote{font-size:clamp(1.05rem,2vw,1.35rem);font-weight:600;line-height:1.7}
+  .mbs3 figcaption{margin-top:8px;color:#7fd8a6;font-size:.85rem}
+  .work2{padding:90px 0 40px}
+  .w2-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:26px}
+  .w2-head h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+  .sl-ctrl{display:flex;align-items:center;gap:12px;font-family:"JetBrains Mono",monospace;color:var(--muted);font-size:.9rem;direction:ltr}
+  .sl-btn{width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:1.4rem;cursor:pointer}
+  .sl-btn:hover{border-color:var(--accent);color:var(--accent)}
+  .slider{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth;padding-bottom:6px}
+  .slider::-webkit-scrollbar{display:none}
+  .slide{flex:0 0 100%;scroll-snap-align:center;display:grid;grid-template-columns:1.15fr 1fr;min-height:520px;background:#0d1218;border:1px solid #1a232e;border-radius:20px;overflow:hidden}
+  .s-media{aspect-ratio:auto!important;display:grid;place-items:center;padding:50px;background:#f6f4ef;position:relative}
+  .s-media img{max-width:82%;max-height:300px;object-fit:contain;transition:transform .6s}
+  .slide:hover .s-media img{transform:scale(1.05)}
+  .s-media.thumb-hajar{padding:0;background:#023620}.s-media.thumb-hajar img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain}
+  .s-media.thumb-white{background:#fff}
+  .s-info{padding:42px 40px;display:flex;flex-direction:column;gap:12px}
+  .s-idx{font-family:"JetBrains Mono",monospace;font-size:2.4rem;font-weight:700;color:var(--accent);line-height:1;direction:ltr;text-align:start}
+  [dir=rtl] .s-idx{text-align:right}
+  .s-idx small{font-size:.9rem;color:var(--muted);font-weight:400;margin-left:4px}
+  .s-info h3{font-size:2rem;line-height:1.25}
+  .s-info h3 bdi{font-family:"JetBrains Mono",monospace;font-size:.5em;color:var(--muted);font-weight:500}
+  .s-hook{font-size:1.25rem;font-weight:600;color:var(--text)}
+  .s-line{color:var(--muted)}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+  .fact{border:1px solid #1d2733;border-radius:10px;padding:10px 12px;background:#0a0f15}
+  .fact>span{display:block;font-size:.72rem;color:var(--cm)}
+  .fact b{font-size:.88rem;font-weight:600}
+  .s-vis{font-size:.82rem;color:#7fd8a6}
+  .s-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+  .sl-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
+  .sl-dots i{width:8px;height:8px;border-radius:99px;background:#26323f;transition:.3s;cursor:pointer}
+  .sl-dots i.on{width:28px;background:var(--accent)}
+  .m2-head{margin:60px 0 16px;font-size:1.2rem;font-weight:700}
+  .m2s{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .m2{background:#0d1218;border:1px solid #1a232e;border-radius:14px;padding:20px;transition:.25s}
+  .m2:hover{transform:translateY(-4px);border-color:#2a3a4a}
+  .m2 h3{font-size:1.05rem}
+  .m2 p{color:var(--muted);font-size:.88rem;margin:6px 0 12px}
+  .m2>span{font-family:"JetBrains Mono",monospace;font-size:.72rem;color:var(--kw)}
+  .m2.soon{border-style:dashed;border-color:rgba(212,255,63,.35)}
+  .m2.soon h3{color:var(--accent)}
+  .ct2{text-align:center;padding:110px 0 120px}
+  .ct2 h2{font-size:clamp(2rem,5vw,3.4rem)}
+  .ct2 p{color:var(--muted);margin:12px 0 28px}
+  .ct2 .actions{justify-content:center}
+  @media (max-width:900px){.slide{grid-template-columns:1fr;min-height:0}.s-media{min-height:260px}.m2s{grid-template-columns:1fr 1fr}.facts{grid-template-columns:1fr 1fr 1fr}}
+  @media (max-width:600px){.s-info{padding:26px 22px}.m2s{grid-template-columns:1fr}.facts{grid-template-columns:1fr}.hero2{padding:70px 0 30px}.w2-head{flex-direction:column;align-items:flex-start}}
+  .h1-sub{display:block;font-style:normal;font-family:"JetBrains Mono","IBM Plex Sans Arabic",monospace;font-size:.36em;color:var(--accent);margin-top:6px;font-weight:600}
+  html.lang-en .h1-sub{font-family:"IBM Plex Sans Arabic",sans-serif}
 </style>
 </head>
 <body>
@@ -501,10 +560,7 @@
   <nav class="wrap">
     <a href="#" class="logo"><span class="lg-u">yasmin</span><span class="lg-at">@</span><span class="lg-h">portfolio</span><span class="lg-p">:~$</span></a>
     <div class="links" id="links">
-      <a href="#work"><span class="ar">المشاريع</span><span class="en">Projects</span></a>
-      <a href="#vision"><span class="ar">رؤية 2030</span><span class="en">Vision 2030</span></a>
-      <a href="#journey"><span class="ar">مسيرتي</span><span class="en">Journey</span></a>
-      <a href="#about"><span class="ar">عنّي</span><span class="en">About</span></a>
+      <a href="#work"><span class="ar">الأعمال</span><span class="en">Work</span></a>
       <a href="#contact"><span class="ar">تواصل</span><span class="en">Contact</span></a>
     </div>
     <div class="navr">
@@ -515,42 +571,81 @@
   </nav>
 </header>
 
-<main class="dash wrap">
-  <div class="w r t-hero"><div class="w-bar"><i></i><i></i><i></i><span>yasmin@portfolio — zsh</span></div><div class="w-body">
-      <div class="cmd"><span class="pr">❯</span> whoami</div>
-      <h1><span class="ar">ياسمين المؤمن<br><em class="en-name">Yasmin Almomen</em></span><span class="en">Yasmin Almomen<br><em>ياسمين المؤمن</em></span></h1>
-      <div class="roles"><span class="rl-pre">&gt;</span> <span id="role" class="rl"></span><span class="cursor"></span></div>
-      <p class="hero-sub"><span class="ar">نظم معلومات حاسوبية · جامعة الإمام عبدالرحمن بن فيصل</span><span class="en">Computer Information Systems · Imam Abdulrahman Bin Faisal University</span></p>
-      <div class="actions"><a href="#work" class="btn btn-accent"><span class="ar">استعرض أعمالي ←</span><span class="en">./see-my-work</span></a><a href="#about" class="btn btn-ghost"><span class="ar">من أنا</span><span class="en">whoami --more</span></a></div></div></div>
-  <div class="w r t-now" id="journey"><div class="w-bar"><i></i><i></i><i></i><span>~/now</span></div><div class="w-body"><div class="lbl now"><span class="ar">● يحدث الآن</span><span class="en">● happening now</span></div><div class="nowi"><span class="nd"></span><div><b>KAUST Academy</b><small><span class="ar">المعلوماتية الحيوية</span><span class="en">Bioinformatics</span></small></div></div><div class="nowi"><span class="nd"></span><div><b><span class="ar">هاكاثون التحول الرقمي الصحي العسكري</span><span class="en">Military Health DX Hackathon</span></b><small><span class="ar">كلية الأمير سلطان العسكرية</span><span class="en">PSMCHS · Dhahran</span></small></div></div><div class="nowi"><span class="nd"></span><div><b><span class="ar">هاكاثون نمكّن 2026</span><span class="en">Nmkkn AI Hackathon 2026</span></b><small><span class="ar">ذكاء اصطناعي</span><span class="en">AI</span></small></div></div></div></div>
-  <div class="w r t-contact" id="contact"><div class="w-bar"><i></i><i></i><i></i><span>~/contact</span></div><div class="w-body"><div class="lbl"><span class="ar">تواصل</span><span class="en">contact</span></div><h3 class="ct-h"><span class="ar">لنصنع أثرًا معًا</span><span class="en">Let’s build impact together</span></h3>
-      <div class="ct-btns"><a href="https://www.linkedin.com/in/yasmin-almomen-9a45a13a5" target="_blank" rel="noopener" class="btn btn-accent sm">LinkedIn</a><a href="https://github.com/yaass24" target="_blank" rel="noopener" class="btn btn-ghost sm">GitHub</a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=yasssssmin38@gmail.com" target="_blank" rel="noopener" class="btn btn-ghost sm">Gmail</a></div></div></div>
-  <article class="w r tile t-big" id="work"><div class="w-bar"><i></i><i></i><i></i><span>~/projects/hajar</span></div>
-    <div class="tile-media thumb thumb-hajar"><img src="assets/hajar-logo.png" alt="HAJAR"></div>
-    <span class="status live"><i></i><span class="ar">الإصدار 2</span><span class="en">v2</span></span>
-    <div class="tile-info"><h3>هَجَر <bdi class="tn-en">· HAJAR</bdi></h3><p><span class="ar">الأحساء في لعبة ثلاثية الأبعاد</span><span class="en">Al-Ahsa as a 3D adventure</span></p><div class="tile-links"><a href="https://hajar-3d-adventure.yaassmin38.workers.dev/" target="_blank" rel="noopener"><span class="ar">العب</span><span class="en">Play</span> ↗</a><a href="https://www.figma.com/design/ATX26Fxhx2PWwExfgdswzQ" target="_blank" rel="noopener"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Hajar" target="_blank" rel="noopener"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div></div></article>
-  <article class="w r tile t-sm"><div class="w-bar"><i></i><i></i><i></i><span>~/projects/mueen</span></div>
-    <div class="tile-media thumb "><img src="assets/mueen-logo.png" alt="MU'EEN"></div>
-    <span class="status dev"><i></i><span class="ar">نموذج أولي</span><span class="en">Prototype</span></span>
-    <div class="tile-info"><h3>مُعين <bdi class="tn-en">· MU'EEN</bdi></h3><p><span class="ar">يكشف عوائق الطالب الصحية قبل أن يصل إليها</span><span class="en">Spots campus barriers before students hit them</span></p><div class="tile-links"><a href="https://yaass24.github.io/Mu-een/" target="_blank" rel="noopener"><span class="ar">جرّب</span><span class="en">Demo</span> ↗</a><a href="https://www.figma.com/design/sXCsdqLnoGpQ19vTEYezXS/mu-een?node-id=78-2" target="_blank" rel="noopener"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Mu-een" target="_blank" rel="noopener"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div></div></article>
-  <article class="w r tile t-sm"><div class="w-bar"><i></i><i></i><i></i><span>~/projects/wadeh</span></div>
-    <div class="tile-media thumb "><img src="assets/wadeh-logo.png" alt="WADEH"></div>
-    <span class="status live"><i></i><span class="ar">الإصدار 2</span><span class="en">v2</span></span>
-    <div class="tile-info"><h3>واضح <bdi class="tn-en">· WADEH</bdi></h3><p><span class="ar">التزاماتك الشهرية في موعدها، حتى في السيارة</span><span class="en">Never miss a payment, even on CarPlay</span></p><div class="tile-links"><a href="https://wadeh-lly2.onrender.com" target="_blank" rel="noopener"><span class="ar">جرّب</span><span class="en">App</span> ↗</a><a href="https://www.figma.com/design/qJjKAEzTGd5scJkjaGuV9N/WADEH-%E2%80%93-Digital-Banking-App?node-id=49-2" target="_blank" rel="noopener"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Wadeh-v2" target="_blank" rel="noopener"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div></div></article>
-  <article class="w r tile t-wide"><div class="w-bar"><i></i><i></i><i></i><span>~/projects/rawiyyah</span></div>
-    <div class="tile-media thumb thumb-white"><img src="assets/rawiyyah-logo.jpg" alt="RAWIYYAH"></div>
-    <span class="status dev"><i></i><span class="ar">قيد التطوير</span><span class="en">In dev</span></span>
-    <div class="tile-info"><h3>رَويَّة <bdi class="tn-en">· RAWIYYAH</bdi></h3><p><span class="ar">ملاعب دامجة تُراجَع قبل أن تُبنى</span><span class="en">Inclusive playgrounds, reviewed before they’re built</span></p><div class="tile-links"><a href="https://rawiyyah.free.je/" target="_blank" rel="noopener"><span class="ar">جرّب</span><span class="en">Demo</span> ↗</a><a href="https://www.figma.com/design/2GawzgM1IP3HQyRKrVWjN1/RAWIYYAH?node-id=101-2" target="_blank" rel="noopener"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Rawiyyah" target="_blank" rel="noopener"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div></div></article>
-  <div class="w r t-mini"><div class="w-bar"><i></i><i></i><i></i><span>~/projects/greno</span></div><div class="w-body"><h3>Greno ♻️</h3><p><span class="ar">صوّر النفاية، واعرف أين ترميها</span><span class="en">Snap the waste, learn where it goes</span></p><span class="mini-tool">AI · YOLOv8</span></div></div>
-  <div class="w r t-mini"><div class="w-bar"><i></i><i></i><i></i><span>~/projects/edutrack</span></div><div class="w-body"><h3>EduTrack</h3><p><span class="ar">مهامك الدراسية في مكان واحد</span><span class="en">All your coursework in one place</span></p><span class="mini-tool">Microsoft Project</span></div></div>
-  <div class="w r t-mini"><div class="w-bar"><i></i><i></i><i></i><span>~/projects/fitpass</span></div><div class="w-body"><h3><bdi>FitPass+</bdi></h3><p><span class="ar">حصص رياضية ووجبات صحية بلمسة</span><span class="en">Classes and healthy meals in one tap</span></p><span class="mini-tool">Figma</span></div></div>
-  <div class="w r t-mbs"><div class="w-bar"><i></i><i></i><i></i><span>~/quote.txt</span></div><div class="w-body"><figure class="mbs2"><blockquote><span class="ar">«إن العالم يعيش في زمن الابتكارات العلمية والتقنية غير المسبوقة، وآفاق النمو غير المحدودة»</span><span class="en">“The world is living in an era of unprecedented scientific and technological innovation, and limitless horizons for growth.”</span></blockquote>
-      <figcaption><span class="ar">صاحب السمو الملكي الأمير محمد بن سلمان بن عبدالعزيز آل سعود</span><span class="en">HRH Prince Mohammed bin Salman bin Abdulaziz Al Saud</span></figcaption></figure></div></div>
-  <div class="w r t-vision" id="vision"><div class="w-bar"><i></i><i></i><i></i><span>~/vision-2030.md</span></div><div class="w-body"><div class="lbl"><span class="ar">رؤية 2030</span><span class="en">vision 2030</span></div><div class="vp "><span class="vp-n"><span class="ar">مجتمع حيوي</span><span class="en">A Vibrant Society</span></span><span class="vp-p"><span class="ar">هَجَر · مُعين · رَويَّة</span><span class="en">HAJAR · MU'EEN · RAWIYYAH</span></span></div><div class="vp "><span class="vp-n"><span class="ar">اقتصاد مزدهر</span><span class="en">A Thriving Economy</span></span><span class="vp-p"><span class="ar">واضح</span><span class="en">WADEH</span></span></div><div class="vp soon"><span class="vp-n"><span class="ar">وطن طموح</span><span class="en">An Ambitious Nation</span></span><span class="vp-p"><span class="ar">قريبًا…</span><span class="en">Coming soon…</span></span></div><p class="note"><span class="ar">ارتباط بمحاور الرؤية، وليس تبعية رسمية.</span><span class="en">Thematic alignment, not an official affiliation.</span></p></div></div>
-  <div class="w r t-about" id="about"><div class="w-bar"><i></i><i></i><i></i><span>~/about.md</span></div><div class="w-body"><div class="lbl"><span class="ar">عنّي</span><span class="en">about</span></div><h2><span class="ar">أحب أن أبسّط المعقّد</span><span class="en">I like making the complex simple</span></h2>
-      <p class="lead"><span class="ar">طالبة نظم معلومات حاسوبية، أربط البيانات بالتقنية وإدارة المشاريع لأصنع حلولًا عملية تدعم رؤية 2030.</span><span class="en">A CIS student connecting data, technology and project management to build practical solutions that support Vision 2030.</span></p><p class="quote-line"><span class="ar">«قوة الأنظمة ليست في تعقيدها التقني، بل في قدرتها على تحويل التعقيد إلى وضوح، والبيانات إلى قرارات، والاحتياجات إلى حلول.»</span><span class="en">“The power of systems lies not in their technical complexity, but in their ability to turn complexity into clarity, data into decisions, and needs into solutions.”</span></p></div></div>
-  <div class="w r t-skills"><div class="w-bar"><i></i><i></i><i></i><span>~/skills</span></div><div class="w-body"><div class="lbl"><span class="ar">ما أعمل به</span><span class="en">stack</span></div><div class="cloud"><span class="cl-x"><span class="ar">تحليل البيانات</span><span class="en">Data Analytics</span></span><span class="cl-x"><span class="ar">ذكاء الأعمال</span><span class="en">BI</span></span><span class="cl-x"><span class="ar">تحليل النظم</span><span class="en">Systems Analysis</span></span><span class="cl-x"><span class="ar">إدارة المشاريع</span><span class="en">Project Management</span></span><span class="cl-x"><span class="ar">UX/UI</span><span class="en">UX/UI</span></span><span class="cl-x"><span class="ar">ERP</span><span class="en">ERP</span></span><span>Python</span><span>SQL Server</span><span>Power BI</span><span>Figma</span><span>Microsoft Project</span><span>Excel</span><span>Odoo</span><span>YOLOv8</span><span>Flask</span><span>Balsamiq</span><span>Git</span><span>HTML/CSS/JS</span></div><div class="soft"><span class="ar">قيادة الفريق · التواصل · سرعة التعلّم</span><span class="en">Team leadership · Communication · Quick learner</span></div></div></div>
-  <div class="w r t-done"><div class="w-bar"><i></i><i></i><i></i><span>~/journey.log</span></div><div class="w-body"><div class="lbl"><span class="ar">✓ شاركت وأنجزت</span><span class="en">✓ completed</span></div><div class="marquee"><div class="mq-track"><span class="tk"><span class="ar">هاكاثون فرق</span><span class="en">Farq Hackathon</span></span><span class="tk"><span class="ar">هاكاثون الطفولة</span><span class="en">Childhood Hackathon</span></span><span class="tk"><span class="ar">هاكاثون AgentX</span><span class="en">AgentX Hackathon</span></span><span class="tk">AI Foundations · OpenAI</span><span class="tk">Build Your First App · Tuwaiq × KFUPM</span><span class="tk">AI &amp; ML on Google Cloud · MCIT</span><span class="tk"><span class="ar">هاكاثون فرق</span><span class="en">Farq Hackathon</span></span><span class="tk"><span class="ar">هاكاثون الطفولة</span><span class="en">Childhood Hackathon</span></span><span class="tk"><span class="ar">هاكاثون AgentX</span><span class="en">AgentX Hackathon</span></span><span class="tk">AI Foundations · OpenAI</span><span class="tk">Build Your First App · Tuwaiq × KFUPM</span><span class="tk">AI &amp; ML on Google Cloud · MCIT</span></div></div></div></div>
+<main>
+  <section class="hero2 wrap">
+    <div class="cmd r"><span class="pr">❯</span> whoami</div>
+    <h1 class="r"><span class="ar">ياسمين المؤمن</span><span class="en">Yasmin Almomen</span><em class="h1-sub"><span class="ar">Yasmin Almomen</span><span class="en">ياسمين المؤمن</span></em></h1>
+    <figure class="mbs3 r"><blockquote><span class="ar">«إن العالم يعيش في زمن الابتكارات العلمية والتقنية غير المسبوقة، وآفاق النمو غير المحدودة»</span><span class="en">“The world is living in an era of unprecedented scientific and technological innovation, and limitless horizons for growth.”</span></blockquote>
+      <figcaption><span class="ar">صاحب السمو الملكي الأمير محمد بن سلمان بن عبدالعزيز آل سعود</span><span class="en">HRH Prince Mohammed bin Salman bin Abdulaziz Al Saud</span></figcaption></figure>
+    <p class="h2l r"><span class="ar">أبني حلولًا رقمية <em>لمشاكل حقيقية</em></span><span class="en">I build digital solutions for <em>real problems</em></span><span class="cursor"></span></p>
+    <div class="actions r"><a href="#work" class="btn btn-accent"><span class="ar">شوف الأعمال ↓</span><span class="en">see the work ↓</span></a><a href="#contact" class="btn btn-ghost"><span class="ar">تواصل</span><span class="en">contact</span></a></div>
+  </section>
+
+  <section id="work" class="wrap work2">
+    <div class="w2-head r">
+      <div><div class="eyebrow"><span class="ar">أعمالي</span><span class="en">work</span></div><h2><span class="ar">ما بنيته</span><span class="en">What I built</span></h2></div>
+      <div class="sl-ctrl"><button class="sl-btn" data-d="-1" aria-label="prev">‹</button><span id="sl-count">01 / 04</span><button class="sl-btn" data-d="1" aria-label="next">›</button></div>
+    </div>
+    <div class="slider r" id="slider">
+        <article class="slide" data-i="0">
+          <div class="s-media thumb thumb-hajar"><img src="assets/hajar-logo.png" alt="HAJAR"></div>
+          <div class="s-info">
+            <div class="s-idx">01<small>/04</small></div>
+            <h3>هَجَر <bdi>· HAJAR</bdi></h3>
+            <p class="s-hook"><span class="ar">الأحساء في لعبة ثلاثية الأبعاد</span><span class="en">Al-Ahsa as a 3D adventure</span></p>
+            <p class="s-line"><span class="ar">١٠ مراحل من الواحة إلى المزارع، تُلعب من المتصفح على أي جهاز.</span><span class="en">10 stages from the oasis to the farms, playable in any browser.</span></p>
+            <div class="facts"><div class="fact"><span><span class="ar">النوع</span><span class="en">Type</span></span><b><span class="ar">لعبة ثلاثية الأبعاد</span><span class="en">3D game</span></b></div><div class="fact"><span><span class="ar">دوري</span><span class="en">Role</span></span><b><span class="ar">فكرة وتصميم وتطوير</span><span class="en">Idea, design, build</span></b></div><div class="fact"><span><span class="ar">الحالة</span><span class="en">Status</span></span><b><span class="ar">الإصدار 2</span><span class="en">Version 2</span></b></div></div>
+            <div class="s-vis">🇸🇦 <span class="ar">رؤية 2030</span><span class="en">Vision 2030</span> · <span class="ar">مجتمع حيوي · الثقافة والتراث</span><span class="en">Vibrant Society · Heritage</span></div>
+            <div class="s-links"><a href="https://hajar-3d-adventure.yaassmin38.workers.dev/" target="_blank" rel="noopener" class="btn btn-accent sm"><span class="ar">العب الآن</span><span class="en">Play now</span> ↗</a><a href="https://www.figma.com/design/ATX26Fxhx2PWwExfgdswzQ" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Hajar" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
+          </div>
+        </article>
+        <article class="slide" data-i="1">
+          <div class="s-media thumb "><img src="assets/mueen-logo.png" alt="MU'EEN"></div>
+          <div class="s-info">
+            <div class="s-idx">02<small>/04</small></div>
+            <h3>مُعين <bdi>· MU'EEN</bdi></h3>
+            <p class="s-hook"><span class="ar">يكشف عوائق الطالب الصحية قبل أن يصل إليها</span><span class="en">Spots campus barriers before students reach them</span></p>
+            <p class="s-line"><span class="ar">يربط الاحتياج الصحي بالجدول وحالة المرافق، وبلاغ فوري بمسح QR.</span><span class="en">Links health needs to schedules and facilities, with instant QR alerts.</span></p>
+            <div class="facts"><div class="fact"><span><span class="ar">النوع</span><span class="en">Type</span></span><b><span class="ar">نظام جامعي</span><span class="en">University system</span></b></div><div class="fact"><span><span class="ar">الفريق</span><span class="en">Team</span></span><b>Innovision</b></div><div class="fact"><span><span class="ar">الحالة</span><span class="en">Status</span></span><b><span class="ar">نموذج أولي</span><span class="en">Prototype</span></b></div></div>
+            <div class="s-vis">🇸🇦 <span class="ar">رؤية 2030</span><span class="en">Vision 2030</span> · <span class="ar">مجتمع حيوي · تمكين ذوي الإعاقة</span><span class="en">Vibrant Society · Accessibility</span></div>
+            <div class="s-links"><a href="https://yaass24.github.io/Mu-een/" target="_blank" rel="noopener" class="btn btn-accent sm"><span class="ar">جرّب النظام</span><span class="en">Try it</span> ↗</a><a href="https://www.figma.com/design/sXCsdqLnoGpQ19vTEYezXS/mu-een?node-id=78-2" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Mu-een" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
+          </div>
+        </article>
+        <article class="slide" data-i="2">
+          <div class="s-media thumb "><img src="assets/wadeh-logo.png" alt="WADEH"></div>
+          <div class="s-info">
+            <div class="s-idx">03<small>/04</small></div>
+            <h3>واضح <bdi>· WADEH</bdi></h3>
+            <p class="s-hook"><span class="ar">التزاماتك الشهرية في موعدها، حتى في السيارة</span><span class="en">Never miss a payment, even on CarPlay</span></p>
+            <p class="s-line"><span class="ar">بنك رقمي يذكّرك عبر تقويم الآيفون وCarPlay، مع ويدجت للرصيد.</span><span class="en">A digital bank reminding you via iPhone Calendar and CarPlay, with a balance widget.</span></p>
+            <div class="facts"><div class="fact"><span><span class="ar">النوع</span><span class="en">Type</span></span><b><span class="ar">بنك رقمي</span><span class="en">Digital bank</span></b></div><div class="fact"><span><span class="ar">يشمل</span><span class="en">Includes</span></span><b><span class="ar">دراسة حالة UX</span><span class="en">UX case study</span></b></div><div class="fact"><span><span class="ar">الحالة</span><span class="en">Status</span></span><b><span class="ar">الإصدار 2</span><span class="en">Version 2</span></b></div></div>
+            <div class="s-vis">🇸🇦 <span class="ar">رؤية 2030</span><span class="en">Vision 2030</span> · <span class="ar">اقتصاد مزدهر · التحول الرقمي المالي</span><span class="en">Thriving Economy · Digital finance</span></div>
+            <div class="s-links"><a href="https://wadeh-lly2.onrender.com" target="_blank" rel="noopener" class="btn btn-accent sm"><span class="ar">جرّب التطبيق</span><span class="en">Try the app</span> ↗</a><a href="https://www.figma.com/design/qJjKAEzTGd5scJkjaGuV9N/WADEH-%E2%80%93-Digital-Banking-App?node-id=49-2" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Wadeh-v2" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
+          </div>
+        </article>
+        <article class="slide" data-i="3">
+          <div class="s-media thumb thumb-white"><img src="assets/rawiyyah-logo.jpg" alt="RAWIYYAH"></div>
+          <div class="s-info">
+            <div class="s-idx">04<small>/04</small></div>
+            <h3>رَويَّة <bdi>· RAWIYYAH</bdi></h3>
+            <p class="s-hook"><span class="ar">ملاعب دامجة تُراجَع قبل أن تُبنى</span><span class="en">Inclusive playgrounds, reviewed before they’re built</span></p>
+            <p class="s-line"><span class="ar">مخطط ومراجعة بالقواعد وفحص للمسارات في مساحة عمل واحدة.</span><span class="en">Layout, rule-based review and route checks in one workspace.</span></p>
+            <div class="facts"><div class="fact"><span><span class="ar">النوع</span><span class="en">Type</span></span><b><span class="ar">أداة تخطيط</span><span class="en">Planning tool</span></b></div><div class="fact"><span><span class="ar">مبني على</span><span class="en">Based on</span></span><b>UNICEF · Universal Design</b></div><div class="fact"><span><span class="ar">الحالة</span><span class="en">Status</span></span><b><span class="ar">قيد التطوير</span><span class="en">In development</span></b></div></div>
+            <div class="s-vis">🇸🇦 <span class="ar">رؤية 2030</span><span class="en">Vision 2030</span> · <span class="ar">مجتمع حيوي · جودة الحياة</span><span class="en">Vibrant Society · Quality of life</span></div>
+            <div class="s-links"><a href="https://rawiyyah.free.je/" target="_blank" rel="noopener" class="btn btn-accent sm"><span class="ar">جرّب الأداة</span><span class="en">Try it</span> ↗</a><a href="https://www.figma.com/design/2GawzgM1IP3HQyRKrVWjN1/RAWIYYAH?node-id=101-2" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">Figma</span><span class="en">Figma</span> ↗</a><a href="https://github.com/yaass24/Rawiyyah" target="_blank" rel="noopener" class="btn btn-ghost sm"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗</a></div>
+          </div>
+        </article>
+    </div>
+    <div class="sl-dots" id="sl-dots"><i class="on"></i><i></i><i></i><i></i></div>
+    <div class="m2-head r"><span class="ar">تجارب أخرى</span><span class="en">More experiments</span></div>
+    <div class="m2s"><div class="m2 r"><h3>Greno ♻️</h3><p><span class="ar">صوّر النفاية، واعرف أين ترميها</span><span class="en">Snap the waste, learn where it goes</span></p><span>Python · YOLOv8 · Flask</span></div><div class="m2 r"><h3>EduTrack</h3><p><span class="ar">مهامك الدراسية في مكان واحد</span><span class="en">All your coursework in one place</span></p><span>Microsoft Project</span></div><div class="m2 r"><h3><bdi>FitPass+</bdi></h3><p><span class="ar">حصص رياضية ووجبات صحية بلمسة</span><span class="en">Classes and healthy meals in one tap</span></p><span>Figma</span></div><div class="m2 r soon"><h3><span class="ar">قريبًا</span><span class="en">Coming soon</span></h3><p><span class="ar">مشروع جديد لمحور «وطن طموح»</span><span class="en">A new project for “An Ambitious Nation”</span></p><span>// in progress</span></div></div>
+  </section>
+
+  <section id="contact" class="wrap ct2 r">
+    <h2><span class="ar">عجبك اللي شفته؟</span><span class="en">Like what you see?</span></h2>
+    <p><span class="ar">سيرتي الكاملة على LinkedIn، والكود على GitHub.</span><span class="en">My full résumé is on LinkedIn, and the code is on GitHub.</span></p>
+    <div class="actions"><a href="https://www.linkedin.com/in/yasmin-almomen-9a45a13a5" target="_blank" rel="noopener" class="btn btn-accent">LinkedIn ↗</a><a href="https://github.com/yaass24" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=yasssssmin38@gmail.com" target="_blank" rel="noopener" class="btn btn-ghost">Gmail ↗</a></div>
+  </section>
 </main>
 
 <footer>
@@ -581,6 +676,15 @@
   let ri=0,ci=0,del=false;
   (function type(){ if(!roleEl) return; const L=root.classList.contains('lang-en')?ROLES.en:ROLES.ar; const w=L[ri%L.length];
     roleEl.textContent=w.slice(0,ci); if(!del&&ci<w.length){ci++;setTimeout(type,80);} else if(!del){del=true;setTimeout(type,1400);} else if(ci>0){ci--;setTimeout(type,40);} else {del=false;ri++;setTimeout(type,250);} })();
+
+  const sl=document.getElementById('slider');
+  if(sl){ const slides=[...sl.children], dots=[...document.querySelectorAll('#sl-dots i')], cnt=document.getElementById('sl-count'); let cur=0;
+    const go=i=>{cur=(i+slides.length)%slides.length; slides[cur].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});};
+    document.querySelectorAll('.sl-btn').forEach(b=>b.onclick=()=>go(cur+(+b.dataset.d)));
+    dots.forEach((d,i)=>d.onclick=()=>go(i));
+    const ob=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting&&e.intersectionRatio>.6){cur=+e.target.dataset.i; dots.forEach((d,i)=>d.classList.toggle('on',i===cur)); if(cnt) cnt.textContent='0'+(cur+1)+' / 04';}}),{root:sl,threshold:[.6]});
+    slides.forEach(x=>ob.observe(x));
+    let t=setInterval(()=>go(cur+1),6000); sl.addEventListener('pointerenter',()=>clearInterval(t)); }
   const links = document.getElementById('links');
   document.getElementById('menu').onclick = () => links.classList.toggle('open');
   links.querySelectorAll('a').forEach(a => a.onclick = () => links.classList.remove('open'));
