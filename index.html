@@ -42,13 +42,13 @@ html.lang-en body{font-family:Inter,"IBM Plex Sans Arabic",sans-serif}
 /* viewport + board */
 #vp{position:fixed;inset:0;overflow:hidden;cursor:grab;touch-action:none}
 #vp.drag{cursor:grabbing}
-#board{position:absolute;left:0;top:0;width:3700px;height:2400px;transform-origin:0 0;will-change:transform;
+#board{position:absolute;left:0;top:0;width:3400px;height:2760px;transform-origin:0 0;will-change:transform;
  background-image:radial-gradient(rgba(130,170,255,.12) 1.5px,transparent 1.5px);background-size:32px 32px}
 #board.anim{transition:transform .95s cubic-bezier(.65,.02,.2,1)}
 .links{position:absolute;left:0;top:0;pointer-events:none}
 .links path{fill:none;stroke:#2a3a4c;stroke-width:2.5;stroke-dasharray:8 10}
 .note-lbl{position:absolute;font-family:"JetBrains Mono","IBM Plex Sans Arabic",monospace;color:var(--cm);font-size:28px}
-.note-lbl.big{font-size:64px;font-weight:700;color:#1f2a36;letter-spacing:-1px}
+.note-lbl.big{font-size:72px;font-weight:700;color:#243142;letter-spacing:-1px}
 html:not(.lang-en) .note-lbl{font-family:"IBM Plex Sans Arabic",sans-serif}
 /* frames */
 .fr{position:absolute;background:rgba(16,22,29,.9);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45);transition:border-color .3s,box-shadow .3s}
@@ -84,10 +84,10 @@ mark{background:none;color:var(--acc)}
 .f-quote cite{display:block;font-style:normal;color:var(--grn);font-size:17px;margin-top:14px;font-weight:600}
 /* projects */
 .pj{display:grid;grid-template-rows:auto 1fr;height:100%}
-.pj.big{grid-template-columns:1.1fr 1fr;grid-template-rows:auto}
+.pj.big{grid-template-columns:1fr 1fr;grid-template-rows:auto}
 .f-proj .fr-body{padding:0}
 .pj-media{position:relative;display:grid;place-items:center;background:#f6f4ef;padding:30px;min-height:230px}
-.pj.big .pj-media{min-height:560px}
+.pj.big .pj-media{min-height:480px}
 .pj-media img{max-width:78%;max-height:200px;object-fit:contain}
 .pj.big .pj-media img{max-height:340px}
 .pj-media.m-hajar{background:#023620;padding:0}.pj-media.m-hajar img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain}
@@ -106,7 +106,7 @@ mark{background:none;color:var(--acc)}
 .vis{font-size:14px;color:var(--grn)}
 .pj-info .row{margin-top:auto;padding-top:8px}
 /* minis */
-.minis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.minis{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .mini{background:var(--tile);border:1px solid #1a232e;border-radius:16px;padding:20px}
 .mini h4{font-size:20px}.mini p{color:var(--muted);font-size:15px;margin:6px 0 12px;line-height:1.6}
 .mini>span{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--kw)}
@@ -180,35 +180,25 @@ mark{background:none;color:var(--acc)}
 </header>
 
 <div id="vp"><div id="board">
-  <svg class="links" width="3700" height="2400" viewBox="0 0 3700 2400" aria-hidden="true">
-    <path d="M2300 1140 C 2430 1140, 2430 560, 2560 560"/>
-    <path d="M2300 1140 C 2430 1140, 2430 1240, 2560 1240"/>
-    <path d="M2300 1140 C 2430 1140, 2430 1900, 2560 1900"/>
-    <path d="M1300 1140 C 1220 1140, 1220 1080, 1140 1080"/>
-    <path d="M1300 1140 C 1220 1140, 1220 1770, 1140 1770"/>
-    <path d="M1800 1420 L 1800 1500"/>
-    <path d="M1800 1830 L 1800 1920"/>
-    <path d="M1800 800 L 1800 860"/>
-  </svg>
-  <div class="note-lbl" style="left:2560px;top:170px"><span class="ar">// المشاريع</span><span class="en">// projects</span></div>
-  <div class="note-lbl" style="left:140px;top:630px"><span class="ar">// عنّي</span><span class="en">// about</span></div>
-  <div class="note-lbl big" style="left:1300px;top:420px"><span class="ar">بورد ياسمين</span><span class="en">yasmin’s board</span></div>
-  <section class="fr f-quote" id="quote" data-x="1300" data-y="560" data-w="1000" data-h="240" style="left:1300px;top:560px;width:1000px;min-height:240px">
+  <div class="note-lbl big" style="left:100px;top:40px"><span class="ar">بورد ياسمين</span><span class="en">yasmin’s board</span></div>
+  <div class="note-lbl" style="left:100px;top:1090px"><span class="ar">// المشاريع</span><span class="en">// projects</span></div>
+  <div class="note-lbl" style="left:100px;top:2330px">&nbsp;</div>
+  <section class="fr f-quote" id="quote" data-x="1200" data-y="160" data-w="1000" data-h="260" style="left:1200px;top:160px;width:1000px;min-height:260px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/quote.txt</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <blockquote><span class="ar">«إن العالم يعيش في زمن الابتكارات العلمية والتقنية غير المسبوقة، وآفاق النمو غير المحدودة»</span><span class="en">“The world is living in an era of unprecedented scientific and technological innovation, and limitless horizons for growth.”</span></blockquote>
       <cite><span class="ar">صاحب السمو الملكي الأمير محمد بن سلمان بن عبدالعزيز آل سعود</span><span class="en">HRH Prince Mohammed bin Salman bin Abdulaziz Al Saud</span></cite></div>
   </section>
-  <section class="fr f-hero" id="hero" data-x="1300" data-y="860" data-w="1000" data-h="560" style="left:1300px;top:860px;width:1000px;min-height:560px">
+  <section class="fr f-hero" id="hero" data-x="1200" data-y="480" data-w="1000" data-h="560" style="left:1200px;top:480px;width:1000px;min-height:560px">
     <div class="fr-bar"><i></i><i></i><i></i><span>yasmin@portfolio — zsh</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="cmd"><b>❯</b> whoami</div>
       <h1><span class="ar">ياسمين المؤمن</span><span class="en">Yasmin Almomen</span><em><span class="ar">Yasmin Almomen</span><span class="en">ياسمين المؤمن</span></em></h1>
       <p class="tag1"><span class="ar">أبني حلولًا رقمية <mark>لمشاكل حقيقية</mark></span><span class="en">I build digital solutions for <mark>real problems</mark></span><span class="cursor"></span></p>
-      <p class="sub"><span class="ar">نظم معلومات حاسوبية · جامعة الإمام عبدالرحمن بن فيصل</span><span class="en">Computer Information Systems · Imam Abdulrahman Bin Faisal University</span></p>
+      <p class="sub"><span class="ar">طالبة نظم معلومات حاسوبية في السنة الأخيرة · جامعة الإمام عبدالرحمن بن فيصل</span><span class="en">Final-year Computer Information Systems student · Imam Abdulrahman Bin Faisal University</span></p>
       <div class="row"><button class="btn acc" data-go="projects"><span class="ar">استكشف أعمالي ←</span><span class="en">explore my work →</span></button><button class="btn" data-go="overview"><span class="ar">شوف البورد كامل ⊞</span><span class="en">see the whole board ⊞</span></button></div></div>
   </section>
-  <section class="fr f-proj" id="hajar" data-x="2560" data-y="240" data-w="980" data-h="620" style="left:2560px;top:240px;width:980px;min-height:620px">
+  <section class="fr f-proj" id="hajar" data-x="100" data-y="1160" data-w="1550" data-h="540" style="left:100px;top:1160px;width:1550px;min-height:540px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/hajar</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="pj big">
@@ -223,10 +213,10 @@ mark{background:none;color:var(--acc)}
         </div>
       </div></div>
   </section>
-  <section class="fr f-proj" id="mueen" data-x="2560" data-y="940" data-w="470" data-h="600" style="left:2560px;top:940px;width:470px;min-height:600px">
+  <section class="fr f-proj" id="mueen" data-x="100" data-y="1760" data-w="1550" data-h="540" style="left:100px;top:1760px;width:1550px;min-height:540px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/mueen</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
-      <div class="pj">
+      <div class="pj big">
         <div class="pj-media "><img src="assets/mueen-logo.png" alt="MU'EEN"><span class="status dev"><i></i><span class="ar">نموذج أولي</span><span class="en">Prototype</span></span></div>
         <div class="pj-info">
           <h3>مُعين <bdi>· MU'EEN</bdi></h3>
@@ -238,10 +228,10 @@ mark{background:none;color:var(--acc)}
         </div>
       </div></div>
   </section>
-  <section class="fr f-proj" id="wadeh" data-x="3070" data-y="940" data-w="470" data-h="600" style="left:3070px;top:940px;width:470px;min-height:600px">
+  <section class="fr f-proj" id="wadeh" data-x="1750" data-y="1760" data-w="1550" data-h="540" style="left:1750px;top:1760px;width:1550px;min-height:540px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/wadeh</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
-      <div class="pj">
+      <div class="pj big">
         <div class="pj-media "><img src="assets/wadeh-logo.png" alt="WADEH"><span class="status live"><i></i><span class="ar">الإصدار 2</span><span class="en">v2</span></span></div>
         <div class="pj-info">
           <h3>واضح <bdi>· WADEH</bdi></h3>
@@ -253,7 +243,7 @@ mark{background:none;color:var(--acc)}
         </div>
       </div></div>
   </section>
-  <section class="fr f-proj" id="rawiyyah" data-x="2560" data-y="1620" data-w="980" data-h="560" style="left:2560px;top:1620px;width:980px;min-height:560px">
+  <section class="fr f-proj" id="rawiyyah" data-x="1750" data-y="1160" data-w="1550" data-h="540" style="left:1750px;top:1160px;width:1550px;min-height:540px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/rawiyyah</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="pj big">
@@ -268,23 +258,23 @@ mark{background:none;color:var(--acc)}
         </div>
       </div></div>
   </section>
-  <section class="fr f-more" id="more" data-x="1300" data-y="1500" data-w="1000" data-h="330" style="left:1300px;top:1500px;width:1000px;min-height:330px">
+  <section class="fr f-more" id="more" data-x="2300" data-y="640" data-w="1000" data-h="400" style="left:2300px;top:640px;width:1000px;min-height:400px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/more</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="lbl"><span class="ar">تجارب أخرى</span><span class="en">More experiments</span></div>
       <div class="minis"><div class="mini "><h4>Greno ♻️</h4><p><span class="ar">صوّر النفاية، واعرف أين ترميها</span><span class="en">Snap the waste, learn where it goes</span></p><span>Python · YOLOv8 · Flask</span></div><div class="mini "><h4>EduTrack</h4><p><span class="ar">مهامك الدراسية في مكان واحد</span><span class="en">All your coursework in one place</span></p><span>Microsoft Project</span></div><div class="mini "><h4><bdi>FitPass+</bdi></h4><p><span class="ar">حصص رياضية ووجبات صحية بلمسة</span><span class="en">Classes and healthy meals in one tap</span></p><span>Figma</span></div><div class="mini soon"><h4><span class="ar">قريبًا</span><span class="en">Coming soon</span></h4><p><span class="ar">مشروع جديد لمحور «وطن طموح»</span><span class="en">A new project for “An Ambitious Nation”</span></p><span>// in progress</span></div></div></div>
   </section>
-  <section class="fr f-about" id="about" data-x="140" data-y="760" data-w="1000" data-h="600" style="left:140px;top:760px;width:1000px;min-height:600px">
+  <section class="fr f-about" id="about" data-x="100" data-y="160" data-w="1000" data-h="880" style="left:100px;top:160px;width:1000px;min-height:880px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/about.md</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="lbl"><span class="ar">عنّي</span><span class="en">about</span></div>
       <h2><span class="ar">مرحبًا، أنا ياسمين</span><span class="en">Hi, I’m Yasmin</span></h2>
-      <p class="lead"><span class="ar">طالبة نظم معلومات حاسوبية، أهتم بالربط بين البيانات والتقنية وإدارة المشاريع، لتقديم حلول عملية تصنع قيمة حقيقية للأعمال وتدعم رؤية المملكة 2030؛ أبدأ بفهم المشكلة بعمق، وأنتهي بحلٍّ عامل قابل للاختبار.</span><span class="en">Computer Information Systems student interested in bridging data, technology, and project management to deliver practical solutions that drive business value and support Saudi Vision 2030. I start by deeply understanding the problem and finish with a working, testable solution.</span></p>
+      <p class="lead"><span class="ar">طالبة في السنة الأخيرة بتخصص نظم المعلومات الحاسوبية، أهتم بالربط بين البيانات والتقنية وإدارة المشاريع، لتقديم حلول عملية تصنع قيمة حقيقية للأعمال وتدعم رؤية المملكة 2030؛ أبدأ بفهم المشكلة بعمق، وأنتهي بحلٍّ عامل قابل للاختبار.</span><span class="en">Final-year Computer Information Systems student interested in bridging data, technology, and project management to deliver practical solutions that drive business value and support Saudi Vision 2030. I start by deeply understanding the problem and finish with a working, testable solution.</span></p>
       <p class="motto"><span class="ar">«قوة الأنظمة ليست في تعقيدها التقني، بل في قدرتها على تحويل التعقيد إلى وضوح، والبيانات إلى قرارات، والاحتياجات إلى حلول.»</span><span class="en">“The power of systems lies not in their technical complexity, but in their ability to turn complexity into clarity, data into decisions, and needs into solutions.”</span></p>
       <div class="chips x"><span><span class="ar">تحليل البيانات</span><span class="en">Data Analytics</span></span><span><span class="ar">ذكاء الأعمال</span><span class="en">Business Intelligence</span></span><span><span class="ar">تحليل النظم</span><span class="en">Systems Analysis</span></span><span><span class="ar">إدارة المشاريع</span><span class="en">Project Management</span></span><span><span class="ar">UX/UI</span><span class="en">UX/UI</span></span><span><span class="ar">ERP</span><span class="en">ERP</span></span></div>
       <div class="chips"><span>Python</span><span>SQL Server</span><span>Power BI</span><span>Figma</span><span>Microsoft Project</span><span>Excel</span><span>Odoo</span><span>YOLOv8</span><span>Flask</span><span>Git</span></div></div>
   </section>
-  <section class="fr f-vision" id="vision" data-x="140" data-y="1560" data-w="1000" data-h="420" style="left:140px;top:1560px;width:1000px;min-height:420px">
+  <section class="fr f-vision" id="vision" data-x="2300" data-y="160" data-w="1000" data-h="420" style="left:2300px;top:160px;width:1000px;min-height:420px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/vision-2030.md</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="lbl"><span class="ar">رؤية 2030</span><span class="en">Vision 2030</span></div>
@@ -292,7 +282,7 @@ mark{background:none;color:var(--acc)}
       <div class="vps"><div class="vp "><b><span class="ar">مجتمع حيوي</span><span class="en">A Vibrant Society</span></b><span><span class="ar">هَجَر · مُعين · رَويَّة</span><span class="en">HAJAR · MU'EEN · RAWIYYAH</span></span></div><div class="vp "><b><span class="ar">اقتصاد مزدهر</span><span class="en">A Thriving Economy</span></b><span><span class="ar">واضح</span><span class="en">WADEH</span></span></div><div class="vp soon"><b><span class="ar">وطن طموح</span><span class="en">An Ambitious Nation</span></b><span><span class="ar">قريبًا…</span><span class="en">Coming soon…</span></span></div></div>
       <p class="note"><span class="ar">ارتباط بمحاور الرؤية، وليس تبعية رسمية.</span><span class="en">Thematic alignment, not an official affiliation.</span></p></div>
   </section>
-  <section class="fr f-contact" id="contact" data-x="1300" data-y="1920" data-w="1000" data-h="300" style="left:1300px;top:1920px;width:1000px;min-height:300px">
+  <section class="fr f-contact" id="contact" data-x="1200" data-y="2380" data-w="1000" data-h="300" style="left:1200px;top:2380px;width:1000px;min-height:300px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/contact</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <h2><span class="ar">لنصنع أثرًا معًا</span><span class="en">Let’s build impact together</span></h2>
@@ -323,8 +313,8 @@ const mobile=()=>matchMedia('(max-width:760px)').matches;
 let s=1,tx=0,ty=0,cur=1;
 const apply=(anim)=>{board.classList.toggle('anim',!!anim);board.style.transform=`translate(${tx}px,${ty}px) scale(${s})`;};
 const rectOf=id=>{
-  if(id==='overview') return {x:100,y:150,w:3500,h:2120};
-  if(id==='projects') return {x:2540,y:220,w:1020,h:1980};
+  if(id==='overview') return {x:60,y:20,w:3280,h:2700};
+  if(id==='projects') return {x:100,y:1100,w:3200,h:1220};
   const el=document.getElementById(id); return {x:+el.dataset.x,y:+el.dataset.y,w:+el.dataset.w,h:Math.max(+el.dataset.h,el.offsetHeight)};
 };
 function fit(r,anim=true){
