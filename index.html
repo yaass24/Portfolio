@@ -178,11 +178,14 @@ mark{background:none;color:var(--acc)}
 .dash-card>p{color:var(--muted);font-size:15px;margin:4px 0 12px}
 .dash-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .dash-grid figure{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0a0f15}
-.dash-grid img{display:block;width:100%;aspect-ratio:16/9.4;object-fit:cover;background:#fff}
+.dash-grid img{display:block;width:100%;aspect-ratio:16/9.4;object-fit:contain;background:#eef0f3;cursor:zoom-in}
 .dash-grid figcaption{padding:10px 12px;font-size:14px;font-weight:600;display:flex;flex-direction:column;gap:2px}
 .dash-grid figcaption small{font-family:"JetBrains Mono",monospace;font-weight:400;font-size:11.5px;color:var(--kw);direction:ltr;text-align:start}
 [dir=rtl] .dash-grid figcaption small{text-align:right}
 @media (max-width:760px){.dash-card{padding:14px}.dash-grid{grid-template-columns:1fr}.dash-head h4{font-size:17px}.dash-card>p{font-size:14px}}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(5,8,12,.88);display:grid;place-items:center;padding:20px}
+.lb[hidden]{display:none}.lb img{max-width:min(1400px,96vw);max-height:86dvh;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb button{position:absolute;top:16px;inset-inline-end:16px;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:18px}
 /* a11y */
 :focus{outline:none}
 :focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:10px}
@@ -431,6 +434,7 @@ mark{background:none;color:var(--acc)}
   <ul id="idx-list"></ul></div>
 </div>
 <div class="prog" id="prog"></div>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true"><img id="lb-img" alt=""><button id="lb-x" aria-label="Close / إغلاق">✕</button></div>
 
 <script>
 (function(){
@@ -529,6 +533,10 @@ document.getElementById('lang').onclick=()=>{ const en=!root.classList.contains(
     document.querySelectorAll('.cv-btn').forEach(a=>{a.href=u; a.hidden=false;}); };
   set(); document.getElementById('lang').addEventListener('click',set);
 })();
+const lb=document.getElementById('lb'), lbi=document.getElementById('lb-img');
+document.querySelectorAll('.dash-grid img').forEach(im=>{ im.tabIndex=0; const open=e=>{ e.stopPropagation(); lbi.src=im.src; lbi.alt=im.alt; lb.hidden=false; document.getElementById('lb-x').focus(); }; im.addEventListener('click',open); im.addEventListener('keydown',e=>{ if(e.key==='Enter') open(e); }); });
+const lbClose=()=>{ lb.hidden=true; }; document.getElementById('lb-x').onclick=lbClose; lb.addEventListener('click',e=>{ if(e.target===lb) lbClose(); });
+addEventListener('keydown',e=>{ if(e.key==='Escape'&&!lb.hidden) lbClose(); });
 // intro: show whole board, then fly to hero
 if(mobile()){ deck('hero',1); }
 else { fit(rectOf('overview'),false); label('overview'); cur=0; setTimeout(()=>go('hero'),1100); }
