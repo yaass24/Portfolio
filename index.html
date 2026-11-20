@@ -140,10 +140,10 @@ mark{background:none;color:var(--acc)}
 .chips>span{font-family:"JetBrains Mono",monospace;font-size:14px;border:1px solid var(--line);background:var(--tile);padding:8px 13px;border-radius:8px;color:#c9d3dd}
 .chips.x>span{font-family:inherit;font-weight:600;color:var(--acc);border-color:rgba(212,255,63,.35);background:rgba(212,255,63,.06)}
 /* vision */
-.vps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.vps{display:flex;flex-direction:column;gap:12px}
 .vp{background:linear-gradient(160deg,rgba(0,108,53,.25),var(--tile) 70%);border:1px solid rgba(127,216,166,.2);border-radius:14px;padding:20px}
-.vp{position:relative;overflow:hidden}.vn{position:absolute;inset-inline-end:12px;top:4px;font-family:"JetBrains Mono",monospace;font-size:46px;font-weight:700;color:rgba(127,216,166,.12)}
-.vp b{display:block;color:var(--grn);font-size:22px;margin-bottom:8px;position:relative}.vk{font-size:14px;color:#b4bfcb;position:relative;line-height:1.6}
+.vp{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px!important}.vn{position:absolute;inset-inline-end:50%;top:-2px;font-family:"JetBrains Mono",monospace;font-size:46px;font-weight:700;color:rgba(127,216,166,.12)}
+.vp b{display:block;color:var(--grn);font-size:22px;position:relative}.vk{font-size:14px;color:#b4bfcb;position:relative;line-height:1.6}
 .vp.soon>span{color:var(--acc)}
 .note{color:var(--cm);font-size:14px;margin-top:14px}
 /* contact */
@@ -178,7 +178,7 @@ mark{background:none;color:var(--acc)}
   .pj-info{padding:22px 20px}.pj-info h3{font-size:26px}.hook{font-size:18px}.line{font-size:15px}
   .facts{grid-template-columns:1fr 1fr 1fr}.fact b{font-size:12px}
   .f-vision .fr-body{display:flex;flex-direction:column;justify-content:center;min-height:calc(100% - 50px)}
-  .minis{grid-template-columns:1fr}.vps{grid-template-columns:repeat(3,1fr);gap:8px}.vp{padding:14px 10px}.vp b{font-size:15px}.vk{font-size:12px;display:block}.vp{padding:18px 10px 16px}.vn{font-size:30px}
+  .minis{grid-template-columns:1fr}.vp{flex-direction:column;align-items:flex-start;gap:6px;padding:16px 18px!important}.vp b{font-size:19px}.vk{font-size:13px}.vn{font-size:34px;inset-inline-end:12px}
   .lead{font-size:16px}.motto{font-size:18px}.f-contact h2{font-size:32px}
   .f-contact .fr-body{display:flex;flex-direction:column;justify-content:center;min-height:calc(100% - 50px)}
   .btn{padding:12px 18px;font-size:15px}
@@ -308,7 +308,7 @@ mark{background:none;color:var(--acc)}
       <div class="chips x"><span><span class="ar">تحليل البيانات</span><span class="en">Data Analytics</span></span><span><span class="ar">ذكاء الأعمال</span><span class="en">Business Intelligence</span></span><span><span class="ar">تحليل النظم</span><span class="en">Systems Analysis</span></span><span><span class="ar">إدارة المشاريع</span><span class="en">Project Management</span></span><span><span class="ar">UX/UI</span><span class="en">UX/UI</span></span><span><span class="ar">ERP</span><span class="en">ERP</span></span></div>
       <div class="chips"><span>Python</span><span>SQL Server</span><span>Power BI</span><span>Figma</span><span>Microsoft Project</span><span>Excel</span><span>Odoo</span><span>YOLOv8</span><span>Flask</span><span>Git</span></div></div>
   </section>
-  <section class="fr f-vision" id="vision" data-x="2400" data-y="160" data-w="1000" data-h="420" style="left:2400px;top:160px;width:1000px;min-height:420px">
+  <section class="fr f-vision" id="vision" data-x="2400" data-y="160" data-w="1000" data-h="440" style="left:2400px;top:160px;width:1000px;min-height:440px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/vision-2030.md</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="lbl"><span class="ar">رؤية 2030</span><span class="en">Vision 2030</span></div>
