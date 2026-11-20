@@ -115,6 +115,18 @@ mark{background:none;color:var(--acc)}
 @keyframes pulse{50%{transform:scale(1.06);box-shadow:0 0 40px rgba(212,255,63,.18)}}
 .f-next{border-style:dashed;border-color:rgba(212,255,63,.3)}
 .f-proj .pj-media{min-height:340px}
+
+/* unified project media */
+.f-proj .pj-media,.f-proj .pj-media.m-hajar,.f-proj .pj-media.m-white,.f-proj .pj-media.m-next{background:radial-gradient(circle at 50% 40%,rgba(212,255,63,.07),transparent 65%),repeating-linear-gradient(0deg,transparent 0 31px,rgba(130,170,255,.06) 31px 32px),repeating-linear-gradient(90deg,transparent 0 31px,rgba(130,170,255,.06) 31px 32px),#0b1016;padding:0;min-height:340px;border-bottom:1px solid var(--line)}
+.logo-card{width:300px;height:200px;border-radius:24px;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06)}
+.logo-card img{max-width:78%!important;max-height:72%!important;width:auto!important;height:auto!important;object-fit:contain}
+.logo-card.lc-fill{background:#023620}.logo-card.lc-fill img{max-width:100%!important;max-height:100%!important;width:100%!important;height:100%!important;object-fit:cover}
+.logo-card.lc-wide img{transform:scale(1.25)}
+.logo-card.lc-next{background:transparent;border:3px dashed rgba(212,255,63,.5);box-shadow:none;animation:pulse 2.4s ease-in-out infinite}
+.logo-card.lc-next .nx-q{border:0;width:auto;height:auto;animation:none}
+.mono-b{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:13px!important;direction:ltr;display:block;text-align:start}
+.hook{min-height:2.6em}.line{min-height:5.1em}
+@media (max-width:760px){.f-proj .pj-media{min-height:250px}.logo-card{width:240px;height:160px}.hook,.line{min-height:0}}
 /* minis */
 .minis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .mini{background:var(--tile);border:1px solid #1a232e;border-radius:16px;padding:20px}
@@ -214,13 +226,13 @@ mark{background:none;color:var(--acc)}
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/hajar</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="pj">
-        <div class="pj-media m-hajar"><img src="assets/hajar-logo.png" alt="HAJAR"><span class="status live"><i></i><span class="ar">الإصدار 2</span><span class="en">v2</span></span></div>
+        <div class="pj-media"><div class="logo-card lc-fill"><img src="assets/hajar-logo.png" alt="HAJAR"></div><span class="status live"><i></i><span class="ar">الإصدار 2</span><span class="en">Version 2</span></span></div>
         <div class="pj-info">
           <h3><span class="ar">هَجَر <bdi>· HAJAR</bdi></span><span class="en">HAJAR <bdi class="bd-ar"><span class="dt">·</span> هَجَر</bdi></span></h3>
           <p class="hook"><span class="ar">الأحساء في لعبة ثلاثية الأبعاد</span><span class="en">Al-Ahsa as a 3D adventure</span></p>
-          <p class="line"><span class="ar">١٠ مراحل من الواحة وجامع جواثا وعين الحارة إلى المزارع، تُلعب من المتصفح على أي جهاز وتدعم يد PlayStation.</span><span class="en">10 stages from the oasis, Jawatha Mosque and Ain Al-Harah to the farms, playable in any browser with PlayStation controller support.</span></p>
-          <div class="facts"><div class="fact"><span><span class="ar">النوع</span><span class="en">Type</span></span><b><span class="ar">لعبة ثلاثية الأبعاد</span><span class="en">3D game</span></b></div><div class="fact"><span><span class="ar">دوري</span><span class="en">Role</span></span><b><span class="ar">فكرة وتصميم وتطوير</span><span class="en">Idea, design, build</span></b></div><div class="fact"><span><span class="ar">الحالة</span><span class="en">Status</span></span><b><span class="ar">الإصدار 2</span><span class="en">Version 2</span></b></div></div>
-          <div class="row"><a href="https://hajar-3d-adventure.yaassmin38.workers.dev/" target="_blank" rel="noopener" class="btn acc sm"><span class="ar">العب الآن</span><span class="en">Play now</span> ↗&#xFE0E;</a><a href="https://www.figma.com/design/ATX26Fxhx2PWwExfgdswzQ" target="_blank" rel="noopener" class="btn sm"><span class="ar">Figma</span><span class="en">Figma</span> ↗&#xFE0E;</a><a href="https://github.com/yaass24/Hajar" target="_blank" rel="noopener" class="btn sm"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗&#xFE0E;</a></div>
+          <p class="line"><span class="ar">رحلة من ١٠ مراحل بين معالم الأحساء، تُلعب من المتصفح على أي جهاز.</span><span class="en">A 10-stage journey through Al-Ahsa’s landmarks, playable in any browser.</span></p>
+          <div class="facts"><div class="fact"><span><span class="ar">النوع</span><span class="en">Type</span></span><b><span class="ar">لعبة</span><span class="en">Game</span></b></div><div class="fact"><span><span class="ar">الأدوات</span><span class="en">Tools</span></span><b class="mono-b">JS · 3D</b></div><div class="fact"><span><span class="ar">الحالة</span><span class="en">Status</span></span><b><span class="ar">الإصدار 2</span><span class="en">Version 2</span></b></div></div>
+          <div class="row"><a href="https://hajar-3d-adventure.yaassmin38.workers.dev/" target="_blank" rel="noopener" class="btn acc sm"><span class="ar">جرّب</span><span class="en">Try it</span> ↗&#xFE0E;</a><a href="https://www.figma.com/design/ATX26Fxhx2PWwExfgdswzQ" target="_blank" rel="noopener" class="btn sm"><span class="ar">Figma</span><span class="en">Figma</span> ↗&#xFE0E;</a><a href="https://github.com/yaass24/Hajar" target="_blank" rel="noopener" class="btn sm"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗&#xFE0E;</a></div>
         </div>
       </div></div>
   </section>
@@ -228,12 +240,12 @@ mark{background:none;color:var(--acc)}
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/mueen</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="pj">
-        <div class="pj-media "><img src="assets/mueen-logo.png" alt="MU'EEN"><span class="status dev"><i></i><span class="ar">نموذج أولي</span><span class="en">Prototype</span></span></div>
+        <div class="pj-media"><div class="logo-card "><img src="assets/mueen-logo.png" alt="MU'EEN"></div><span class="status dev"><i></i><span class="ar">نموذج أولي</span><span class="en">Prototype</span></span></div>
         <div class="pj-info">
           <h3><span class="ar">مُعين <bdi>· MU'EEN</bdi></span><span class="en">MU'EEN <bdi class="bd-ar"><span class="dt">·</span> مُعين</bdi></span></h3>
-          <p class="hook"><span class="ar">يكشف عوائق الطالب الصحية قبل أن يصل إليها</span><span class="en">Spots campus barriers before students reach them</span></p>
-          <p class="line"><span class="ar">يربط الاحتياج الصحي بالجدول وحالة المرافق، وبلاغ فوري بمسح QR عند كل دور.</span><span class="en">Links health needs to schedules and facilities, with instant QR alerts on every floor.</span></p>
-          <div class="facts"><div class="fact"><span><span class="ar">النوع</span><span class="en">Type</span></span><b><span class="ar">نظام جامعي</span><span class="en">University system</span></b></div><div class="fact"><span><span class="ar">الفريق</span><span class="en">Team</span></span><b>Innovision</b></div><div class="fact"><span><span class="ar">الحالة</span><span class="en">Status</span></span><b><span class="ar">نموذج أولي</span><span class="en">Prototype</span></b></div></div>
+          <p class="hook"><span class="ar">عوائق الحرم تُكتشف قبل الوصول إليها</span><span class="en">Campus barriers, caught before students reach them</span></p>
+          <p class="line"><span class="ar">يربط احتياج الطالب الصحي بجدوله وحالة المرافق، ويتيح بلاغًا فوريًا بمسح QR.</span><span class="en">Links a student’s health needs to their schedule and facilities, with instant QR alerts.</span></p>
+          <div class="facts"><div class="fact"><span><span class="ar">النوع</span><span class="en">Type</span></span><b><span class="ar">نظام</span><span class="en">System</span></b></div><div class="fact"><span><span class="ar">الأدوات</span><span class="en">Tools</span></span><b class="mono-b">Web · Figma</b></div><div class="fact"><span><span class="ar">الحالة</span><span class="en">Status</span></span><b><span class="ar">نموذج أولي</span><span class="en">Prototype</span></b></div></div>
           <div class="row"><a href="https://yaass24.github.io/Mu-een/" target="_blank" rel="noopener" class="btn acc sm"><span class="ar">جرّب</span><span class="en">Try it</span> ↗&#xFE0E;</a><a href="https://www.figma.com/design/sXCsdqLnoGpQ19vTEYezXS/mu-een?node-id=78-2" target="_blank" rel="noopener" class="btn sm"><span class="ar">Figma</span><span class="en">Figma</span> ↗&#xFE0E;</a><a href="https://github.com/yaass24/Mu-een" target="_blank" rel="noopener" class="btn sm"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗&#xFE0E;</a></div>
         </div>
       </div></div>
@@ -242,12 +254,12 @@ mark{background:none;color:var(--acc)}
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/wadeh</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="pj">
-        <div class="pj-media "><img src="assets/wadeh-logo.png" alt="WADEH"><span class="status live"><i></i><span class="ar">الإصدار 2</span><span class="en">v2</span></span></div>
+        <div class="pj-media"><div class="logo-card lc-wide"><img src="assets/wadeh-logo.png" alt="WADEH"></div><span class="status live"><i></i><span class="ar">الإصدار 2</span><span class="en">Version 2</span></span></div>
         <div class="pj-info">
           <h3><span class="ar">واضح <bdi>· WADEH</bdi></span><span class="en">WADEH <bdi class="bd-ar"><span class="dt">·</span> واضح</bdi></span></h3>
-          <p class="hook"><span class="ar">التزاماتك الشهرية في موعدها، حتى في السيارة</span><span class="en">Never miss a payment, even on CarPlay</span></p>
-          <p class="line"><span class="ar">بنك رقمي يذكّرك عبر تقويم الآيفون وCarPlay، مع ويدجت للرصيد ودخول بـ Face ID.</span><span class="en">A digital bank that reminds you via iPhone Calendar and CarPlay, with a balance widget and Face ID.</span></p>
-          <div class="facts"><div class="fact"><span><span class="ar">النوع</span><span class="en">Type</span></span><b><span class="ar">بنك رقمي</span><span class="en">Digital bank</span></b></div><div class="fact"><span><span class="ar">يشمل</span><span class="en">Includes</span></span><b><span class="ar">دراسة حالة UX</span><span class="en">UX case study</span></b></div><div class="fact"><span><span class="ar">الحالة</span><span class="en">Status</span></span><b><span class="ar">الإصدار 2</span><span class="en">Version 2</span></b></div></div>
+          <p class="hook"><span class="ar">التزاماتك الشهرية في موعدها</span><span class="en">Monthly payments, never missed</span></p>
+          <p class="line"><span class="ar">بنك رقمي يذكّرك بالأقساط والفواتير عبر تقويم الآيفون وCarPlay.</span><span class="en">A digital bank that reminds you of installments and bills via iPhone Calendar and CarPlay.</span></p>
+          <div class="facts"><div class="fact"><span><span class="ar">النوع</span><span class="en">Type</span></span><b><span class="ar">تطبيق</span><span class="en">App</span></b></div><div class="fact"><span><span class="ar">الأدوات</span><span class="en">Tools</span></span><b class="mono-b">Node.js · Figma</b></div><div class="fact"><span><span class="ar">الحالة</span><span class="en">Status</span></span><b><span class="ar">الإصدار 2</span><span class="en">Version 2</span></b></div></div>
           <div class="row"><a href="https://wadeh-lly2.onrender.com" target="_blank" rel="noopener" class="btn acc sm"><span class="ar">جرّب</span><span class="en">Try it</span> ↗&#xFE0E;</a><a href="https://www.figma.com/design/qJjKAEzTGd5scJkjaGuV9N/WADEH-%E2%80%93-Digital-Banking-App?node-id=49-2" target="_blank" rel="noopener" class="btn sm"><span class="ar">Figma</span><span class="en">Figma</span> ↗&#xFE0E;</a><a href="https://github.com/yaass24/Wadeh-v2" target="_blank" rel="noopener" class="btn sm"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗&#xFE0E;</a></div>
         </div>
       </div></div>
@@ -256,12 +268,12 @@ mark{background:none;color:var(--acc)}
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/rawiyyah</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="pj">
-        <div class="pj-media m-white"><img src="assets/rawiyyah-logo.jpg" alt="RAWIYYAH"><span class="status dev"><i></i><span class="ar">نموذج أولي</span><span class="en">Prototype</span></span></div>
+        <div class="pj-media"><div class="logo-card "><img src="assets/rawiyyah-logo.jpg" alt="RAWIYYAH"></div><span class="status dev"><i></i><span class="ar">نموذج أولي</span><span class="en">Prototype</span></span></div>
         <div class="pj-info">
           <h3><span class="ar">رَويَّة <bdi>· RAWIYYAH</bdi></span><span class="en">RAWIYYAH <bdi class="bd-ar"><span class="dt">·</span> رَويَّة</bdi></span></h3>
           <p class="hook"><span class="ar">ملاعب دامجة تُراجَع قبل أن تُبنى</span><span class="en">Inclusive playgrounds, reviewed before they’re built</span></p>
-          <p class="line"><span class="ar">مخطط ومراجعة مبنية على قواعد وفحص لترابط المسارات في مساحة عمل واحدة، مستندة إلى التصميم الشامل ودليل UNICEF.</span><span class="en">Layout, rule-based review and route-connectivity checks in one workspace, grounded in Universal Design and the UNICEF toolkit.</span></p>
-          <div class="facts"><div class="fact"><span><span class="ar">النوع</span><span class="en">Type</span></span><b><span class="ar">أداة تخطيط</span><span class="en">Planning tool</span></b></div><div class="fact"><span><span class="ar">مبني على</span><span class="en">Based on</span></span><b>UNICEF</b></div><div class="fact"><span><span class="ar">الحالة</span><span class="en">Status</span></span><b><span class="ar">نموذج أولي</span><span class="en">Prototype</span></b></div></div>
+          <p class="line"><span class="ar">مساحة عمل تراجع مخطط الملعب بالقواعد وتفحص ترابط مساراته قبل التنفيذ.</span><span class="en">A workspace that checks a playground layout against rules and route connectivity before building.</span></p>
+          <div class="facts"><div class="fact"><span><span class="ar">النوع</span><span class="en">Type</span></span><b><span class="ar">أداة</span><span class="en">Tool</span></b></div><div class="fact"><span><span class="ar">الأدوات</span><span class="en">Tools</span></span><b class="mono-b">PHP · MySQL</b></div><div class="fact"><span><span class="ar">الحالة</span><span class="en">Status</span></span><b><span class="ar">نموذج أولي</span><span class="en">Prototype</span></b></div></div>
           <div class="row"><a href="https://rawiyyah.free.je/" target="_blank" rel="noopener" class="btn acc sm"><span class="ar">جرّب</span><span class="en">Try it</span> ↗&#xFE0E;</a><a href="https://www.figma.com/design/2GawzgM1IP3HQyRKrVWjN1/RAWIYYAH?node-id=101-2" target="_blank" rel="noopener" class="btn sm"><span class="ar">Figma</span><span class="en">Figma</span> ↗&#xFE0E;</a><a href="https://github.com/yaass24/Rawiyyah" target="_blank" rel="noopener" class="btn sm"><span class="ar">GitHub</span><span class="en">GitHub</span> ↗&#xFE0E;</a></div>
         </div>
       </div></div>
@@ -270,11 +282,12 @@ mark{background:none;color:var(--acc)}
     <div class="fr-bar"><i></i><i></i><i></i><span>~/projects/next</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <div class="pj">
-        <div class="pj-media m-next"><div class="nx"><span class="nx-q">?</span><span class="nx-t"><span class="ar">قريبًا</span><span class="en">coming soon</span></span></div><span class="status dev"><i></i><span class="ar">قيد العمل</span><span class="en">In progress</span></span></div>
+        <div class="pj-media"><div class="logo-card lc-next"><span class="nx-q">?</span></div><span class="status dev"><i></i><span class="ar">قيد العمل</span><span class="en">In progress</span></span></div>
         <div class="pj-info">
           <h3><span class="ar">المشروع القادم</span><span class="en">Next project</span></h3>
           <p class="hook"><span class="ar">شيء جديد يُبنى الآن</span><span class="en">Something new is being built</span></p>
-          <p class="line"><span class="ar">أعمل حاليًا على مشروع جديد، فكرته تبدأ كالعادة من مشكلة حقيقية. ترقّبوه.</span><span class="en">I’m working on a new project that, as always, starts from a real problem. Stay tuned.</span></p>
+          <p class="line"><span class="ar">مشروع جديد يبدأ كالعادة من مشكلة حقيقية، ترقّبوه قريبًا.</span><span class="en">A new project that, as always, starts from a real problem. Coming soon.</span></p>
+          <div class="facts"><div class="fact"><span><span class="ar">النوع</span><span class="en">Type</span></span><b>—</b></div><div class="fact"><span><span class="ar">الأدوات</span><span class="en">Tools</span></span><b class="mono-b">—</b></div><div class="fact"><span><span class="ar">الحالة</span><span class="en">Status</span></span><b><span class="ar">قيد العمل</span><span class="en">In progress</span></b></div></div>
           <div class="row"><a href="https://www.linkedin.com/in/yasmin-almomen-9a45a13a5" target="_blank" rel="noopener" class="btn acc sm"><span class="ar">تابعني لتعرفه أولًا</span><span class="en">Follow to see it first</span> ↗&#xFE0E;</a></div>
         </div>
       </div></div>
