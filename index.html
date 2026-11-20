@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<script>try{var th=localStorage.getItem('theme');if(th==='light'||(!th&&matchMedia('(prefers-color-scheme: light)').matches))document.documentElement.classList.add('light');}catch(e){}try{if(localStorage.getItem('lang')==='en'){document.documentElement.classList.add('lang-en');document.documentElement.lang='en';document.documentElement.dir='ltr';}}catch(e){}</script>
+<script>try{if(localStorage.getItem('theme')==='light')document.documentElement.classList.add('light');}catch(e){}try{if(localStorage.getItem('lang')==='en'){document.documentElement.classList.add('lang-en');document.documentElement.lang='en';document.documentElement.dir='ltr';}}catch(e){}</script>
 <style>
 :root{--glass:rgba(16,22,29,.85);--frame:rgba(16,22,29,.9);--topbar:rgba(10,14,19,.96);--hover:#1a232e;--bar:#121922;--deep:#0a0f15;--soft:#b9c3ce;--ghost:#243142;--dot:rgba(130,170,255,.12);--bg:#0a0e13;--panel:#10161d;--tile:#0d1218;--line:#1d2733;--text:#e6edf3;--muted:#9aa6b4;--acc:#d4ff3f;--kw:#c792ea;--fn:#82aaff;--num:#f78c6c;--cm:#8494a6;--grn:#7fd8a6}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -193,26 +193,40 @@ mark{background:none;color:var(--acc)}
 .lb button{position:absolute;top:16px;inset-inline-end:16px;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:18px}
 [hidden]{display:none!important}
 
-html.light{--bg:#f3f5f8;--panel:#ffffff;--tile:#f7f9fb;--line:#dde3ea;--text:#0f1720;--muted:#5b6876;--cm:#6b7a8c;--acc:#c4f000;--kw:#8a3ec7;--fn:#2f6fd6;--num:#d0602f;--grn:#0f8a52;
- --glass:rgba(255,255,255,.88);--frame:rgba(255,255,255,.96);--topbar:rgba(243,245,248,.96);--hover:#eef2f6;--bar:#f0f3f7;--deep:#f3f6f9;--soft:#384554;--ghost:#d9e0e8;--dot:rgba(47,111,214,.14)}
+html.light{--bg:#eef1f5;--panel:#ffffff;--tile:#f6f8fa;--line:#e1e6ec;--text:#111827;--muted:#5f6b7a;--cm:#7a8696;--acc:#c6f432;--kw:#7c3aed;--fn:#2563eb;--num:#c2410c;--grn:#047857;
+ --glass:rgba(255,255,255,.92);--frame:#ffffff;--topbar:rgba(238,241,245,.95);--hover:#f1f4f8;--bar:#f6f8fa;--deep:#f6f8fa;--soft:#374151;--ghost:#dfe5ec;--dot:rgba(17,24,39,.09)}
 html.light body{color:var(--text)}
-html.light .fr{box-shadow:0 20px 50px rgba(20,40,70,.10)}
-html.light .fr.active{border-color:#9ccc00;box-shadow:0 0 0 1px rgba(156,204,0,.25),0 20px 50px rgba(20,40,70,.12)}
-html.light .btn.acc,html.light .chipbtn.acc{color:#0f1720}
-html.light mark,html.light .f-hero h1 em,html.light .logo .u,html.light .dock .where b,html.light .ix-p.on,html.light .lrn-ic,html.light .mini.soon h4,html.light .vp.soon>span{color:#5c7d00}
-html.light .logo-card.lc-next{border-color:rgba(92,125,0,.5)}html.light .nx-q,html.light .nx-t{color:#5c7d00}
-html.light .status{background:rgba(255,255,255,.92);color:#0f1720;border:1px solid var(--line)}
-html.light .f-quote{background:linear-gradient(135deg,rgba(15,138,82,.12),var(--frame) 65%)}
-html.light .vp{background:linear-gradient(160deg,rgba(15,138,82,.10),var(--tile) 70%);border-color:rgba(15,138,82,.25)}
-html.light .vn{color:rgba(15,138,82,.15)}
+html.light .fr{box-shadow:0 1px 2px rgba(17,24,39,.04),0 12px 32px rgba(17,24,39,.07)}
+html.light .fr.active{border-color:#a3c92b;box-shadow:0 0 0 3px rgba(198,244,50,.35),0 12px 32px rgba(17,24,39,.08)}
+html.light .fr-bar{background:#f8fafc}
+html.light .btn{background:#fff;border-color:var(--line)}
+html.light .btn.acc,html.light .chipbtn.acc{background:#111827;color:#c6f432;border-color:#111827}
+html.light .chipbtn,html.light .nav{background:#fff;box-shadow:0 1px 2px rgba(17,24,39,.05)}
+html.light mark,html.light .f-hero h1 em,html.light .logo .u,html.light .dock .where b{color:#4d7c0f}
+html.light .cmd b,html.light .cursor{color:#4d7c0f}html.light .cursor{background:#4d7c0f}
+html.light .lbl{color:#7a8696}
+html.light .logo-card.lc-next{border-color:rgba(77,124,15,.45)}html.light .nx-q,html.light .nx-t{color:#4d7c0f}
+html.light .status{background:#fff;color:#111827;border:1px solid var(--line)}
+html.light .f-quote{background:#fff}html.light .f-quote blockquote{color:#111827}html.light .f-quote cite{color:#047857}
+html.light .vp{background:#f6f8fa;border-color:var(--line)}html.light .vp b{color:#047857}html.light .vn{color:rgba(4,120,87,.12)}
+html.light .mini,html.light .lrn,html.light .dash-card,html.light .fact{background:#f8fafc;border-color:var(--line)}
+html.light .mini.soon{border-color:rgba(77,124,15,.45)}html.light .mini.soon h4{color:#4d7c0f}
+html.light .chips>span{background:#fff}
+html.light .chips.x>span{color:#3f6212;border-color:rgba(77,124,15,.3);background:#f2fbd8}
+html.light .lrn-ic{background:#f2fbd8;color:#4d7c0f}
+html.light .motto{background:#f8fafc}
+html.light .prog{background:#84cc16}
+html.light .f-proj .pj-media{background:#f6f8fa!important;border-bottom-color:var(--line)}
+html.light .dock{background:#fff;box-shadow:0 10px 30px rgba(17,24,39,.10)}
+html.light .hint{background:#fff}
+html.light .dash-grid figure{background:#fff!important}
+html.light .dw-bar{background:#f8fafc}
+html.light .idx{background:rgba(238,241,245,.8)}html.light .idx-box{background:#fff}
+html.light #idx-list button.on .ix-p{color:#4d7c0f}
+html.light :focus-visible{outline-color:#4d7c0f}
 html.light .logo-card img[alt=HAJAR]{border-radius:16px;object-fit:cover}
-html.light .chips.x>span{color:#4d6a00;border-color:rgba(92,125,0,.35);background:rgba(196,240,0,.15)}
-html.light .prog{background:#9ccc00}
-html.light .f-proj .pj-media{background:radial-gradient(circle at 50% 40%,rgba(196,240,0,.12),transparent 65%),repeating-linear-gradient(0deg,transparent 0 31px,rgba(47,111,214,.06) 31px 32px),repeating-linear-gradient(90deg,transparent 0 31px,rgba(47,111,214,.06) 31px 32px),#eef2f6!important}
-html.light .cursor{background:#9ccc00}
-html.light .idx{background:rgba(240,243,247,.75)}
-html.light :focus-visible{outline-color:#5c7d00}
-.theme-ic{display:inline-block;width:1.1em;text-align:center}
+.theme-ic{display:grid;place-items:center}.theme-ic svg{display:block}.ti-moon{display:none!important}html.light .ti-sun{display:none!important}html.light .ti-moon{display:block!important}
+#theme{display:grid;place-items:center;padding:8px 11px}
 /* a11y */
 :focus{outline:none}
 :focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:10px}
@@ -301,7 +315,7 @@ html.light :focus-visible{outline-color:#5c7d00}
     <button data-go="learning"><span class="ar">التعلّم</span><span class="en">learning</span></button>
     <button data-go="contact"><span class="ar">تواصل</span><span class="en">contact</span></button>
   </nav>
-  <div class="tr"><button class="chipbtn" id="theme" aria-label="Light / dark mode"><span class="theme-ic" id="theme-ic">☀</span></button><button class="chipbtn" id="lang" aria-label="Switch language / تغيير اللغة"><span class="ar">EN</span><span class="en">عربي</span></button></div>
+  <div class="tr"><button class="chipbtn" id="theme" aria-label="Light / dark mode"><span class="theme-ic" id="theme-ic"><svg class=ti-sun viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class=ti-moon viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span></button><button class="chipbtn" id="lang" aria-label="Switch language / تغيير اللغة"><span class="ar">EN</span><span class="en">عربي</span></button></div>
 </header>
 
 <div id="vp"><div id="board">
@@ -566,9 +580,8 @@ const lbClose=()=>{ lb.hidden=true; }; document.getElementById('lb-x').onclick=l
 addEventListener('keydown',e=>{ if(e.key==='Escape'&&!lb.hidden) lbClose(); });
 
 const thBtn=document.getElementById('theme'), thIc=document.getElementById('theme-ic');
-const thSet=()=>{ const L=root.classList.contains('light'); thIc.textContent=L?'☾':'☀'; document.querySelectorAll('img[data-light]').forEach(i=>i.src=L?i.dataset.light:i.dataset.dark); }; thSet();
+const thSet=()=>{ const L=root.classList.contains('light'); document.querySelectorAll('img[data-light]').forEach(i=>i.src=L?i.dataset.light:i.dataset.dark); }; thSet();
 thBtn.onclick=()=>{ const l=!root.classList.contains('light'); root.classList.toggle('light',l); try{localStorage.setItem('theme',l?'light':'dark')}catch(e){} thSet(); };
-matchMedia('(prefers-color-scheme: light)').addEventListener('change',e=>{ try{ if(localStorage.getItem('theme')) return; }catch(_){} root.classList.toggle('light',e.matches); thSet(); });
 // intro: show whole board, then fly to hero
 if(mobile()){ deck('hero',1); }
 else { fit(rectOf('overview'),false); label('overview'); cur=0; setTimeout(()=>go('hero'),1100); }
