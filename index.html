@@ -42,7 +42,7 @@ html.lang-en body{font-family:Inter,"IBM Plex Sans Arabic",sans-serif}
 /* viewport + board */
 #vp{position:fixed;inset:0;overflow:hidden;cursor:grab;touch-action:none}
 #vp.drag{cursor:grabbing}
-#board{position:absolute;left:0;top:0;width:3500px;height:3060px;transform-origin:0 0;will-change:transform;
+#board{position:absolute;left:0;top:0;width:3500px;height:3500px;transform-origin:0 0;will-change:transform;
  background-image:radial-gradient(var(--dot) 1.5px,transparent 1.5px);background-size:32px 32px}
 #board.anim{transition:transform .95s cubic-bezier(.65,.02,.2,1)}
 .links{position:absolute;left:0;top:0;pointer-events:none}
@@ -227,6 +227,19 @@ html.light :focus-visible{outline-color:#4d7c0f}
 html.light .logo-card img[alt=HAJAR]{border-radius:16px;object-fit:cover}
 .theme-ic{display:grid;place-items:center}.theme-ic svg{display:block}.ti-moon{display:none!important}html.light .ti-sun{display:none!important}html.light .ti-moon{display:block!important}
 #theme{display:grid;place-items:center;padding:8px 11px}
+
+.vol{display:grid;grid-template-columns:1fr 1.25fr;gap:18px;align-items:start}
+.vol-cert{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(160deg,rgba(212,255,63,.10),var(--tile) 70%);border:1px solid rgba(212,255,63,.28);border-radius:16px;padding:20px}
+.vc-ic{flex:none;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(212,255,63,.12);color:var(--acc);font-size:20px}
+.vol-cert b{display:block;font-size:20px;line-height:1.35}.vol-cert small{display:block;color:var(--muted);font-size:14px;margin-top:6px;line-height:1.6}
+.vol-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.vol-list li{display:flex;align-items:center;gap:12px;background:var(--tile);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.vd{flex:none;width:9px;height:9px;border-radius:50%;background:var(--muted)}.vd.on{background:#28c840;box-shadow:0 0 8px #28c840}
+.vt{flex:1;min-width:0}.vt b{display:block;font-size:17px}.vt small{color:var(--muted);font-size:13.5px}
+.vy{font-family:"JetBrains Mono","IBM Plex Sans Arabic",monospace;font-size:12.5px;color:var(--cm);white-space:nowrap}
+html:not(.lang-en) .vy{font-family:"IBM Plex Sans Arabic",sans-serif}
+html.light .vol-cert{background:#f2fbd8;border-color:rgba(77,124,15,.3)}html.light .vc-ic{background:#e6f6b8;color:#4d7c0f}
+@media (max-width:760px){.vol{grid-template-columns:1fr;gap:12px}.vol-cert{padding:16px}.vol-cert b{font-size:17px}.vt b{font-size:15px}.vol-list li{padding:10px 12px}}
 /* a11y */
 :focus{outline:none}
 :focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:10px}
@@ -313,6 +326,7 @@ html.light .logo-card img[alt=HAJAR]{border-radius:16px;object-fit:cover}
     <button data-go="vision"><span class="ar">رؤية 2030</span><span class="en">vision</span></button>
     <button data-go="projects"><span class="ar">المشاريع</span><span class="en">projects</span></button>
     <button data-go="learning"><span class="ar">التعلّم</span><span class="en">learning</span></button>
+    <button data-go="volunteer"><span class="ar">التطوع</span><span class="en">volunteering</span></button>
     <button data-go="contact"><span class="ar">تواصل</span><span class="en">contact</span></button>
   </nav>
   <div class="tr"><button class="chipbtn" id="theme" aria-label="Light / dark mode"><span class="theme-ic" id="theme-ic"><svg class=ti-sun viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class=ti-moon viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span></button><button class="chipbtn" id="lang" aria-label="Switch language / تغيير اللغة"><span class="ar">EN</span><span class="en">عربي</span></button></div>
@@ -451,7 +465,16 @@ html.light .logo-card img[alt=HAJAR]{border-radius:16px;object-fit:cover}
         </div>
       </div></div>
   </section>
-  <section class="fr f-contact" id="contact" data-x="1250" data-y="2680" data-w="1000" data-h="300" style="left:1250px;top:2680px;width:1000px;min-height:300px">
+  <section class="fr f-volunteer" id="volunteer" data-x="1250" data-y="2680" data-w="1000" data-h="380" style="left:1250px;top:2680px;width:1000px;min-height:380px">
+    <div class="fr-bar"><i></i><i></i><i></i><span>~/volunteering.log</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
+    <div class="fr-body">
+      <div class="lbl"><span class="ar">التطوع والأندية</span><span class="en">Volunteering &amp; Clubs</span></div>
+      <div class="vol">
+        <div class="vol-cert"><span class="vc-ic" aria-hidden="true">✦</span><div><b><span class="ar">شهادة ساعات تطوعية</span><span class="en">Volunteer Hours Certificate</span></b><small><span class="ar">أندية كلية علوم الحاسب وتقنية المعلومات · جامعة الإمام عبدالرحمن بن فيصل</span><span class="en">CCSIT Clubs · Imam Abdulrahman Bin Faisal University</span></small></div></div>
+        <ul class="vol-list"><li><span class="vd"></span><div class="vt"><b><span class="ar">نادي CCSIT</span><span class="en">CCSIT Club</span></b><small><span class="ar">اللجنة الإعلامية · عضو ثم عضو أساسي</span><span class="en">Media Committee · Member → Core Member</span></small></div><span class="vy">2024 – 2025</span></li><li><span class="vd on"></span><div class="vt"><b><span class="ar">نادي الأمن السيبراني</span><span class="en">Cyber Security Club</span></b><small><span class="ar">عضو</span><span class="en">Member</span></small></div><span class="vy"><span class="ar">2025 – الآن</span><span class="en">2025 – now</span></span></li><li><span class="vd on"></span><div class="vt"><b><span class="ar">نادي ريادة الأعمال التقنية</span><span class="en">Tech Entrepreneurship Club</span></b><small><span class="ar">عضو</span><span class="en">Member</span></small></div><span class="vy"><span class="ar">2026 – الآن</span><span class="en">2026 – now</span></span></li></ul>
+      </div></div>
+  </section>
+  <section class="fr f-contact" id="contact" data-x="1250" data-y="3120" data-w="1000" data-h="300" style="left:1250px;top:3120px;width:1000px;min-height:300px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/contact</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <h2><span class="ar">لنصنع أثرًا معًا</span><span class="en">Let’s build impact together</span></h2>
@@ -480,14 +503,14 @@ html.light .logo-card img[alt=HAJAR]{border-radius:16px;object-fit:cover}
 <script>
 (function(){
 const root=document.documentElement, vp=document.getElementById('vp'), board=document.getElementById('board');
-const STOPS=['overview','hero','quote','about','vision','projects','hajar','mueen','wadeh','rawiyyah','next','more','learning','contact'], PATHS={'overview':'~/','hero':'~/whoami','quote':'~/quote.txt','about':'~/about.md','vision':'~/vision-2030.md','projects':'~/projects','hajar':'~/projects/hajar','mueen':'~/projects/mueen','wadeh':'~/projects/wadeh','rawiyyah':'~/projects/rawiyyah','next':'~/projects/next','more':'~/projects/more','learning':'~/learning.md','contact':'~/contact'};
-const NAMES={ar:{overview:'البورد كامل',hero:'البداية',quote:'جملة ملهمة',projects:'المشاريع',hajar:'هَجَر',mueen:'مُعين',wadeh:'واضح',next:'مشاريع قادمة',rawiyyah:'رَويَّة',more:'تجارب أخرى',learning:'التعلّم والتطوير',about:'عنّي',vision:'رؤية 2030',contact:'تواصل'},
- en:{overview:'whole board',hero:'start',quote:'inspiration',projects:'projects',hajar:'HAJAR',mueen:"MU'EEN",wadeh:'WADEH',next:'upcoming projects',rawiyyah:'RAWIYYAH',more:'more',learning:'learning',about:'about',vision:'vision 2030',contact:'contact'}};
+const STOPS=['overview','hero','quote','about','vision','projects','hajar','mueen','wadeh','rawiyyah','next','more','learning','volunteer','contact'], PATHS={'overview':'~/','hero':'~/whoami','quote':'~/quote.txt','about':'~/about.md','vision':'~/vision-2030.md','projects':'~/projects','hajar':'~/projects/hajar','mueen':'~/projects/mueen','wadeh':'~/projects/wadeh','rawiyyah':'~/projects/rawiyyah','next':'~/projects/next','more':'~/projects/more','learning':'~/learning.md','volunteer':'~/volunteering.log','contact':'~/contact'};
+const NAMES={ar:{overview:'البورد كامل',hero:'البداية',quote:'جملة ملهمة',projects:'المشاريع',hajar:'هَجَر',mueen:'مُعين',wadeh:'واضح',next:'مشاريع قادمة',rawiyyah:'رَويَّة',more:'تجارب أخرى',learning:'التعلّم والتطوير',volunteer:'التطوع والأندية',about:'عنّي',vision:'رؤية 2030',contact:'تواصل'},
+ en:{overview:'whole board',hero:'start',quote:'inspiration',projects:'projects',hajar:'HAJAR',mueen:"MU'EEN",wadeh:'WADEH',next:'upcoming projects',rawiyyah:'RAWIYYAH',more:'more',learning:'learning',volunteer:'volunteering',about:'about',vision:'vision 2030',contact:'contact'}};
 const mobile=()=>matchMedia('(max-width:760px)').matches;
 let s=1,tx=0,ty=0,cur=1;
 const apply=(anim)=>{board.classList.toggle('anim',!!anim);board.style.transform=`translate(${tx}px,${ty}px) scale(${s})`;};
 const rectOf=id=>{
-  if(id==='overview') return {x:60,y:20,w:3380,h:3000};
+  if(id==='overview') return {x:60,y:20,w:3380,h:3440};
   if(id==='projects') return {x:100,y:1380,w:3300,h:860};
   const el=document.getElementById(id); return {x:+el.dataset.x,y:+el.dataset.y,w:+el.dataset.w,h:Math.max(+el.dataset.h,el.offsetHeight)};
 };
