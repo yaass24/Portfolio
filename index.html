@@ -42,7 +42,7 @@ html.lang-en body{font-family:Inter,"IBM Plex Sans Arabic",sans-serif}
 /* viewport + board */
 #vp{position:fixed;inset:0;overflow:hidden;cursor:grab;touch-action:none}
 #vp.drag{cursor:grabbing}
-#board{position:absolute;left:0;top:0;width:3500px;height:3720px;transform-origin:0 0;will-change:transform;
+#board{position:absolute;left:0;top:0;width:3500px;height:4300px;transform-origin:0 0;will-change:transform;
  background-image:radial-gradient(var(--dot) 1.5px,transparent 1.5px);background-size:32px 32px}
 #board.anim{transition:transform .95s cubic-bezier(.65,.02,.2,1)}
 .links{position:absolute;left:0;top:0;pointer-events:none}
@@ -253,6 +253,13 @@ html.light .vol-cert{background:#f2fbd8;border-color:rgba(77,124,15,.3)}html.lig
 [dir=rtl] .certs2 b{text-align:right}
 html.light .lc-ic{background:#f2fbd8;color:#4d7c0f}
 @media (max-width:760px){.certs2 li{padding:12px 14px}.certs2 b{font-size:15.5px}.certs2 small{font-size:13px}.lc-ic{width:34px;height:34px}}
+.hk-head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}.hk-n{font-family:"JetBrains Mono",monospace;font-size:52px;font-weight:700;line-height:1;color:var(--acc)}.hk-u{color:var(--soft);font-size:16px}
+.hk-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hk-list li{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--tile);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.hk-now{flex:none;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#ffb547;border:1px solid rgba(255,181,71,.35);background:rgba(255,181,71,.08);padding:3px 10px;border-radius:999px}
+.hk-now i{width:7px;height:7px;border-radius:50%;background:#ffb547;box-shadow:0 0 8px #ffb547}
+html.light .hk-n{color:#4d7c0f}html.light .hk-now{color:#b45309}
+@media (max-width:760px){.hk-list{grid-template-columns:1fr;gap:8px}.hk-list li{padding:10px 12px}.hk-n{font-size:40px}}
 /* a11y */
 :focus{outline:none}
 :focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:10px}
@@ -340,6 +347,7 @@ html.light .lc-ic{background:#f2fbd8;color:#4d7c0f}
     <button data-go="projects"><span class="ar">المشاريع</span><span class="en">projects</span></button>
     <button data-go="learning"><span class="ar">الشهادات</span><span class="en">certificates</span></button>
     <button data-go="volunteer"><span class="ar">التطوع</span><span class="en">volunteering</span></button>
+    <button data-go="hackathons"><span class="ar">الهاكاثونات</span><span class="en">hackathons</span></button>
     <button data-go="contact"><span class="ar">تواصل</span><span class="en">contact</span></button>
   </nav>
   <div class="tr"><button class="chipbtn" id="theme" aria-label="Light / dark mode"><span class="theme-ic" id="theme-ic"><svg class=ti-sun viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class=ti-moon viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span></button><button class="chipbtn" id="lang" aria-label="Switch language / تغيير اللغة"><span class="ar">EN</span><span class="en">عربي</span></button></div>
@@ -480,7 +488,14 @@ html.light .lc-ic{background:#f2fbd8;color:#4d7c0f}
         <div class="vol-side"><div class="vs-l"><span class="ar">الأندية</span><span class="en">Clubs</span></div><ul class="vol-list"><li><span class="vd on"></span><div class="vt"><b><span class="ar">نادي CCSIT</span><span class="en">CCSIT Club</span></b></div></li><li><span class="vd on"></span><div class="vt"><b><span class="ar">GDG at IAU</span><span class="en">GDG at IAU</span></b></div></li><li><span class="vd on"></span><div class="vt"><b><span class="ar">نادي AI &amp; Robot</span><span class="en">AI &amp; Robot Club</span></b></div></li><li><span class="vd on"></span><div class="vt"><b><span class="ar">نادي الأمن السيبراني</span><span class="en">Cyber Security Club</span></b></div></li><li><span class="vd on"></span><div class="vt"><b><span class="ar">نادي ريادة الأعمال التقنية</span><span class="en">Tech Entrepreneurship Club</span></b></div></li></ul></div>
       </div></div>
   </section>
-  <section class="fr f-contact" id="contact" data-x="1250" data-y="3340" data-w="1000" data-h="300" style="left:1250px;top:3340px;width:1000px;min-height:300px">
+  <section class="fr f-hackathons" id="hackathons" data-x="1250" data-y="3340" data-w="1000" data-h="460" style="left:1250px;top:3340px;width:1000px;min-height:460px">
+    <div class="fr-bar"><i></i><i></i><i></i><span>~/hackathons.log</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
+    <div class="fr-body">
+      <div class="lbl"><span class="ar">الهاكاثونات والمسابقات</span><span class="en">Hackathons &amp; Competitions</span></div>
+      <div class="hk-head"><span class="hk-n">6</span><span class="hk-u"><span class="ar">مشاركات</span><span class="en">participations</span></span></div>
+      <ul class="hk-list"><li><div class="vt"><b><span class="ar">هاكاثون فرق</span><span class="en">Farq Hackathon</span></b><small><span class="ar">جامعة اليمامة</span><span class="en">Al Yamamah University</span></small></div></li><li><div class="vt"><b><span class="ar">هاكاثون الطفولة</span><span class="en">Childhood Hackathon</span></b><small><span class="ar">جمعية إنماء لرعاية الطفولة</span><span class="en">Enmaa Association</span></small></div></li><li><div class="vt"><b>AgentX Hackathon</b><small><span class="ar">الرياض</span><span class="en">Riyadh</span></small></div></li><li><div class="vt"><b><span class="ar">بطولة الاستشارات</span><span class="en">Consulting Championship</span></b><small><span class="ar">أرامكو</span><span class="en">Aramco</span></small></div></li><li><div class="vt"><b><span class="ar">هاكاثون الابتكار للتحول الرقمي الصحي العسكري</span><span class="en">Military Health Digital Transformation Hackathon</span></b><small><span class="ar">كلية الأمير سلطان العسكرية للعلوم الصحية</span><span class="en">Prince Sultan Military College of Health Sciences</span></small></div><span class=hk-now><i></i><span class="ar">جارٍ</span><span class="en">ongoing</span></span></li><li><div class="vt"><b><span class="ar">هاكاثون نمكّن للذكاء الاصطناعي 2026</span><span class="en">Nmkkn AI Hackathon 2026</span></b><small><span class="ar">نمكّن</span><span class="en">Nmkkn</span></small></div><span class=hk-now><i></i><span class="ar">جارٍ</span><span class="en">ongoing</span></span></li></ul></div>
+  </section>
+  <section class="fr f-contact" id="contact" data-x="1250" data-y="3920" data-w="1000" data-h="300" style="left:1250px;top:3920px;width:1000px;min-height:300px">
     <div class="fr-bar"><i></i><i></i><i></i><span>~/contact</span><button class="fr-zoom" aria-label="zoom">⤢</button></div>
     <div class="fr-body">
       <h2><span class="ar">لنصنع أثرًا معًا</span><span class="en">Let’s build impact together</span></h2>
@@ -509,14 +524,14 @@ html.light .lc-ic{background:#f2fbd8;color:#4d7c0f}
 <script>
 (function(){
 const root=document.documentElement, vp=document.getElementById('vp'), board=document.getElementById('board');
-const STOPS=['overview','hero','quote','about','vision','projects','hajar','mueen','wadeh','rawiyyah','next','more','learning','volunteer','contact'], PATHS={'overview':'~/','hero':'~/whoami','quote':'~/quote.txt','about':'~/about.md','vision':'~/vision-2030.md','projects':'~/projects','hajar':'~/projects/hajar','mueen':'~/projects/mueen','wadeh':'~/projects/wadeh','rawiyyah':'~/projects/rawiyyah','next':'~/projects/next','more':'~/projects/more','learning':'~/learning.md','volunteer':'~/volunteering.log','contact':'~/contact'};
-const NAMES={ar:{overview:'البورد كامل',hero:'البداية',quote:'جملة ملهمة',projects:'المشاريع',hajar:'هَجَر',mueen:'مُعين',wadeh:'واضح',next:'مشاريع قادمة',rawiyyah:'رَويَّة',more:'تجارب أخرى',learning:'الشهادات',volunteer:'التطوع والأنشطة',about:'عنّي',vision:'رؤية 2030',contact:'تواصل'},
- en:{overview:'whole board',hero:'start',quote:'inspiration',projects:'projects',hajar:'HAJAR',mueen:"MU'EEN",wadeh:'WADEH',next:'upcoming projects',rawiyyah:'RAWIYYAH',more:'more',learning:'certificates',volunteer:'volunteering',about:'about',vision:'vision 2030',contact:'contact'}};
+const STOPS=['overview','hero','quote','about','vision','projects','hajar','mueen','wadeh','rawiyyah','next','more','learning','volunteer','hackathons','contact'], PATHS={'overview':'~/','hero':'~/whoami','quote':'~/quote.txt','about':'~/about.md','vision':'~/vision-2030.md','projects':'~/projects','hajar':'~/projects/hajar','mueen':'~/projects/mueen','wadeh':'~/projects/wadeh','rawiyyah':'~/projects/rawiyyah','next':'~/projects/next','more':'~/projects/more','learning':'~/learning.md','volunteer':'~/volunteering.log','hackathons':'~/hackathons.log','contact':'~/contact'};
+const NAMES={ar:{overview:'البورد كامل',hero:'البداية',quote:'جملة ملهمة',projects:'المشاريع',hajar:'هَجَر',mueen:'مُعين',wadeh:'واضح',next:'مشاريع قادمة',rawiyyah:'رَويَّة',more:'تجارب أخرى',learning:'الشهادات',volunteer:'التطوع والأنشطة',hackathons:'الهاكاثونات',about:'عنّي',vision:'رؤية 2030',contact:'تواصل'},
+ en:{overview:'whole board',hero:'start',quote:'inspiration',projects:'projects',hajar:'HAJAR',mueen:"MU'EEN",wadeh:'WADEH',next:'upcoming projects',rawiyyah:'RAWIYYAH',more:'more',learning:'certificates',volunteer:'volunteering',hackathons:'hackathons',about:'about',vision:'vision 2030',contact:'contact'}};
 const mobile=()=>matchMedia('(max-width:760px)').matches;
 let s=1,tx=0,ty=0,cur=1;
 const apply=(anim)=>{board.classList.toggle('anim',!!anim);board.style.transform=`translate(${tx}px,${ty}px) scale(${s})`;};
 const rectOf=id=>{
-  if(id==='overview') return {x:60,y:20,w:3380,h:3660};
+  if(id==='overview') return {x:60,y:20,w:3380,h:4240};
   if(id==='projects') return {x:100,y:1380,w:3300,h:860};
   const el=document.getElementById(id); return {x:+el.dataset.x,y:+el.dataset.y,w:+el.dataset.w,h:Math.max(+el.dataset.h,el.offsetHeight)};
 };
